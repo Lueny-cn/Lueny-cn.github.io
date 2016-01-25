@@ -3,7 +3,6 @@
 <head>
   <meta charset="utf-8">
   
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <title>Lueny-blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="卢文友">
@@ -21,174 +20,201 @@
   
     <link rel="icon" href="http://7xq76k.com1.z0.glb.clouddn.com/favicon.png">
   
+  
+  <link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.5.0/animate.min.css" type="text/css">
+  
   <link rel="stylesheet" href="/css/style.css" type="text/css">
+  <link rel="stylesheet" href="/font-awesome/css/font-awesome.min.css">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  
+    
+    
+  
+  
+      <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  
+  <script>
+      var yiliaConfig = {
+          fancybox: true,
+          animate: true,
+          isHome: true,
+          isPost: false,
+          isArchive: false,
+          isTag: false,
+          isCategory: false,
+          open_in_new: false
+      }
+  </script>
 </head>
-
 <body>
   <div id="container">
     <div class="left-col">
     <div class="overlay"></div>
 <div class="intrude-less">
-	<header id="header" class="inner">
-		<a href="/" class="profilepic">
-			
-			<img lazy-src="/img/head.png" class="js-avatar">
-			
-		</a>
+    <header id="header" class="inner">
+        <a href="/" class="profilepic">
+            
+            <img lazy-src="/img/avatar.png" class="js-avatar">
+            
+        </a>
 
-		<hgroup>
-		  <h1 class="header-author"><a href="/">Lueny</a></h1>
-		</hgroup>
+        <hgroup>
+          <h1 class="header-author"><a href="/">Lueny</a></h1>
+        </hgroup>
 
-		
-		<p class="header-subtitle">文友的博客</p>
-		
+        
+        <p class="header-subtitle">文友的博客</p>
+        
+                
 
-		
-			<div class="switch-btn">
-				<div class="icon">
-					<div class="icon-ctn">
-						<div class="icon-wrap icon-house" data-idx="0">
-							<div class="birdhouse"></div>
-							<div class="birdhouse_holes"></div>
-						</div>
-						<div class="icon-wrap icon-ribbon hide" data-idx="1">
-							<div class="ribbon"></div>
-						</div>
-						
-						<div class="icon-wrap icon-link hide" data-idx="2">
-							<div class="loopback_l"></div>
-							<div class="loopback_r"></div>
-						</div>
-						
-						
-						<div class="icon-wrap icon-me hide" data-idx="3">
-							<div class="user"></div>
-							<div class="shoulder"></div>
-						</div>
-						
-					</div>
-					
-				</div>
-				<div class="tips-box hide">
-					<div class="tips-arrow"></div>
-					<ul class="tips-inner">
-						<li>菜单</li>
-						<li>標籤</li>
-						
-						<li>友情链接</li>
-						
-						
-						<li>關於</li>
-						
-					</ul>
-				</div>
-			</div>
-		
 
-		<div class="switch-area">
-			<div class="switch-wrap">
-				<section class="switch-part switch-part1">
-					<nav class="header-menu">
-						<ul>
-						
-							<li><a href="/">主页</a></li>
-				        
-							<li><a href="/archives">归档</a></li>
-				        
-						</ul>
-					</nav>
-					<nav class="header-nav">
-						<div class="social">
-							
-								<a class="github" target="_blank" href="https://github.com/Lueny-cn" title="github">github</a>
-					        
-								<a class="weibo" target="_blank" href="http://weibo.com/u/2312143500/home?topnav=1&wvr=6" title="weibo">weibo</a>
-					        
-						</div>
-					</nav>
-				</section>
-				
-				
-				<section class="switch-part switch-part2">
-					<div class="widget tagcloud" id="js-tagcloud">
-						<a href="/tags/JavaScript/" style="font-size: 10px;">JavaScript</a> <a href="/tags/随笔/" style="font-size: 10px;">随笔</a>
-					</div>
-				</section>
-				
-				
-				
-				<section class="switch-part switch-part3">
-					<div id="js-friends">
-					
-			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://zyingying.github.io/">zyingying的博客</a>
-			        
-			        </div>
-				</section>
-				
+        
+            <div id="switch-btn" class="switch-btn">
+                <div class="icon">
+                    <div class="icon-ctn">
+                        <div class="icon-wrap icon-house" data-idx="0">
+                            <div class="birdhouse"></div>
+                            <div class="birdhouse_holes"></div>
+                        </div>
+                        <div class="icon-wrap icon-ribbon hide" data-idx="1">
+                            <div class="ribbon"></div>
+                        </div>
+                        
+                        <div class="icon-wrap icon-link hide" data-idx="2">
+                            <div class="loopback_l"></div>
+                            <div class="loopback_r"></div>
+                        </div>
+                        
+                        
+                        <div class="icon-wrap icon-me hide" data-idx="3">
+                            <div class="user"></div>
+                            <div class="shoulder"></div>
+                        </div>
+                        
+                    </div>
+                    
+                </div>
+                <div class="tips-box hide">
+                    <div class="tips-arrow"></div>
+                    <ul class="tips-inner">
+                        <li>菜单</li>
+                        <li>标签</li>
+                        
+                        <li>友情链接</li>
+                        
+                        
+                        <li>关于我</li>
+                        
+                    </ul>
+                </div>
+            </div>
+        
 
-				
-				
-				<section class="switch-part switch-part4">
-				
-					<div id="js-aboutme">who am I？who is he？</div>
-				</section>
-				
-			</div>
-		</div>
-	</header>				
+        <div id="switch-area" class="switch-area">
+            <div class="switch-wrap">
+                <section class="switch-part switch-part1">
+                    <nav class="header-menu">
+                        <ul>
+                        
+                            <li><a href="/">主页</a></li>
+                        
+                            <li><a href="/archives">归档</a></li>
+                        
+                        </ul>
+                    </nav>
+                    <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <li id="新浪微博"><a class="新浪微博" target="_blank" href="http://weibo.com/u/2312143500/home?topnav=1&wvr=6" title="新浪微博"></a></li>
+                            
+                                <li id="GitHub"><a class="GitHub" target="_blank" href="https://github.com/Lueny-cn" title="GitHub"></a></li>
+                            
+                                <li id="RSS"><a class="RSS" target="_blank" href="/atom.xml" title="RSS"></a></li>
+                            
+                        </ul>
+                    </nav>
+                </section>
+                
+                
+                <section class="switch-part switch-part2">
+                    <div class="widget tagcloud" id="js-tagcloud">
+                        <a href="/tags/JavaScript/" style="font-size: 10px;">JavaScript</a> <a href="/tags/随笔/" style="font-size: 10px;">随笔</a>
+                    </div>
+                </section>
+                
+                
+                
+                <section class="switch-part switch-part3">
+                    <div id="js-friends">
+                    
+                      <a target="_blank" class="main-nav-link switch-friends-link" href="https://hexo.io">Hexo</a>
+                    
+                      <a target="_blank" class="main-nav-link switch-friends-link" href="https://github.com/Lueny-cn">GitHub</a>
+                    
+                    </div>
+                </section>
+                
+
+                
+                
+                <section class="switch-part switch-part4">
+                
+                    <div id="js-aboutme">who am I？what is it？</div>
+                </section>
+                
+            </div>
+        </div>
+    </header>                
 </div>
-
     </div>
     <div class="mid-col">
       <nav id="mobile-nav">
-  	<div class="overlay">
-  		<div class="slider-trigger"></div>
-  		<h1 class="header-author js-mobile-header hide">Lueny</h1>
-  	</div>
-	<div class="intrude-less">
-		<header id="header" class="inner">
-			<div class="profilepic">
-			
-				<img lazy-src="/img/head.png" class="js-avatar">
-			
-			</div>
-			<hgroup>
-			  <h1 class="header-author">Lueny</h1>
-			</hgroup>
-			
-			<p class="header-subtitle">文友的博客</p>
-			
-			<nav class="header-menu">
-				<ul>
-				
-					<li><a href="/">主页</a></li>
-		        
-					<li><a href="/archives">归档</a></li>
-		        
-		        <div class="clearfix"></div>
-				</ul>
-			</nav>
-			<nav class="header-nav">
-				<div class="social">
-					
-						<a class="github" target="_blank" href="https://github.com/Lueny-cn" title="github">github</a>
-			        
-						<a class="weibo" target="_blank" href="http://weibo.com/u/2312143500/home?topnav=1&wvr=6" title="weibo">weibo</a>
-			        
-				</div>
-			</nav>
-		</header>				
-	</div>
+      <div class="overlay">
+          <div class="slider-trigger"></div>
+          <h1 class="header-author js-mobile-header hide"><a href="/" title="回到主页">Lueny</a></h1>
+      </div>
+    <div class="intrude-less">
+        <header id="header" class="inner">
+            <a href="/" class="profilepic">
+                <img lazy-src="/img/avatar.png" class="js-avatar">
+            </a>
+            <hgroup>
+              <h1 class="header-author"><a href="/" title="回到主页">Lueny</a></h1>
+            </hgroup>
+            
+            <p class="header-subtitle">文友的博客</p>
+            
+            <nav class="header-menu">
+                <ul>
+                
+                    <li><a href="/">主页</a></li>
+                
+                    <li><a href="/archives">归档</a></li>
+                
+                <div class="clearfix"></div>
+                </ul>
+            </nav>
+            <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <li id="新浪微博"><a class="新浪微博" target="_blank" href="http://weibo.com/u/2312143500/home?topnav=1&wvr=6" title="新浪微博"></a></li>
+                            
+                                <li id="GitHub"><a class="GitHub" target="_blank" href="https://github.com/Lueny-cn" title="GitHub"></a></li>
+                            
+                                <li id="RSS"><a class="RSS" target="_blank" href="/atom.xml" title="RSS"></a></li>
+                            
+                        </ul>
+            </nav>
+        </header>                
+    </div>
 </nav>
-
       <div class="body-wrap">
   
-      <article id="post-JavaScript之理解闭包" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-JavaScript之理解闭包" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
       <a href="/2016/01/17/JavaScript之理解闭包/" class="article-date">
-  	<time datetime="2016-01-17T13:14:23.000Z" itemprop="datePublished">2016-01-17</time>
+      <time datetime="2016-01-17T13:14:23.000Z" itemprop="datePublished">2016-01-17</time>
 </a>
     </div>
   
@@ -210,52 +236,25 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        
-        <h3 id="u521D_u63A2JavaScript_closure"><a href="#u521D_u63A2JavaScript_closure" class="headerlink" title="初探JavaScript closure"></a><strong>初探JavaScript closure</strong></h3><p>JavaScript closure，<strong>“closure”</strong>翻译为闭包，闭包的官方解释是这样的：闭包是一个拥有许多变量和绑定了这些变量的环境的表达式（通常是一个函数），因而这些变量也是该表达式的一部分。<br>官方的解释真的是晦涩难懂，我们还是来看下例子吧。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*一个简单的闭包demo*/</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">a</span>(<span class="params"></span>) </span>&#123;     <span class="comment">//a的块级作用域</span></span><br><span class="line">  <span class="function"><span class="keyword">function</span> <span class="title">b</span>(<span class="params"></span>)</span>&#123;    <span class="comment">//a的局部作用域，b的块级作用域，一般只能在a中被调用</span></span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">"Hello closure!"</span>);  </span><br><span class="line">  &#125;;</span><br><span class="line">  <span class="keyword">return</span> b;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//b();   /*如果不通过闭包的话,这样是不能取得函数a中的变量的, b报错undefined*/</span></span><br><span class="line"><span class="keyword">var</span> c = a();</span><br><span class="line">c();  <span class="comment">// Hello closure!  ==&gt; a()();</span></span><br></pre></td></tr></table></figure></p>
-<blockquote>
-<p>分析：首先声明了一个函数a，然后在函数中再声明函数b，并在函数a中返回函数b的值，即a取得了函数b的引用，这样我们就可以在函数a外面通过引用函数a中b的引用来取得函数b的结果了。<br>通过上述例子外面可以了解到，使用闭包我们可以在函数的外部访问到函数内部的局部变量或函数。</p>
-</blockquote>
-<h3 id="u4F7F_u7528_u95ED_u5305_u540E_u7684_u4E00_u4E9B_u5206_u6790"><a href="#u4F7F_u7528_u95ED_u5305_u540E_u7684_u4E00_u4E9B_u5206_u6790" class="headerlink" title="使用闭包后的一些分析"></a><strong>使用闭包后的一些分析</strong></h3><p>在MDN中的闭包模块中提到：<strong>定义在闭包中的函数可以“记忆”它创建时候的环境</strong>。这就是使用闭包的好处，同样也是其出现bug，或者造成内存泄露的原因所在。<br>先看下例子:<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*#1 实现累加计数*/</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">a</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  <span class="keyword">var</span> count = <span class="number">0</span>;</span><br><span class="line">  <span class="function"><span class="keyword">function</span> <span class="title">b</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    count ++;</span><br><span class="line">    <span class="built_in">console</span>.log(count);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> b;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> c = a();</span><br><span class="line">c();  <span class="comment">//1</span></span><br><span class="line">c();  <span class="comment">//2</span></span><br><span class="line">c();  <span class="comment">//3</span></span><br></pre></td></tr></table></figure></p>
-<blockquote>
-<p>分析: 只要存在外部变量对函数b的引用, 变量count就会一直存在函数a的环境中, 因为a存在对b的引用, 可以说函数b 依赖于函数a而存在,那么函数a中的变量也存在。理解这句之前我们要先对<strong>JavaScript的垃圾回收机制</strong> 有所了解：在Javascript中，如果一个对象不再被引用，那么这个对象就会被GC回收。如果两个对象互相引用，而不再被第3者所引用，那么这两个互相引用的对象也会被回收。因为函数a被b引用，b又被a外的c引用，这就是为什么函数a执行后不会被回收的原因。我们接下来说到<strong>闭包的内存泄露</strong>也是因为JavaScript的垃圾回收机制（引用计数回收，”0”引用回收)。</p>
-</blockquote>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*#2.1 在循环中创建闭包,非常常见的一个bug*/</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">a</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> b = <span class="keyword">new</span> <span class="built_in">Array</span>();</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">var</span> i=<span class="number">0</span>; i &lt; <span class="number">10</span>; i++)&#123;</span><br><span class="line">    b[i] = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">      <span class="keyword">return</span> i;</span><br><span class="line">    &#125;;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> b; </span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> c = a();</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; <span class="number">10</span>; i++) &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">"c["</span>+i+<span class="string">"]"</span>+<span class="string">": "</span>+c[i]()+<span class="string">"\n"</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>#2.1 分析：返回的数组b的值都是 10 闭包只能取得包含函数中任何变量的最后一个值，因为它都是对函数a中的同一个局部变量 i 的引用。<br>解决办法: 创建一个每次循环都会执行一次的匿名函数：将每次循环时包围函数的i值作为参数，存入匿名函数中。因为函数参数是按值传递的，而非引用，所以每个匿名函数中的num值 都为每此循环时i值的一个副本。</p>
-</blockquote>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*#2.2  解决方案*/</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">a</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> b = <span class="keyword">new</span> <span class="built_in">Array</span>();</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">var</span> i=<span class="number">0</span>; i &lt; <span class="number">10</span>; i++)&#123;</span><br><span class="line">    b[i] = <span class="function"><span class="keyword">function</span>(<span class="params">num</span>) </span>&#123;</span><br><span class="line">      <span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> num; </span><br><span class="line">      &#125;;</span><br><span class="line">    &#125;(i);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> b; </span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> c = a();</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; <span class="number">10</span>; i++) &#123;  </span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">"c["</span>+i+<span class="string">"]"</span>+<span class="string">": "</span>+ c[i]() +<span class="string">"\n"</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*#3 使用闭包,内存泄露的经典案例*/</span></span><br><span class="line">  <span class="keyword">var</span> theThing = <span class="literal">null</span>;</span><br><span class="line">  <span class="keyword">var</span> replaceThing = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> originalThing = theThing;</span><br><span class="line">    <span class="keyword">var</span> unused = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;  </span><br><span class="line">    <span class="comment">// 'unused' 是唯一引用了 'originalThing' 的地方 但是 'unused' 永远不会被调用</span></span><br><span class="line">      <span class="keyword">if</span> (originalThing)</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">"hi"</span>);</span><br><span class="line">    &#125;;</span><br><span class="line">    theThing = &#123;</span><br><span class="line">      longStr: <span class="keyword">new</span> <span class="built_in">Array</span>(<span class="number">1000000</span>).join(<span class="string">'*'</span>),  <span class="comment">// 创建一个 1MB 大小的对象</span></span><br><span class="line">      someMethod: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(someMessage);</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;;</span><br><span class="line">&#125;;</span><br><span class="line">setInterval(replaceThing, <span class="number">1000</span>);  <span class="comment">//每一秒就会消耗1MB内存,除非关闭浏览器</span></span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>&nbsp;分析：每个 theThing 对象中包含 1MB 的 <code>longStr</code> 对象，当我们调用 <code>replaceThing</code> 方法时，它将会在 <code>originalThing</code> 中保存着上一个 <code>theThing</code> 的引用。 但是我们仍然认为这样不会造成问题。因为每次调用的时候，上次的引用 <code>originalThing</code> 将会被反向引用（当 <code>originalThing</code> 通过 <code>originalThing</code> = <code>the Thing</code> 被重置)。此外，只有 <code>replaceThing</code> 的主体被引用了, <code>unused</code> 函数 从来没有被引用。</p>
-<p>  &nbsp; 那么为什么会造成内存泄露呢? 闭包实现的一个最典型的特点是:每个函数对象都有一个字典类型的链接对象来代表它的词法作用域。如果在<code>replaceThing</code>中定义两个都使用<code>originalThing</code>的函数，很重要的一点是他们获取到的是同一个对象，即使<code>originalThing</code>被多次的分配，所以这两个函数共享相同的词法环境。但<strong>只要一个变量被任意一个闭包函数使用，那么它最终还是会存在于在这范围内的所有闭包函数共享的词法环境中</strong>。而也正是这一细微的差别导致了令人困惑不已的内存泄漏问题。</p>
-</blockquote>
-<p>&nbsp;更多关于闭包使用中出现的例子可以去看Tom大叔的 <a href="http://www.cnblogs.com/TomXu/archive/2012/01/31/2330252.html" target="_blank" rel="external">深入理解JavaScript系列-闭包（Closures）</a>。</p>
-<h3 id="u4F7F_u7528_u95ED_u5305_u7684_u573A_u666F"><a href="#u4F7F_u7528_u95ED_u5305_u7684_u573A_u666F" class="headerlink" title="使用闭包的场景"></a><strong>使用闭包的场景</strong></h3><blockquote>
-<ol>
-<li>保护函数内的变量安全。以#1例子为例，函数a中<code>count</code>只有函数b才能访问，而无法通过其他途径访问到，因此保护了函数a中<code>count</code>只有函数b才能访问的安全性。</li>
-<li>在内存中维持一个变量。依然如前例，由于闭包，函数a中<code>count</code>的一直存在于内存中，因此每次执行c()，都会给<code>count</code>自加1。</li>
-<li>通过保护变量的安全实现JavaScript私有属性和私有方法（不能被外部访问)。</li>
-</ol>
-</blockquote>
-<h3 id="u4F7F_u7528_u95ED_u5305_u7684_u6027_u80FD_u8003_u91CF"><a href="#u4F7F_u7528_u95ED_u5305_u7684_u6027_u80FD_u8003_u91CF" class="headerlink" title="使用闭包的性能考量"></a><strong>使用闭包的性能考量</strong></h3><p> 如果不是因为某些特殊任务而需要闭包，在没有必要的情况下，在其它函数中创建函数是不明智的，因为闭包对脚本性能具有负面影响，包括处理速度和内存消耗。</p>
-<p>例如，在创建新的对象或者类时，方法通常应该关联于对象的原型，而不是定义到对象的构造器中。原因是这将导致每次构造器被调用，方法都会被重新赋值一次（也就是说，为每一个对象的创建）。</p>
-<p>考虑以下虽然不切实际但却说明问题的示例：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">MyObject</span>(<span class="params">name, message</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">this</span>.name = name.toString();</span><br><span class="line">  <span class="keyword">this</span>.message = message.toString();</span><br><span class="line">  <span class="keyword">this</span>.getName = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">this</span>.name;</span><br><span class="line">  &#125;;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">this</span>.getMessage = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">this</span>.message;</span><br><span class="line">  &#125;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>上面的代码并未利用到闭包的益处，因此，应该修改为如下常规形式：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">MyObject</span>(<span class="params">name, message</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">this</span>.name = name.toString();</span><br><span class="line">  <span class="keyword">this</span>.message = message.toString();</span><br><span class="line">&#125;</span><br><span class="line">MyObject.prototype = &#123;</span><br><span class="line">  getName: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">this</span>.name;</span><br><span class="line">  &#125;,</span><br><span class="line">  getMessage: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">this</span>.message;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p>
-<p>或者改写为:<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">MyObject</span>(<span class="params">name, message</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">this</span>.name = name.toString();</span><br><span class="line">  <span class="keyword">this</span>.message = message.toString();</span><br><span class="line">&#125;</span><br><span class="line">MyObject.prototype.getName = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="keyword">this</span>.name;</span><br><span class="line">&#125;;</span><br><span class="line">MyObject.prototype.getMessage = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="keyword">this</span>.message;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p>
-<p><br><br><br><br><br>参考资料:<a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Closures" target="_blank" rel="external">Mozilla 开发者网络-&gt;JavaScript闭包</a></p>
-
+          
+              JavaScript Closure学习笔记
+          
       
     </div>
     
     <div class="article-info article-info-index">
       
       
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
-	</div>
 
       
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
+    </div>
 
+      
+        <p class="article-more-link">
+          <a  href="/2016/01/17/JavaScript之理解闭包/#more">more >></a>
+        </p>
       
       <div class="clearfix"></div>
     </div>
@@ -271,13 +270,12 @@
 
 
 
-
   
-      <article id="post-hello-lwy" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-hello-lwy" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
       <a href="/2016/01/07/hello-lwy/" class="article-date">
-  	<time datetime="2016-01-07T14:48:23.000Z" itemprop="datePublished">2016-01-07</time>
+      <time datetime="2016-01-07T14:48:23.000Z" itemprop="datePublished">2016-01-07</time>
 </a>
     </div>
   
@@ -299,7 +297,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        
+          
         <hr>
 <p>Hello world!</p>
 
@@ -309,11 +307,11 @@
     <div class="article-info article-info-index">
       
       
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/随笔/">随笔</a></li></ul>
-	</div>
 
       
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/随笔/">随笔</a></li></ul>
+    </div>
 
       
       <div class="clearfix"></div>
@@ -330,69 +328,72 @@
 
 
 
-
   
   
 </div>
       <footer id="footer">
-  <div class="outer">
-    <div id="footer-info">
-    	<div class="footer-left">
-    		&copy; 2016 Lueny
-    	</div>
-      	<div class="footer-right">
-      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Lueny
-      	</div>
+    <div class="outer">
+        <div id="footer-info">
+            <div class="footer-left">
+                &copy; 2016 Lueny
+            </div>
+            <div class="footer-right">
+                <a href="http://hexo.io/" target="_blank" title="快速、简洁且高效的静态博客框架">Hexo</a>  Theme <a href="https://github.com/MOxFIVE/hexo-theme-yelee" target="_blank" title="简而不减双栏 Hexo 博客主题">Yelee</a> by MOxFIVE
+            </div>
+        </div>
+        <div class="visit">
+            <span id="busuanzi_container_site_pv" style='display:none'>
+                <span id="site-visit" >本站到访数: 
+                    <span id="busuanzi_value_site_uv"></span>
+                </span>
+            </span>
+            <span id="busuanzi_container_page_pv" style='display:none'>
+                <span id="page-visit">, 本页阅读量: 
+                    <span id="busuanzi_value_page_pv"></span>
+                </span>
+            </span>
+        </div>
     </div>
-  </div>
 </footer>
     </div>
-    
-  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
-
-
-<script>
-	var yiliaConfig = {
-		fancybox: true,
-		mathjax: true,
-		animate: true,
-		isHome: true,
-		isPost: false,
-		isArchive: false,
-		isTag: false,
-		isCategory: false,
-		open_in_new: false
-	}
-</script>
-<script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js" type="text/javascript"></script>
+    <script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js" type="text/javascript"></script>
 <script src="/js/main.js" type="text/javascript"></script>
 
+    <script>
+        $(document).ready(function() {
+            var iPad = window.navigator.userAgent.indexOf('iPad');
+            if (iPad > -1 || $(".left-col").css("display") === "none") {
+                var bgColorList = ["#9db3f4", "#414141", "#e5a859", "#f5dfc6", "#c084a0", "#847e72", "#cd8390", "#996731"];
+                var bgColor = Math.ceil(Math.random() * (bgColorList.length - 1));
+                $("body").css({"background-color": bgColorList[bgColor], "background-size": "cover"});
+            }
+            else {
+                var backgroundnum = 5;
+                var backgroundimg = "url(/background/bg-x.jpg)".replace(/x/gi, Math.ceil(Math.random() * backgroundnum));
+                $("body").css({"background": backgroundimg, "background-attachment": "fixed", "background-size": "cover"});
+            }
+        })
+    </script>
 
 
 
 
+<div class="scroll" id="scroll">
+    <a href="#" title="返回顶部"><i class="fa fa-arrow-up"></i></a>
+    <a href="#comments" title="查看评论"><i class="fa fa-comments-o"></i></a>
+    <a href="#footer" title="转到底部"><i class="fa fa-arrow-down"></i></a>
+</div>
 
-<script type="text/x-mathjax-config">
-MathJax.Hub.Config({
-    tex2jax: {
-        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
-        processEscapes: true,
-        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
-    }
-});
-
-MathJax.Hub.Queue(function() {
-    var all = MathJax.Hub.getAllJax(), i;
-    for(i=0; i < all.length; i += 1) {
-        all[i].SourceElement().parentNode.className += ' has-jax';                 
-    }       
-});
+<script>
+    $(document).ready(function() {
+        if ($("#comments").length < 1) {
+            $("#scroll > a:nth-child(2)").hide();
+        };
+    })
 </script>
 
-<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
 </script>
-
-
   </div>
 </body>
 </html>
