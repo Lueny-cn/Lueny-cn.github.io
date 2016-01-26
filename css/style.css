@@ -168,6 +168,7 @@ h2 {
 }
 h3 {
   font-size: 1.1em;
+  color: #000;
 }
 h4,
 h5,
@@ -1360,20 +1361,16 @@ color
   margin-top: 30px;
 }
 .article-entry h2 {
-  margin: 0.5em auto;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+  font-size: 20px;
   font-weight: bold;
-  color: #9c9;
+  color: #000;
   padding-bottom: 5px;
   border-bottom: 1px solid #ddd;
-  text-align: center;
 }
 .article-entry h2:hover {
   color: #88acdb;
-}
-.article-entry h2::before,
-.article-entry h2::after {
-  content: " —— ";
-  font-family: Arial;
 }
 .article-entry h3 {
   margin: 0.5em auto;
