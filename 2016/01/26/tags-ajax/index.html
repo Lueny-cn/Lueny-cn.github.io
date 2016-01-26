@@ -12,7 +12,7 @@
 <meta property="og:site_name" content="Lueny-blog">
 <meta property="og:description" content="传统的Web应用，服务器处理每一个用户请求都需要重新加载网页。这样的处理方式效率不高。用户的体验是所有页面都会消失，再重新载入，即使只是一部分页面元素改变也要重新载入整个页面，不仅要刷新改变的部分，连没有变化的部分也要刷新，这会加重服务器的负担。ajax就解决了这个问题。">
 <meta property="og:image" content="http://7xq76k.com1.z0.glb.clouddn.com/ajax1.png">
-<meta property="og:updated_time" content="2016-01-26T14:29:31.365Z">
+<meta property="og:updated_time" content="2016-01-26T14:31:01.016Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JavaScript学习笔记---Ajax">
 <meta name="twitter:description" content="传统的Web应用，服务器处理每一个用户请求都需要重新加载网页。这样的处理方式效率不高。用户的体验是所有页面都会消失，再重新载入，即使只是一部分页面元素改变也要重新载入整个页面，不仅要刷新改变的部分，连没有变化的部分也要刷新，这会加重服务器的负担。ajax就解决了这个问题。">
@@ -251,8 +251,7 @@
 </blockquote>
 <p><strong>XMLHttpRequest是 Ajax 的基础。获取Ajax对象就要创建XMLHttpRequest对象</strong><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">getXhr</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> xmlhttp;</span><br><span class="line">    <span class="keyword">if</span> (<span class="built_in">window</span>.XMLHttpRequest) &#123;<span class="comment">// code for IE7+, Firefox, Chrome, Opera, Safari</span></span><br><span class="line">      xmlhttp=<span class="keyword">new</span> XMLHttpRequest();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span> &#123;<span class="comment">// code for IE6, IE5</span></span><br><span class="line">    xmlhttp=<span class="keyword">new</span> ActiveXObject(<span class="string">"Microsoft.XMLHTTP"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <h3 id="Ajax_u7684_u5DE5_u4F5C_u539F_u7406_u56FE_3A"><a href="#Ajax_u7684_u5DE5_u4F5C_u539F_u7406_u56FE_3A" class="headerlink" title="Ajax的工作原理图:"></a>Ajax的工作原理图:</h3><p><img src="http://7xq76k.com1.z0.glb.clouddn.com/ajax1.png" alt="Ajax工作原理"></p>
-<p>##Ajax的方法</p>
-<blockquote>
+<h3 id="Ajax_u7684_u65B9_u6CD5"><a href="#Ajax_u7684_u65B9_u6CD5" class="headerlink" title="Ajax的方法"></a>Ajax的方法</h3><blockquote>
 <p>abort()：停止当前请求<br>getAllResponseHeaders()：把HTTP请求的所有响应首部作为键/值对返回<br>getResponseHeader(“header”)：返回指定首部的串值<br>open(“method”,”URL”,[asyncFlag],[“userName”],[“password”])：建立对服务器的调用。method参数可以是GET、POST或PUT。url参数可以是相对URL或绝对URL。这个方法还包括3个可选的参数，是否异步，用户名，密码<br>send(content)：向服务器发送请求<br>setRequestHeader(“header”, “value”)：把指定首部设置为所提供的值。在设置任何首部之前必须先调用open()。设置header并和请求一起发送 (‘post’方法一定要)</p>
 </blockquote>
 <h3 id="Ajax_u5BF9_u8C61_u7684_u5C5E_u6027"><a href="#Ajax_u5BF9_u8C61_u7684_u5C5E_u6027" class="headerlink" title="Ajax对象的属性"></a>Ajax对象的属性</h3><blockquote>
@@ -290,7 +289,7 @@
         <p><span>本文标题:</span><a href="/2016/01/26/tags-ajax/">JavaScript学习笔记---Ajax</a></p>
         <p><span>文章作者:</span><a href="/" title="访问 Lueny 的个人博客">Lueny</a></p>
         <p><span>发布时间:</span>2016年01月26日 - 22时50分</p>
-        <p><span>最后更新:</span>2016年01月26日 - 22时29分</p>
+        <p><span>最后更新:</span>2016年01月26日 - 22时31分</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/2016/01/26/tags-ajax/" title="JavaScript学习笔记---Ajax">http://yoursite.com/2016/01/26/tags-ajax/</a>
             <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2016/01/26/tags-ajax/　　作者: Lueny" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
@@ -320,7 +319,7 @@
 
     <div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
-    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#u4EC0_u4E48_u662FAjax_3F"><span class="toc-number">1.</span> <span class="toc-text">什么是Ajax?</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Ajax_u7684_u5DE5_u4F5C_u539F_u7406_u56FE_3A"><span class="toc-number">2.</span> <span class="toc-text">Ajax的工作原理图:</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Ajax_u5BF9_u8C61_u7684_u5C5E_u6027"><span class="toc-number">3.</span> <span class="toc-text">Ajax对象的属性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Ajax_u6280_u672F_u7684_u4F18_u70B9"><span class="toc-number">4.</span> <span class="toc-text">Ajax技术的优点</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Ajax_u6280_u672F_u7684_u7F3A_u70B9"><span class="toc-number">5.</span> <span class="toc-text">Ajax技术的缺点</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Ajax_u6CE8_u610F_u70B9_u53CA_u9002_u7528_u548C_u4E0D_u9002_u7528_u573A_u666F"><span class="toc-number">6.</span> <span class="toc-text">Ajax注意点及适用和不适用场景</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#u6240_u7528_u5230_u7684_u6280_u672F"><span class="toc-number">7.</span> <span class="toc-text">所用到的技术</span></a></li></ol>
+    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#u4EC0_u4E48_u662FAjax_3F"><span class="toc-number">1.</span> <span class="toc-text">什么是Ajax?</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Ajax_u7684_u5DE5_u4F5C_u539F_u7406_u56FE_3A"><span class="toc-number">2.</span> <span class="toc-text">Ajax的工作原理图:</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Ajax_u7684_u65B9_u6CD5"><span class="toc-number">3.</span> <span class="toc-text">Ajax的方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Ajax_u5BF9_u8C61_u7684_u5C5E_u6027"><span class="toc-number">4.</span> <span class="toc-text">Ajax对象的属性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Ajax_u6280_u672F_u7684_u4F18_u70B9"><span class="toc-number">5.</span> <span class="toc-text">Ajax技术的优点</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Ajax_u6280_u672F_u7684_u7F3A_u70B9"><span class="toc-number">6.</span> <span class="toc-text">Ajax技术的缺点</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Ajax_u6CE8_u610F_u70B9_u53CA_u9002_u7528_u548C_u4E0D_u9002_u7528_u573A_u666F"><span class="toc-number">7.</span> <span class="toc-text">Ajax注意点及适用和不适用场景</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#u6240_u7528_u5230_u7684_u6280_u672F"><span class="toc-number">8.</span> <span class="toc-text">所用到的技术</span></a></li></ol>
 </div>
 <style>
     .left-col .switch-btn {
