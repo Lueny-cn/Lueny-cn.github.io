@@ -3,17 +3,35 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Lueny-blog</title>
+  <title>Ajax入门(一) 从0开始到一次成功的GET请求 | Lueny-blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="卢文友">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Lueny-blog">
-<meta property="og:url" content="http://yoursite.com/index.html">
+  <meta name="description" content="首先我们先理解好下面几个概念及其过程：网页浏览过程分析一个完整的HTTP请求过程,通常有下面7个步骤
+1、建立TCP连接2、Web浏览器向Web服务器发送请求命令3、Web浏览器发送请求头信息4、Web服务器- 应答5、Web服务器- 发送应答头信息6、Web服务器- 向浏览器发送数据7、Web服务器- 关闭TCP连接
+
+Ajax原理理解同步和异步(基本都用异步请求).
+
+同步: 客户端发起请求–">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Ajax入门(一) 从0开始到一次成功的GET请求">
+<meta property="og:url" content="http://yoursite.com/2016/02/02/Ajax入门（一）从0开始到一次成功的GET请求/index.html">
 <meta property="og:site_name" content="Lueny-blog">
-<meta property="og:description" content="卢文友">
+<meta property="og:description" content="首先我们先理解好下面几个概念及其过程：网页浏览过程分析一个完整的HTTP请求过程,通常有下面7个步骤
+1、建立TCP连接2、Web浏览器向Web服务器发送请求命令3、Web浏览器发送请求头信息4、Web服务器- 应答5、Web服务器- 发送应答头信息6、Web服务器- 向浏览器发送数据7、Web服务器- 关闭TCP连接
+
+Ajax原理理解同步和异步(基本都用异步请求).
+
+同步: 客户端发起请求–">
+<meta property="og:image" content="http://7xq76k.com1.z0.glb.clouddn.com/http.png">
+<meta property="og:image" content="http://7xq76k.com1.z0.glb.clouddn.com/http2.png">
+<meta property="og:updated_time" content="2016-02-15T04:10:03.392Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Lueny-blog">
-<meta name="twitter:description" content="卢文友">
+<meta name="twitter:title" content="Ajax入门(一) 从0开始到一次成功的GET请求">
+<meta name="twitter:description" content="首先我们先理解好下面几个概念及其过程：网页浏览过程分析一个完整的HTTP请求过程,通常有下面7个步骤
+1、建立TCP连接2、Web浏览器向Web服务器发送请求命令3、Web浏览器发送请求头信息4、Web服务器- 应答5、Web服务器- 发送应答头信息6、Web服务器- 向浏览器发送数据7、Web服务器- 关闭TCP连接
+
+Ajax原理理解同步和异步(基本都用异步请求).
+
+同步: 客户端发起请求–">
   
     <link rel="alternative" href="/atom.xml" title="Lueny-blog" type="application/atom+xml">
   
@@ -27,9 +45,6 @@
   <link rel="stylesheet" href="/font-awesome/css/font-awesome.min.css">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   
-    
-    
-  
   
       <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
   
@@ -37,8 +52,8 @@
       var yiliaConfig = {
           fancybox: true,
           animate: true,
-          isHome: true,
-          isPost: false,
+          isHome: false,
+          isPost: true,
           isArchive: false,
           isTag: false,
           isCategory: false,
@@ -208,9 +223,7 @@
         </header>                
     </div>
 </nav>
-      <div class="body-wrap">
-  
-    <article id="post-Ajax入门（一）从0开始到一次成功的GET请求" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-Ajax入门（一）从0开始到一次成功的GET请求" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
       <a href="/2016/02/02/Ajax入门（一）从0开始到一次成功的GET请求/" class="article-date">
@@ -226,12 +239,23 @@
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/02/02/Ajax入门（一）从0开始到一次成功的GET请求/">Ajax入门(一) 从0开始到一次成功的GET请求</a>
+    <h1 class="article-title" itemprop="name">
+      Ajax入门(一) 从0开始到一次成功的GET请求
     </h1>
   
 
       </header>
+      
+      <div class="article-info article-info-post">
+        
+
+        
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Ajax/">Ajax</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
+    </div>
+
+        <div class="clearfix"></div>
+      </div>
       
     
     <div class="article-entry" itemprop="articleBody">
@@ -384,213 +408,171 @@
       
     </div>
     
-    <div class="article-info article-info-index">
-      
-      
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Ajax/">Ajax</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
-    </div>
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
   </div>
   
-</article>
-
-
-
-
-
-
-
-
-  
-    <article id="post-tags-ajax" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/01/26/tags-ajax/" class="article-date">
-      <time datetime="2016-01-26T14:50:23.000Z" itemprop="datePublished">2016-01-26</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
     
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/01/26/tags-ajax/">JavaScript学习笔记---Ajax</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <p>传统的Web应用，服务器处理每一个用户请求都需要重新加载网页。这样的处理方式效率不高。用户的体验是所有页面都会消失，再重新载入，即使只是一部分页面元素改变也要重新载入整个页面，不仅要刷新改变的部分，连没有变化的部分也要刷新，这会加重服务器的负担。ajax就解决了这个问题。<br>
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Ajax/">Ajax</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
-    </div>
-
-      
-        <p class="article-more-link">
-          <a  href="/2016/01/26/tags-ajax/#more">more >></a>
+    <div class="copyright">
+        <p><span>本文标题:</span><a href="/2016/02/02/Ajax入门（一）从0开始到一次成功的GET请求/">Ajax入门(一) 从0开始到一次成功的GET请求</a></p>
+        <p><span>文章作者:</span><a href="/" title="访问 Lueny 的个人博客">Lueny</a></p>
+        <p><span>发布时间:</span>2016年02月02日 - 22时50分</p>
+        <p><span>最后更新:</span>2016年02月15日 - 12时10分</p>
+        <p>
+            <span>原始链接:</span><a class="post-url" href="/2016/02/02/Ajax入门（一）从0开始到一次成功的GET请求/" title="Ajax入门(一) 从0开始到一次成功的GET请求">http://yoursite.com/2016/02/02/Ajax入门（一）从0开始到一次成功的GET请求/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2016/02/02/Ajax入门（一）从0开始到一次成功的GET请求/　　作者: Lueny" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <script src="/js/clipboard.min.js"></script>
+            <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-  
-    <article id="post-JavaScript之理解闭包" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/01/17/JavaScript之理解闭包/" class="article-date">
-      <time datetime="2016-01-17T13:14:23.000Z" itemprop="datePublished">2016-01-17</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/01/17/JavaScript之理解闭包/">JavaScript学习笔记---理解闭包</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <h3 id="u521D_u63A2JavaScript_closure"><a href="#u521D_u63A2JavaScript_closure" class="headerlink" title="初探JavaScript closure"></a><strong>初探JavaScript closure</strong></h3><p>JavaScript closure，<strong>“closure”</strong>翻译为闭包，闭包的官方解释是这样的：闭包是一个拥有许多变量和绑定了这些变量的环境的表达式（通常是一个函数），因而这些变量也是该表达式的一部分。<br>官方的解释真的是晦涩难懂，我们还是来看下例子吧。<br>
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
-    </div>
-
-      
-        <p class="article-more-link">
-          <a  href="/2016/01/17/JavaScript之理解闭包/#more">more >></a>
+        <p>
+            <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/cn/" title="中国大陆 (CC BY-NC-SA 3.0 CN)" target = "_blank">"署名-非商用-相同方式共享 3.0"</a> 转载请保留原文链接及作者。
         </p>
-      
-      <div class="clearfix"></div>
     </div>
-    
-  </div>
-  
-</article>
 
 
 
-
-
-
-
-
-  
-    <article id="post-hello-lwy" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/01/07/hello-lwy/" class="article-date">
-      <time datetime="2016-01-07T14:48:23.000Z" itemprop="datePublished">2016-01-07</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
+    <nav id="article-nav">
         
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/01/07/hello-lwy/">hello-lwy</a>
-    </h1>
-  
+        
+            <div id="article-nav-older" class="article-nav-title">
+                <a href="/2016/01/26/tags-ajax/">
+                    JavaScript学习笔记---Ajax
+                </a>
+            </div>
+        
+    </nav>
 
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <hr>
-<p>Hello world!</p>
-<p>  h2{<br>    margin: .5em auto;<br>    font-weight: bold;<br>    color: #9c9;<br>    padding-bottom: 5px;<br>    border-bottom: 1px solid #ddd;<br>    &amp;:hover {<br>      color:#88acdb;<br>    };<br>    text-align: center;<br>    &amp;::before, &amp;::after {<br>    content:” —— “;<br>    font-family: Arial;<br>    };<br>  },</p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/随笔/">随笔</a></li></ul>
-    </div>
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
   
 </article>
 
+    <div id="toc" class="toc-article">
+    <strong class="toc-title">文章目录</strong>
+    <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#u9996_u5148_u6211_u4EEC_u5148_u7406_u89E3_u597D_u4E0B_u9762_u51E0_u4E2A_u6982_u5FF5_u53CA_u5176_u8FC7_u7A0B_uFF1A"><span class="toc-number">1.</span> <span class="toc-text">首先我们先理解好下面几个概念及其过程：</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#u7F51_u9875_u6D4F_u89C8_u8FC7_u7A0B_u5206_u6790"><span class="toc-number"></span> <span class="toc-text">网页浏览过程分析</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#u4E00_u4E2A_u5B8C_u6574_u7684HTTP_u8BF7_u6C42_u8FC7_u7A0B_2C_u901A_u5E38_u6709_u4E0B_u97627_u4E2A_u6B65_u9AA4"><span class="toc-number"></span> <span class="toc-text">一个完整的HTTP请求过程,通常有下面7个步骤</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Ajax_u539F_u7406"><span class="toc-number"></span> <span class="toc-text">Ajax原理</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#u7406_u89E3_u540C_u6B65_u548C_u5F02_u6B65_28_u57FA_u672C_u90FD_u7528_u5F02_u6B65_u8BF7_u6C42_29"><span class="toc-number">1.</span> <span class="toc-text">理解同步和异步(基本都用异步请求).</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#u5176_u5B83_u8BE6_u60C5_u8BF7_u770B__u524D_u4E00_u7BC7_u535A_u6587_u3002"><span class="toc-number">2.</span> <span class="toc-text">其它详情请看 前一篇博文。</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#HTTP_u8BF7_u6C42"><span class="toc-number"></span> <span class="toc-text">HTTP请求</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#u4E00_u4E2AHTTP_u8BF7_u6C42_u4E00_u822C_u7531_u56DB_u90E8_u5206_u7EC4_u6210"><span class="toc-number"></span> <span class="toc-text">一个HTTP请求一般由四部分组成</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#HTTP_u54CD_u5E94"><span class="toc-number"></span> <span class="toc-text">HTTP响应</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#u4E00_u4E2AHTTP_u54CD_u5E94_u4E00_u822C_u7531_u4E09_u90E8_u5206_u7EC4_u6210_3A"><span class="toc-number"></span> <span class="toc-text">一个HTTP响应一般由三部分组成:</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#u5E38_u89C1_u7684HTTP_u8BF7_u6C42_u65B9_u5F0F"><span class="toc-number"></span> <span class="toc-text">常见的HTTP请求方式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#u7F16_u5199Ajax"><span class="toc-number"></span> <span class="toc-text">编写Ajax</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1_u3001_u521B_u5EFAAjax_u5BF9_u8C61"><span class="toc-number">1.</span> <span class="toc-text">1、创建Ajax对象</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2_u3001_u8FDE_u63A5_u670D_u52A1_u5668"><span class="toc-number">2.</span> <span class="toc-text">2、连接服务器</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3_u3001_u53D1_u9001_u8BF7_u6C42"><span class="toc-number">3.</span> <span class="toc-text">3、发送请求</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4_u3001_u63A5_u53D7_u8FD4_u56DE_28XMLHttpRequset_u53D6_u5F97_u54CD_u5E94_29"><span class="toc-number">4.</span> <span class="toc-text">4、接受返回(XMLHttpRequset取得响应)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#u901A_u8FC7_u76D1_u542Conreadystatechange_u4E8B_u4EF6_2C_u6765_u5224_u65AD_u8BF7_u6C42_u7684_u72B6_u6001_28readyState_u5C5E_u6027_3A_u54CD_u5E94_u8FD4_u56DE_u6240_u5904_u72B6_u6001_29"><span class="toc-number">5.</span> <span class="toc-text">通过监听onreadystatechange事件,来判断请求的状态(readyState属性:响应返回所处状态).</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#u4F7F_u7528_u51FD_u6570_u7B80_u5355_u7684_u5C01_u88C5_u4E00_u4E2Aget_u8BF7_u6C42"><span class="toc-number"></span> <span class="toc-text">使用函数简单的封装一个get请求</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#u4F7F_u7528Ajax"><span class="toc-number"></span> <span class="toc-text">使用Ajax</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#u57FA_u7840_3A_u8BF7_u6C42_u5E76_u663E_u793A_u9759_u6001TXT_u6587_u4EF6"><span class="toc-number">1.</span> <span class="toc-text">基础:请求并显示静态TXT文件</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#u52A8_u6001_u6570_u636E_3A_u8BF7_u6C42JS_28_u6216JSON_29_u6587_u4EF6"><span class="toc-number">2.</span> <span class="toc-text">动态数据:请求JS(或JSON)文件</span></a></li></ol>
+</div>
+<style>
+    .left-col .switch-btn {
+        display: none;
+    }
+    .left-col .switch-area {
+        display: none;
+    }
+</style>
+
+<input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
+
+<script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js" type="text/javascript"></script>
+<script>
+    var valueHide = "隐藏目录";
+    var valueShow = "显示目录";
+
+    if ($(".left-col").is(":hidden")) {
+        $("#tocButton").attr("value", valueShow);
+    }
+
+    $("#tocButton").click(function() {
+        if ($("#toc").is(":hidden")) {
+            $("#tocButton").attr("value", valueHide);
+            $("#toc").slideDown(320);
+            $(".switch-btn, .switch-area").fadeOut(300);
+        }
+        else {
+            $("#tocButton").attr("value", valueShow);
+            $("#toc").slideUp(350);
+            $(".switch-btn, .switch-area").fadeIn(500);
+        }
+    })
+
+    if ($(".toc").length < 1) {
+        $("#toc, #tocButton").hide();
+        $(".switch-btn, .switch-area").show();
+    }
+</script>
 
 
 
 
+<div class="share">
+    <div class="bdsharebuttonbox">
+    <a href="#" class="bds_more" data-cmd="more"></a>
+    <a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+    <a href="#" class="bds_sqq" data-cmd="sqq" title="分享给 QQ 好友"></a>
+    <a href="#" class="bds_copy" data-cmd="copy" title="复制网址"></a>
+    <a href="#" class="bds_mail" data-cmd="mail" title="通过邮件分享"></a>
+    <a href="#" class="bds_weixin" data-cmd="weixin" title="生成文章二维码"></a>
+    </div>
+    <script>
+        window._bd_share_config={
+            "common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+    </script>
+</div>
 
 
 
-  
-  
+    
+      <div class="duoshuo" id="comments">
+    <!-- 多说评论框 start -->
+    <div class="ds-thread" data-thread-key="2016/02/02/Ajax入门（一）从0开始到一次成功的GET请求/" data-title="Ajax入门(一) 从0开始到一次成功的GET请求" data-url="http://yoursite.com/2016/02/02/Ajax入门（一）从0开始到一次成功的GET请求/"></div>
+    <!-- 多说评论框 end -->
+    <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+    <script type="text/javascript">
+    var duoshuoQuery = {short_name:"lueny-cn"};
+    (function() {
+        var ds = document.createElement('script');
+        ds.type = 'text/javascript';ds.async = true;
+        ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+        ds.charset = 'UTF-8';
+        (document.getElementsByTagName('head')[0] 
+         || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+    </script>
+    <!-- 多说公共JS代码 end -->
+</div>
+
+    
+
+
+
+
+    <div class="scroll" id="post-nav-button">
+        
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
+        
+
+        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+
+        
+            <a href="/2016/01/26/tags-ajax/" title="下一篇: JavaScript学习笔记---Ajax">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        
+    </div>
+
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2016/02/02/Ajax入门（一）从0开始到一次成功的GET请求/">Ajax入门(一) 从0开始到一次成功的GET请求</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/26/tags-ajax/">JavaScript学习笔记---Ajax</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/17/JavaScript之理解闭包/">JavaScript学习笔记---理解闭包</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/07/hello-lwy/">hello-lwy</a></li></ul>
+    <script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+    <script>
+        $(".post-list").addClass("toc-article");
+        $(".post-list-item a").attr("target","_blank");
+        $("#post-nav-button > a:nth-child(2)").click(function() {
+            $(".fa-bars, .fa-times").toggle();
+            $(".post-list").toggle(300);
+            if ($(".toc").length > 0) {
+                $("#toc, #tocButton").toggle(200, function() {
+                    if ($(".switch-area").is(":visible")) {
+                        $("#toc, .switch-btn, .switch-area").toggle();
+                        $("#tocButton").attr("value", valueHide);
+                        }
+                    })
+            }
+            else {
+                $(".switch-btn, .switch-area").fadeToggle(300);
+            }
+        })
+    </script>
+
+
+
+
+    <script>
+        
+    </script>
 </div>
       <footer id="footer">
     <div class="outer">
