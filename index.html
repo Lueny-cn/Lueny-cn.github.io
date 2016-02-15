@@ -237,150 +237,8 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <h4 id="u9996_u5148_u6211_u4EEC_u5148_u7406_u89E3_u597D_u4E0B_u9762_u51E0_u4E2A_u6982_u5FF5_u53CA_u5176_u8FC7_u7A0B_uFF1A"><a href="#u9996_u5148_u6211_u4EEC_u5148_u7406_u89E3_u597D_u4E0B_u9762_u51E0_u4E2A_u6982_u5FF5_u53CA_u5176_u8FC7_u7A0B_uFF1A" class="headerlink" title="首先我们先理解好下面几个概念及其过程："></a>首先我们先理解好下面几个概念及其过程：</h4><h2 id="u7F51_u9875_u6D4F_u89C8_u8FC7_u7A0B_u5206_u6790"><a href="#u7F51_u9875_u6D4F_u89C8_u8FC7_u7A0B_u5206_u6790" class="headerlink" title="网页浏览过程分析"></a>网页浏览过程分析</h2><h3 id="u4E00_u4E2A_u5B8C_u6574_u7684HTTP_u8BF7_u6C42_u8FC7_u7A0B_2C_u901A_u5E38_u6709_u4E0B_u97627_u4E2A_u6B65_u9AA4"><a href="#u4E00_u4E2A_u5B8C_u6574_u7684HTTP_u8BF7_u6C42_u8FC7_u7A0B_2C_u901A_u5E38_u6709_u4E0B_u97627_u4E2A_u6B65_u9AA4" class="headerlink" title="一个完整的HTTP请求过程,通常有下面7个步骤"></a>一个完整的HTTP请求过程,通常有下面7个步骤</h3><blockquote>
-<p>1、建立TCP连接<br>2、Web浏览器向Web服务器发送请求命令<br>3、Web浏览器发送请求头信息<br>4、Web服务器- 应答<br>5、Web服务器- 发送应答头信息<br>6、Web服务器- 向浏览器发送数据<br>7、Web服务器- 关闭TCP连接</p>
-</blockquote>
-<h2 id="Ajax_u539F_u7406"><a href="#Ajax_u539F_u7406" class="headerlink" title="Ajax原理"></a>Ajax原理</h2><h4 id="u7406_u89E3_u540C_u6B65_u548C_u5F02_u6B65_28_u57FA_u672C_u90FD_u7528_u5F02_u6B65_u8BF7_u6C42_29"><a href="#u7406_u89E3_u540C_u6B65_u548C_u5F02_u6B65_28_u57FA_u672C_u90FD_u7528_u5F02_u6B65_u8BF7_u6C42_29" class="headerlink" title="理解同步和异步(基本都用异步请求)."></a>理解同步和异步(基本都用异步请求).</h4><blockquote>
-<ul>
-<li>同步: 客户端发起请求–等待–&gt;服务器端处理—等待–&gt;响应–&gt;页面载入 (请求错误时全部重新载入)。</li>
-<li>异步: 客户端发起请求—&gt;服务器端处理—&gt;响应—&gt;页面载入(填写时,即时更新,部分返回)。</li>
-</ul>
-</blockquote>
-<h4 id="u5176_u5B83_u8BE6_u60C5_u8BF7_u770B__u524D_u4E00_u7BC7_u535A_u6587_u3002"><a href="#u5176_u5B83_u8BE6_u60C5_u8BF7_u770B__u524D_u4E00_u7BC7_u535A_u6587_u3002" class="headerlink" title="其它详情请看 前一篇博文。"></a>其它详情请看 <a href="http://lueny-cn.github.io/2016/01/26/tags-ajax/" target="_blank" rel="external">前一篇博文</a>。</h4><h2 id="HTTP_u8BF7_u6C42"><a href="#HTTP_u8BF7_u6C42" class="headerlink" title="HTTP请求"></a>HTTP请求</h2><h3 id="u4E00_u4E2AHTTP_u8BF7_u6C42_u4E00_u822C_u7531_u56DB_u90E8_u5206_u7EC4_u6210"><a href="#u4E00_u4E2AHTTP_u8BF7_u6C42_u4E00_u822C_u7531_u56DB_u90E8_u5206_u7EC4_u6210" class="headerlink" title="一个HTTP请求一般由四部分组成"></a>一个HTTP请求一般由四部分组成</h3><p><strong>HTTP请求的方法或动作</strong>(一般是get或者post)<br><strong>正在请求的URL</strong><br><strong>请求头</strong>（包含一些客户端环境信息,身份验证信息等）<br><strong>请求体</strong>（请求正文,请求正文中可以包含客户端提交的查询字符串信息,表单信息等等）<br><img src="http://7xq76k.com1.z0.glb.clouddn.com/http.png" alt="http请求"></p>
-<h2 id="HTTP_u54CD_u5E94"><a href="#HTTP_u54CD_u5E94" class="headerlink" title="HTTP响应"></a>HTTP响应</h2><h3 id="u4E00_u4E2AHTTP_u54CD_u5E94_u4E00_u822C_u7531_u4E09_u90E8_u5206_u7EC4_u6210_3A"><a href="#u4E00_u4E2AHTTP_u54CD_u5E94_u4E00_u822C_u7531_u4E09_u90E8_u5206_u7EC4_u6210_3A" class="headerlink" title="一个HTTP响应一般由三部分组成:"></a>一个HTTP响应一般由三部分组成:</h3><p><strong>状态码</strong>（由数字组成，用来显示请求是成功还是失败）<br><strong>响应头</strong>（响应头和请求头一样包含许多有用的信息,例如服务器类型,日期时间,内容类型和长度等）<br><strong>响应体</strong>（也就是响应正文）.<br><img src="http://7xq76k.com1.z0.glb.clouddn.com/http2.png" alt="http响应"></p>
-<h3 id="u5E38_u89C1_u7684HTTP_u8BF7_u6C42_u65B9_u5F0F"><a href="#u5E38_u89C1_u7684HTTP_u8BF7_u6C42_u65B9_u5F0F" class="headerlink" title="常见的HTTP请求方式"></a>常见的HTTP请求方式</h3><table>
-<thead>
-<tr>
-<th>GET</th>
-<th>POST</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>用于信息获取/查询(如:浏览帖子)</td>
-<td>用于修改服务器上的资源(如:用户注册)</td>
-</tr>
-<tr>
-<td>安全性低(使用url传递参数所有人可见)</td>
-<td>安全性一般(至少不可见)</td>
-</tr>
-<tr>
-<td>容量低(2000个字符)</td>
-<td>容量几乎无限</td>
-</tr>
-</tbody>
-</table>
-<p>常见的HTTP状态码<br>| 状态码 |  描述  | 原因短语|<br>|  —-  |  —-  |  —-   |<br>|200    |请求成功.一般用于GET和POST方法    |OK|<br>|301    |资源移动.所请求资源移动到新的URL,浏览器自动跳转到新的URL|Moved Permanently|<br>|304    |未修改.所请求资源未修改读取缓存数据  |Not Modified|<br>|400    |请求语法错误,服务器无法理解 |Bad Request|<br>|404    |未找到资源,可以设置个性”404页面”    |Not Found|<br>|500    |服务器内部错误    |internal Server Error|</p>
-<h3 id="u7F16_u5199Ajax"><a href="#u7F16_u5199Ajax" class="headerlink" title="编写Ajax"></a>编写Ajax</h3><p>类比打电话理解Ajax编写步骤</p>
-<table>
-<thead>
-<tr>
-<th>打电话</th>
-<th>ajax请求</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>1.打电话</td>
-<td>1.创建Ajax对象</td>
-</tr>
-<tr>
-<td>2.拨号</td>
-<td>2.连接服务器</td>
-</tr>
-<tr>
-<td>3.建立连接</td>
-<td>3.发送请求</td>
-</tr>
-<tr>
-<td>4.听</td>
-<td>4.接受返回</td>
-</tr>
-</tbody>
-</table>
-<h4 id="1_u3001_u521B_u5EFAAjax_u5BF9_u8C61"><a href="#1_u3001_u521B_u5EFAAjax_u5BF9_u8C61" class="headerlink" title="1、创建Ajax对象"></a>1、创建Ajax对象</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">createXmlHttp</span>(<span class="params"></span>) </span>&#123; </span><br><span class="line">    <span class="keyword">if</span> (<span class="built_in">window</span>.XmlHttpRequest) &#123;<span class="comment">// code for IE7+, Firefox, Chrome, Opera, Safari</span></span><br><span class="line">        xmlhttp = newXmlHttpRequest();</span><br><span class="line">    &#125; </span><br><span class="line">    <span class="keyword">if</span> (<span class="built_in">window</span>.ActiveXObject) &#123; <span class="comment">// code for IE6, IE5</span></span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            xmlhttp = newActiveXObject(<span class="string">"Microsoft.XMLHTTP"</span>);</span><br><span class="line">        &#125; <span class="keyword">catch</span> (e) &#123;</span><br><span class="line">            <span class="keyword">try</span> &#123;</span><br><span class="line">                xmlhttp = newActiveXObject(<span class="string">"msxml2.XMLHTTP"</span>);</span><br><span class="line">            &#125; <span class="keyword">catch</span> (ex) &#123;&#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h4 id="2_u3001_u8FDE_u63A5_u670D_u52A1_u5668"><a href="#2_u3001_u8FDE_u63A5_u670D_u52A1_u5668" class="headerlink" title="2、连接服务器"></a>2、连接服务器</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//open(发送请求方法”GET/POST” ,(请求地址”文件名”) ,是否异步传输)</span></span><br><span class="line"><span class="comment">//open(method,url,async); 例如:</span></span><br><span class="line">request.open(<span class="string">"GET"</span>,<span class="string">"get.json"</span>,<span class="literal">true</span>);</span><br></pre></td></tr></table></figure>
-<h4 id="3_u3001_u53D1_u9001_u8BF7_u6C42"><a href="#3_u3001_u53D1_u9001_u8BF7_u6C42" class="headerlink" title="3、发送请求"></a>3、发送请求</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**send(string)</span><br><span class="line">   在使用GET方式请求时无需填写参数</span><br><span class="line">   在使用POST方式时参数代表着向服务器发送的数据</span><br><span class="line">**/</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//完整的GET请求</span></span><br><span class="line">createXmlHttp();<span class="comment">//创建Ajax对象</span></span><br><span class="line"><span class="keyword">if</span> (!xmlhttp) &#123;</span><br><span class="line">    alert(<span class="string">"创建xmlhttp对象异常！"</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">&#125;</span><br><span class="line">xmlhttp.open(<span class="string">"GET"</span>,url,<span class="literal">true</span>);<span class="comment">//连接服务器</span></span><br><span class="line">xmlhttp.send();<span class="comment">//发送请求</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//完整的POST发送请求</span></span><br><span class="line">createXmlHttp();</span><br><span class="line"><span class="keyword">if</span> (!xmlhttp) &#123;</span><br><span class="line">    alert(<span class="string">"创建xmlhttp对象异常！"</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">&#125;</span><br><span class="line">xmlhttp.open(<span class="string">"POST"</span>, url, <span class="literal">true</span>);    </span><br><span class="line">xmlhttp.onreadystatechange = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (xmlhttp.readyState == <span class="number">4</span>) &#123;</span><br><span class="line">        <span class="built_in">document</span>.getElementById(<span class="string">"xxx"</span>).innerHTML = <span class="string">"数据正在加载..."</span>;</span><br><span class="line">        <span class="keyword">if</span> (xmlhttp.status == <span class="number">200</span>) &#123;</span><br><span class="line">            <span class="built_in">document</span>.write(xmlhttp.responseText);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">xmlhttp.setRequestHeader(<span class="string">"Content-type"</span>, <span class="string">"application/x-www-form-urlencoded"</span>);<span class="comment">//设置HTTP头信息.必须在open与send之间,否则出现异常.</span></span><br><span class="line">xmlhttp.send(<span class="string">"name=张三&amp;sex=男"</span>);<span class="comment">//发送给服务器的内容</span></span><br></pre></td></tr></table></figure>
-<h4 id="4_u3001_u63A5_u53D7_u8FD4_u56DE_28XMLHttpRequset_u53D6_u5F97_u54CD_u5E94_29"><a href="#4_u3001_u63A5_u53D7_u8FD4_u56DE_28XMLHttpRequset_u53D6_u5F97_u54CD_u5E94_29" class="headerlink" title="4、接受返回(XMLHttpRequset取得响应)"></a>4、接受返回(XMLHttpRequset取得响应)</h4><table>
-<thead>
-<tr>
-<th>属性</th>
-<th>值</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>responseText</td>
-<td>获得字符串形式的响应数据</td>
-</tr>
-<tr>
-<td>responseXML</td>
-<td>获得XML形式的响应数据</td>
-</tr>
-<tr>
-<td>status和statusText</td>
-<td>以数字和文本方式返回HTTP状态码</td>
-</tr>
-<tr>
-<td>getAllResponseHeader()</td>
-<td>获取所有的响应报头</td>
-</tr>
-<tr>
-<td>getResponseheader()</td>
-<td>查询响应中的某个字段的值</td>
-</tr>
-</tbody>
-</table>
-<h4 id="u901A_u8FC7_u76D1_u542Conreadystatechange_u4E8B_u4EF6_2C_u6765_u5224_u65AD_u8BF7_u6C42_u7684_u72B6_u6001_28readyState_u5C5E_u6027_3A_u54CD_u5E94_u8FD4_u56DE_u6240_u5904_u72B6_u6001_29"><a href="#u901A_u8FC7_u76D1_u542Conreadystatechange_u4E8B_u4EF6_2C_u6765_u5224_u65AD_u8BF7_u6C42_u7684_u72B6_u6001_28readyState_u5C5E_u6027_3A_u54CD_u5E94_u8FD4_u56DE_u6240_u5904_u72B6_u6001_29" class="headerlink" title="通过监听onreadystatechange事件,来判断请求的状态(readyState属性:响应返回所处状态)."></a><strong>通过监听onreadystatechange事件,来判断请求的状态</strong>(readyState属性:响应返回所处状态).</h4><table>
-<thead>
-<tr>
-<th>状态码</th>
-<th>状态</th>
-<th>所处位置</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>0</td>
-<td>未初始化</td>
-<td>还没有调用open()方法</td>
-</tr>
-<tr>
-<td>1</td>
-<td>载入</td>
-<td>已调用send()方法,正在发送请求</td>
-</tr>
-<tr>
-<td>2</td>
-<td>载入完成</td>
-<td>send()方法完成,已经收到全部响应内容</td>
-</tr>
-<tr>
-<td>3</td>
-<td>解析</td>
-<td>正在解析响应内容</td>
-</tr>
-<tr>
-<td>4</td>
-<td>完成</td>
-<td>响应内容解析完成,可以在客户端调用了</td>
-</tr>
-</tbody>
-</table>
-<h3 id="u4F7F_u7528_u51FD_u6570_u7B80_u5355_u7684_u5C01_u88C5_u4E00_u4E2Aget_u8BF7_u6C42"><a href="#u4F7F_u7528_u51FD_u6570_u7B80_u5355_u7684_u5C01_u88C5_u4E00_u4E2Aget_u8BF7_u6C42" class="headerlink" title="使用函数简单的封装一个get请求"></a><strong>使用函数简单的封装一个get请求</strong></h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span><br><span class="line"> * 一个简单的异步get请求</span><br><span class="line"> * @param &#123;String&#125;   url     请求地址,文件名</span><br><span class="line"> * @param &#123;Function&#125; fnSucc  请求成功时执行的函数,形参为为获取的字符串值.</span><br><span class="line"> * @param &#123;Function&#125; fnFaild 请求失败执行的函数,可选参数</span><br><span class="line"> */</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">get</span>(<span class="params">url, fnSucc, fnFaild</span>) </span>&#123;</span><br><span class="line">    <span class="comment">//1.创建ajax对象</span></span><br><span class="line">    <span class="keyword">var</span> oAjax = <span class="literal">null</span></span><br><span class="line">        <span class="comment">//此处必须需要使用window.的方式,表示为window对象的一个属性.不存在是值为undefined,进入else/若直接使用XMLHttpRequest在不支持的情况下会报错</span></span><br><span class="line">    <span class="keyword">if</span> (<span class="built_in">window</span>.XMLHttpRequest) &#123;</span><br><span class="line">        oAjax = <span class="keyword">new</span> XMLHttpRequest();</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="comment">//IE6+</span></span><br><span class="line">        oAjax = <span class="keyword">new</span> ActiveXObject(<span class="string">"Microsoft.XMLHTTP"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//2.连接服务器</span></span><br><span class="line">    <span class="comment">//open(method ,url, async)</span></span><br><span class="line">    oAjax.open(<span class="string">"GET"</span>, url, <span class="literal">true</span>);</span><br><span class="line">    <span class="comment">//3.发送请求</span></span><br><span class="line">    oAjax.send();</span><br><span class="line">    <span class="comment">//4.接收返回</span></span><br><span class="line">    <span class="comment">//OnRedayStateChange事件</span></span><br><span class="line">    oAjax.onreadystatechange = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (oAjax.readyState === <span class="number">4</span>) &#123;</span><br><span class="line">            <span class="keyword">if</span> (oAjax.status === <span class="number">200</span>) &#123;</span><br><span class="line">                fnSucc(oAjax.responseText);</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                <span class="keyword">if</span> (fnFaild) &#123;</span><br><span class="line">                    fnFaild();</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;;</span><br></pre></td></tr></table></figure>
-<h3 id="u4F7F_u7528Ajax"><a href="#u4F7F_u7528Ajax" class="headerlink" title="使用Ajax"></a>使用Ajax</h3><h4 id="u57FA_u7840_3A_u8BF7_u6C42_u5E76_u663E_u793A_u9759_u6001TXT_u6587_u4EF6"><a href="#u57FA_u7840_3A_u8BF7_u6C42_u5E76_u663E_u793A_u9759_u6001TXT_u6587_u4EF6" class="headerlink" title="基础:请求并显示静态TXT文件"></a>基础:请求并显示静态TXT文件</h4><blockquote>
-<ul>
-<li>字符集编码:不一致时会出现乱码</li>
-<li>缓存,阻止缓存,(使用时间对象添加)</li>
-</ul>
-</blockquote>
-<h4 id="u52A8_u6001_u6570_u636E_3A_u8BF7_u6C42JS_28_u6216JSON_29_u6587_u4EF6"><a href="#u52A8_u6001_u6570_u636E_3A_u8BF7_u6C42JS_28_u6216JSON_29_u6587_u4EF6" class="headerlink" title="动态数据:请求JS(或JSON)文件"></a>动态数据:请求JS(或JSON)文件</h4><blockquote>
-<ul>
-<li>并不推荐使用eval，并不推荐使用eval，并不推荐使用eval。因为eval解析数据时会有一系列问题出现。这里是因为只是学习就随意点了。</li>
-<li>在需要解析请求数据时，推荐使用JSON的方法JSON.parse()可以将一个 JSON 字符串解析成为一个 JavaScript 值。参考 <a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/JSON" target="_blank" rel="external">MDN-JSON</a></li>
-</ul>
-</blockquote>
-
+              <h4 id="u9996_u5148_u6211_u4EEC_u5148_u7406_u89E3_u597D_u4E0B_u9762_u51E0_u4E2A_u6982_u5FF5_u53CA_u5176_u8FC7_u7A0B_uFF1A"><a href="#u9996_u5148_u6211_u4EEC_u5148_u7406_u89E3_u597D_u4E0B_u9762_u51E0_u4E2A_u6982_u5FF5_u53CA_u5176_u8FC7_u7A0B_uFF1A" class="headerlink" title="首先我们先理解好下面几个概念及其过程："></a>首先我们先理解好下面几个概念及其过程：</h4><h2 id="u7F51_u9875_u6D4F_u89C8_u8FC7_u7A0B_u5206_u6790"><a href="#u7F51_u9875_u6D4F_u89C8_u8FC7_u7A0B_u5206_u6790" class="headerlink" title="网页浏览过程分析"></a>网页浏览过程分析</h2><h3 id="u4E00_u4E2A_u5B8C_u6574_u7684HTTP_u8BF7_u6C42_u8FC7_u7A0B_2C_u901A_u5E38_u6709_u4E0B_u97627_u4E2A_u6B65_u9AA4"><a href="#u4E00_u4E2A_u5B8C_u6574_u7684HTTP_u8BF7_u6C42_u8FC7_u7A0B_2C_u901A_u5E38_u6709_u4E0B_u97627_u4E2A_u6B65_u9AA4" class="headerlink" title="一个完整的HTTP请求过程,通常有下面7个步骤"></a>一个完整的HTTP请求过程,通常有下面7个步骤</h3>
+          
       
     </div>
     
@@ -393,6 +251,10 @@
         <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Ajax/">Ajax</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
     </div>
 
+      
+        <p class="article-more-link">
+          <a  href="/2016/02/02/Ajax入门（一）从0开始到一次成功的GET请求/#more">more >></a>
+        </p>
       
       <div class="clearfix"></div>
     </div>
