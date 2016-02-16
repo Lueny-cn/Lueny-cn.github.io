@@ -3,21 +3,21 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Ajax入门(一) 从0开始到一次成功的GET请求 | Lueny-blog</title>
+  <title>JavaScript学习笔记---Ajax入门(一) | Lueny-blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="首先我们先理解好下面几个概念及其过程：
 网页浏览过程分析一个完整的HTTP请求过程,通常有下面7个步骤">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Ajax入门(一) 从0开始到一次成功的GET请求">
-<meta property="og:url" content="http://yoursite.com/2016/02/02/Ajax入门（一）从0开始到一次成功的GET请求/index.html">
+<meta property="og:title" content="JavaScript学习笔记---Ajax入门(一)">
+<meta property="og:url" content="http://yoursite.com/2016/02/10/JavaScript学习笔记---Ajax入门(一)/index.html">
 <meta property="og:site_name" content="Lueny-blog">
 <meta property="og:description" content="首先我们先理解好下面几个概念及其过程：
 网页浏览过程分析一个完整的HTTP请求过程,通常有下面7个步骤">
 <meta property="og:image" content="http://7xq76k.com1.z0.glb.clouddn.com/http.png">
 <meta property="og:image" content="http://7xq76k.com1.z0.glb.clouddn.com/http2.png">
-<meta property="og:updated_time" content="2016-02-15T04:44:33.135Z">
+<meta property="og:updated_time" content="2016-02-16T06:16:27.969Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Ajax入门(一) 从0开始到一次成功的GET请求">
+<meta name="twitter:title" content="JavaScript学习笔记---Ajax入门(一)">
 <meta name="twitter:description" content="首先我们先理解好下面几个概念及其过程：
 网页浏览过程分析一个完整的HTTP请求过程,通常有下面7个步骤">
   
@@ -211,11 +211,11 @@
         </header>                
     </div>
 </nav>
-      <div class="body-wrap"><article id="post-Ajax入门（一）从0开始到一次成功的GET请求" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-JavaScript学习笔记---Ajax入门(一)" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2016/02/02/Ajax入门（一）从0开始到一次成功的GET请求/" class="article-date">
-      <time datetime="2016-02-02T14:50:23.000Z" itemprop="datePublished">2016-02-02</time>
+      <a href="/2016/02/10/JavaScript学习笔记---Ajax入门(一)/" class="article-date">
+      <time datetime="2016-02-10T15:50:23.000Z" itemprop="datePublished">2016-02-10</time>
 </a>
     </div>
   
@@ -228,7 +228,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      Ajax入门(一) 从0开始到一次成功的GET请求
+      JavaScript学习笔记---Ajax入门(一)
     </h1>
   
 
@@ -284,7 +284,48 @@
 </tr>
 </tbody>
 </table>
-<p>常见的HTTP状态码<br>| 状态码 |  描述  | 原因短语|<br>|  —-  |  —-  |  —-   |<br>|200    |请求成功.一般用于GET和POST方法    |OK|<br>|301    |资源移动.所请求资源移动到新的URL,浏览器自动跳转到新的URL|Moved Permanently|<br>|304    |未修改.所请求资源未修改读取缓存数据  |Not Modified|<br>|400    |请求语法错误,服务器无法理解 |Bad Request|<br>|404    |未找到资源,可以设置个性”404页面”    |Not Found|<br>|500    |服务器内部错误    |internal Server Error|</p>
+<p>常见的HTTP状态码</p>
+<table>
+<thead>
+<tr>
+<th>状态码</th>
+<th>描述</th>
+<th>原因短语</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>200</td>
+<td>请求成功.一般用于GET和POST方法</td>
+<td>OK</td>
+</tr>
+<tr>
+<td>301</td>
+<td>资源移动.所请求资源移动到新的URL,浏览器自动跳转到新的URL</td>
+<td>Moved Permanently</td>
+</tr>
+<tr>
+<td>304</td>
+<td>未修改.所请求资源未修改读取缓存数据</td>
+<td>Not Modified</td>
+</tr>
+<tr>
+<td>400</td>
+<td>请求语法错误,服务器无法理解</td>
+<td>Bad Request</td>
+</tr>
+<tr>
+<td>404</td>
+<td>未找到资源,可以设置个性”404页面”</td>
+<td>Not Found</td>
+</tr>
+<tr>
+<td>500</td>
+<td>服务器内部错误</td>
+<td>internal Server Error</td>
+</tr>
+</tbody>
+</table>
 <h3 id="u7F16_u5199Ajax"><a href="#u7F16_u5199Ajax" class="headerlink" title="编写Ajax"></a>编写Ajax</h3><p>类比打电话理解Ajax编写步骤</p>
 <table>
 <thead>
@@ -314,6 +355,10 @@
 </table>
 <h4 id="1_u3001_u521B_u5EFAAjax_u5BF9_u8C61"><a href="#1_u3001_u521B_u5EFAAjax_u5BF9_u8C61" class="headerlink" title="1、创建Ajax对象"></a>1、创建Ajax对象</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">createXmlHttp</span>(<span class="params"></span>) </span>&#123; </span><br><span class="line">    <span class="keyword">if</span> (<span class="built_in">window</span>.XmlHttpRequest) &#123;<span class="comment">// code for IE7+, Firefox, Chrome, Opera, Safari</span></span><br><span class="line">        xmlhttp = newXmlHttpRequest();</span><br><span class="line">    &#125; </span><br><span class="line">    <span class="keyword">if</span> (<span class="built_in">window</span>.ActiveXObject) &#123; <span class="comment">// code for IE6, IE5</span></span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            xmlhttp = newActiveXObject(<span class="string">"Microsoft.XMLHTTP"</span>);</span><br><span class="line">        &#125; <span class="keyword">catch</span> (e) &#123;</span><br><span class="line">            <span class="keyword">try</span> &#123;</span><br><span class="line">                xmlhttp = newActiveXObject(<span class="string">"msxml2.XMLHTTP"</span>);</span><br><span class="line">            &#125; <span class="keyword">catch</span> (ex) &#123;&#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h4 id="2_u3001_u8FDE_u63A5_u670D_u52A1_u5668"><a href="#2_u3001_u8FDE_u63A5_u670D_u52A1_u5668" class="headerlink" title="2、连接服务器"></a>2、连接服务器</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//open(发送请求方法”GET/POST” ,(请求地址”文件名”) ,是否异步传输)</span></span><br><span class="line"><span class="comment">//open(method,url,async); 例如:</span></span><br><span class="line">request.open(<span class="string">"GET"</span>,<span class="string">"get.json"</span>,<span class="literal">true</span>);</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p><strong>#### 注意</strong><br>　千万不要把第三个参数指定为false，否则浏览器将停止响应，直到AJAX请求完成。如果这个请求耗时10秒，那么10秒内你会发现浏览器处于“假死”状态。</p>
+<p>最后调用send()方法才真正发送请求。GET请求不需要参数，POST请求需要把body部分以字符串或者FormData对象传进去。</p>
+</blockquote>
 <h4 id="3_u3001_u53D1_u9001_u8BF7_u6C42"><a href="#3_u3001_u53D1_u9001_u8BF7_u6C42" class="headerlink" title="3、发送请求"></a>3、发送请求</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**send(string)</span><br><span class="line">   在使用GET方式请求时无需填写参数</span><br><span class="line">   在使用POST方式时参数代表着向服务器发送的数据</span><br><span class="line">**/</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//完整的GET请求</span></span><br><span class="line">createXmlHttp();<span class="comment">//创建Ajax对象</span></span><br><span class="line"><span class="keyword">if</span> (!xmlhttp) &#123;</span><br><span class="line">    alert(<span class="string">"创建xmlhttp对象异常！"</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">&#125;</span><br><span class="line">xmlhttp.open(<span class="string">"GET"</span>,url,<span class="literal">true</span>);<span class="comment">//连接服务器</span></span><br><span class="line">xmlhttp.send();<span class="comment">//发送请求</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//完整的POST发送请求</span></span><br><span class="line">createXmlHttp();</span><br><span class="line"><span class="keyword">if</span> (!xmlhttp) &#123;</span><br><span class="line">    alert(<span class="string">"创建xmlhttp对象异常！"</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">&#125;</span><br><span class="line">xmlhttp.open(<span class="string">"POST"</span>, url, <span class="literal">true</span>);    </span><br><span class="line">xmlhttp.onreadystatechange = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (xmlhttp.readyState == <span class="number">4</span>) &#123;</span><br><span class="line">        <span class="built_in">document</span>.getElementById(<span class="string">"xxx"</span>).innerHTML = <span class="string">"数据正在加载..."</span>;</span><br><span class="line">        <span class="keyword">if</span> (xmlhttp.status == <span class="number">200</span>) &#123;</span><br><span class="line">            <span class="built_in">document</span>.write(xmlhttp.responseText);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">xmlhttp.setRequestHeader(<span class="string">"Content-type"</span>, <span class="string">"application/x-www-form-urlencoded"</span>);<span class="comment">//设置HTTP头信息.必须在open与send之间,否则出现异常.</span></span><br><span class="line">xmlhttp.send(<span class="string">"name=张三&amp;sex=男"</span>);<span class="comment">//发送给服务器的内容</span></span><br></pre></td></tr></table></figure>
 <h4 id="4_u3001_u63A5_u53D7_u8FD4_u56DE_28XMLHttpRequset_u53D6_u5F97_u54CD_u5E94_29"><a href="#4_u3001_u63A5_u53D7_u8FD4_u56DE_28XMLHttpRequset_u53D6_u5F97_u54CD_u5E94_29" class="headerlink" title="4、接受返回(XMLHttpRequset取得响应)"></a>4、接受返回(XMLHttpRequset取得响应)</h4><table>
 <thead>
@@ -394,6 +439,23 @@
 <li>在需要解析请求数据时，推荐使用JSON的方法JSON.parse()可以将一个 JSON 字符串解析成为一个 JavaScript 值。参考 <a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/JSON" target="_blank" rel="external">MDN-JSON</a></li>
 </ul>
 </blockquote>
+<h3 id="u5B89_u5168_u9650_u5236"><a href="#u5B89_u5168_u9650_u5236" class="headerlink" title="安全限制"></a>安全限制</h3><p>上面代码的URL使用的是相对路径。如果不是相对路径的话,运行肯定报错。在Chrome的控制台里，还可以看到错误信息。</p>
+<p>这是因为浏览器的同源策略导致的。默认情况下，JavaScript在发送AJAX请求时，URL的域名必须和当前页面完全一致。完全一致的意思是，域名要相同（www.example.com和example.com不同），协议要相同（http和https不同），端口号要相同（默认是:80端口，它和:8080就不同）。有的浏览器口子松一点，允许端口不同，大多数浏览器都会严格遵守这个限制。</p>
+<h4 id="u90A3_u662F_u4E0D_u662F_u7528JavaScript_u65E0_u6CD5_u8BF7_u6C42_u5916_u57DF_uFF08_u5C31_u662F_u5176_u4ED6_u7F51_u7AD9_uFF09_u7684URL_u4E86_u5462_uFF1F_u65B9_u6CD5_u8FD8_u662F_u6709_u7684_uFF0C_u5927_u6982_u6709_u8FD9_u4E48_u51E0_u79CD_uFF1A"><a href="#u90A3_u662F_u4E0D_u662F_u7528JavaScript_u65E0_u6CD5_u8BF7_u6C42_u5916_u57DF_uFF08_u5C31_u662F_u5176_u4ED6_u7F51_u7AD9_uFF09_u7684URL_u4E86_u5462_uFF1F_u65B9_u6CD5_u8FD8_u662F_u6709_u7684_uFF0C_u5927_u6982_u6709_u8FD9_u4E48_u51E0_u79CD_uFF1A" class="headerlink" title="那是不是用JavaScript无法请求外域（就是其他网站）的URL了呢？方法还是有的，大概有这么几种："></a>那是不是用JavaScript无法请求外域（就是其他网站）的URL了呢？方法还是有的，大概有这么几种：</h4><blockquote>
+<ul>
+<li><p>一是通过Flash插件发送HTTP请求，这种方式可以绕过浏览器的安全限制，但必须安装Flash，并且跟Flash交互。不过Flash用起来麻烦，而且现在用得也越来越少了。</p>
+</li>
+<li><p>二是通过在同源域名下架设一个代理服务器来转发，JavaScript负责把请求发送到代理服务器：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">'/proxy?url=http://www.sina.com.cn'</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</blockquote>
+<p>代理服务器再把结果返回，这样就遵守了浏览器的同源策略。这种方式麻烦之处在于需要服务器端额外做开发。</p>
+<blockquote>
+<ul>
+<li>第三种方式称为JSONP，它有个限制，只能用GET请求，并且要求返回JavaScript。这种方式跨域实际上是利用了浏览器允许跨域引用JavaScript资源</li>
+</ul>
+</blockquote>
 
       
     </div>
@@ -402,13 +464,13 @@
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/2016/02/02/Ajax入门（一）从0开始到一次成功的GET请求/">Ajax入门(一) 从0开始到一次成功的GET请求</a></p>
+        <p><span>本文标题:</span><a href="/2016/02/10/JavaScript学习笔记---Ajax入门(一)/">JavaScript学习笔记---Ajax入门(一)</a></p>
         <p><span>文章作者:</span><a href="/" title="访问 Lueny 的个人博客">Lueny</a></p>
-        <p><span>发布时间:</span>2016年02月02日 - 22时50分</p>
-        <p><span>最后更新:</span>2016年02月15日 - 12时44分</p>
+        <p><span>发布时间:</span>2016年02月10日 - 23时50分</p>
+        <p><span>最后更新:</span>2016年02月16日 - 14时16分</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2016/02/02/Ajax入门（一）从0开始到一次成功的GET请求/" title="Ajax入门(一) 从0开始到一次成功的GET请求">http://yoursite.com/2016/02/02/Ajax入门（一）从0开始到一次成功的GET请求/</a>
-            <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2016/02/02/Ajax入门（一）从0开始到一次成功的GET请求/　　作者: Lueny" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/2016/02/10/JavaScript学习笔记---Ajax入门(一)/" title="JavaScript学习笔记---Ajax入门(一)">http://yoursite.com/2016/02/10/JavaScript学习笔记---Ajax入门(一)/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2016/02/10/JavaScript学习笔记---Ajax入门(一)/　　作者: Lueny" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script src="/js/clipboard.min.js"></script>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
@@ -423,8 +485,8 @@
         
         
             <div id="article-nav-older" class="article-nav-title">
-                <a href="/2016/01/26/tags-ajax/">
-                    JavaScript学习笔记---Ajax
+                <a href="/2016/01/26/JavaScript学习笔记---Ajax入门(零)/">
+                    JavaScript学习笔记---Ajax入门(零)
                 </a>
             </div>
         
@@ -435,7 +497,7 @@
 
     <div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
-    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#u7F51_u9875_u6D4F_u89C8_u8FC7_u7A0B_u5206_u6790"><span class="toc-number">1.</span> <span class="toc-text">网页浏览过程分析</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#u4E00_u4E2A_u5B8C_u6574_u7684HTTP_u8BF7_u6C42_u8FC7_u7A0B_2C_u901A_u5E38_u6709_u4E0B_u97627_u4E2A_u6B65_u9AA4"><span class="toc-number">1.1.</span> <span class="toc-text">一个完整的HTTP请求过程,通常有下面7个步骤</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Ajax_u539F_u7406"><span class="toc-number">2.</span> <span class="toc-text">Ajax原理</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#u7406_u89E3_u540C_u6B65_u548C_u5F02_u6B65_28_u57FA_u672C_u90FD_u7528_u5F02_u6B65_u8BF7_u6C42_29"><span class="toc-number">2.0.1.</span> <span class="toc-text">理解同步和异步(基本都用异步请求).</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#u5176_u5B83_u8BE6_u60C5_u8BF7_u770B__u524D_u4E00_u7BC7_u535A_u6587_u3002"><span class="toc-number">2.0.2.</span> <span class="toc-text">其它详情请看 前一篇博文。</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#HTTP_u8BF7_u6C42"><span class="toc-number">3.</span> <span class="toc-text">HTTP请求</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#u4E00_u4E2AHTTP_u8BF7_u6C42_u4E00_u822C_u7531_u56DB_u90E8_u5206_u7EC4_u6210"><span class="toc-number">3.1.</span> <span class="toc-text">一个HTTP请求一般由四部分组成</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#HTTP_u54CD_u5E94"><span class="toc-number">4.</span> <span class="toc-text">HTTP响应</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#u4E00_u4E2AHTTP_u54CD_u5E94_u4E00_u822C_u7531_u4E09_u90E8_u5206_u7EC4_u6210_3A"><span class="toc-number">4.1.</span> <span class="toc-text">一个HTTP响应一般由三部分组成:</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#u5E38_u89C1_u7684HTTP_u8BF7_u6C42_u65B9_u5F0F"><span class="toc-number">4.2.</span> <span class="toc-text">常见的HTTP请求方式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#u7F16_u5199Ajax"><span class="toc-number">4.3.</span> <span class="toc-text">编写Ajax</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1_u3001_u521B_u5EFAAjax_u5BF9_u8C61"><span class="toc-number">4.3.1.</span> <span class="toc-text">1、创建Ajax对象</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2_u3001_u8FDE_u63A5_u670D_u52A1_u5668"><span class="toc-number">4.3.2.</span> <span class="toc-text">2、连接服务器</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3_u3001_u53D1_u9001_u8BF7_u6C42"><span class="toc-number">4.3.3.</span> <span class="toc-text">3、发送请求</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4_u3001_u63A5_u53D7_u8FD4_u56DE_28XMLHttpRequset_u53D6_u5F97_u54CD_u5E94_29"><span class="toc-number">4.3.4.</span> <span class="toc-text">4、接受返回(XMLHttpRequset取得响应)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#u901A_u8FC7_u76D1_u542Conreadystatechange_u4E8B_u4EF6_2C_u6765_u5224_u65AD_u8BF7_u6C42_u7684_u72B6_u6001_28readyState_u5C5E_u6027_3A_u54CD_u5E94_u8FD4_u56DE_u6240_u5904_u72B6_u6001_29"><span class="toc-number">4.3.5.</span> <span class="toc-text">通过监听onreadystatechange事件,来判断请求的状态(readyState属性:响应返回所处状态).</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#u4F7F_u7528_u51FD_u6570_u7B80_u5355_u7684_u5C01_u88C5_u4E00_u4E2Aget_u8BF7_u6C42"><span class="toc-number">4.4.</span> <span class="toc-text">使用函数简单的封装一个get请求</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#u4F7F_u7528Ajax"><span class="toc-number">4.5.</span> <span class="toc-text">使用Ajax</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#u57FA_u7840_3A_u8BF7_u6C42_u5E76_u663E_u793A_u9759_u6001TXT_u6587_u4EF6"><span class="toc-number">4.5.1.</span> <span class="toc-text">基础:请求并显示静态TXT文件</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#u52A8_u6001_u6570_u636E_3A_u8BF7_u6C42JS_28_u6216JSON_29_u6587_u4EF6"><span class="toc-number">4.5.2.</span> <span class="toc-text">动态数据:请求JS(或JSON)文件</span></a></li></ol></li></ol></li></ol>
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#u7F51_u9875_u6D4F_u89C8_u8FC7_u7A0B_u5206_u6790"><span class="toc-number">1.</span> <span class="toc-text">网页浏览过程分析</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#u4E00_u4E2A_u5B8C_u6574_u7684HTTP_u8BF7_u6C42_u8FC7_u7A0B_2C_u901A_u5E38_u6709_u4E0B_u97627_u4E2A_u6B65_u9AA4"><span class="toc-number">1.1.</span> <span class="toc-text">一个完整的HTTP请求过程,通常有下面7个步骤</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Ajax_u539F_u7406"><span class="toc-number">2.</span> <span class="toc-text">Ajax原理</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#u7406_u89E3_u540C_u6B65_u548C_u5F02_u6B65_28_u57FA_u672C_u90FD_u7528_u5F02_u6B65_u8BF7_u6C42_29"><span class="toc-number">2.0.1.</span> <span class="toc-text">理解同步和异步(基本都用异步请求).</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#u5176_u5B83_u8BE6_u60C5_u8BF7_u770B__u524D_u4E00_u7BC7_u535A_u6587_u3002"><span class="toc-number">2.0.2.</span> <span class="toc-text">其它详情请看 前一篇博文。</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#HTTP_u8BF7_u6C42"><span class="toc-number">3.</span> <span class="toc-text">HTTP请求</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#u4E00_u4E2AHTTP_u8BF7_u6C42_u4E00_u822C_u7531_u56DB_u90E8_u5206_u7EC4_u6210"><span class="toc-number">3.1.</span> <span class="toc-text">一个HTTP请求一般由四部分组成</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#HTTP_u54CD_u5E94"><span class="toc-number">4.</span> <span class="toc-text">HTTP响应</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#u4E00_u4E2AHTTP_u54CD_u5E94_u4E00_u822C_u7531_u4E09_u90E8_u5206_u7EC4_u6210_3A"><span class="toc-number">4.1.</span> <span class="toc-text">一个HTTP响应一般由三部分组成:</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#u5E38_u89C1_u7684HTTP_u8BF7_u6C42_u65B9_u5F0F"><span class="toc-number">4.2.</span> <span class="toc-text">常见的HTTP请求方式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#u7F16_u5199Ajax"><span class="toc-number">4.3.</span> <span class="toc-text">编写Ajax</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1_u3001_u521B_u5EFAAjax_u5BF9_u8C61"><span class="toc-number">4.3.1.</span> <span class="toc-text">1、创建Ajax对象</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2_u3001_u8FDE_u63A5_u670D_u52A1_u5668"><span class="toc-number">4.3.2.</span> <span class="toc-text">2、连接服务器</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3_u3001_u53D1_u9001_u8BF7_u6C42"><span class="toc-number">4.3.3.</span> <span class="toc-text">3、发送请求</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4_u3001_u63A5_u53D7_u8FD4_u56DE_28XMLHttpRequset_u53D6_u5F97_u54CD_u5E94_29"><span class="toc-number">4.3.4.</span> <span class="toc-text">4、接受返回(XMLHttpRequset取得响应)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#u901A_u8FC7_u76D1_u542Conreadystatechange_u4E8B_u4EF6_2C_u6765_u5224_u65AD_u8BF7_u6C42_u7684_u72B6_u6001_28readyState_u5C5E_u6027_3A_u54CD_u5E94_u8FD4_u56DE_u6240_u5904_u72B6_u6001_29"><span class="toc-number">4.3.5.</span> <span class="toc-text">通过监听onreadystatechange事件,来判断请求的状态(readyState属性:响应返回所处状态).</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#u4F7F_u7528_u51FD_u6570_u7B80_u5355_u7684_u5C01_u88C5_u4E00_u4E2Aget_u8BF7_u6C42"><span class="toc-number">4.4.</span> <span class="toc-text">使用函数简单的封装一个get请求</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#u4F7F_u7528Ajax"><span class="toc-number">4.5.</span> <span class="toc-text">使用Ajax</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#u57FA_u7840_3A_u8BF7_u6C42_u5E76_u663E_u793A_u9759_u6001TXT_u6587_u4EF6"><span class="toc-number">4.5.1.</span> <span class="toc-text">基础:请求并显示静态TXT文件</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#u52A8_u6001_u6570_u636E_3A_u8BF7_u6C42JS_28_u6216JSON_29_u6587_u4EF6"><span class="toc-number">4.5.2.</span> <span class="toc-text">动态数据:请求JS(或JSON)文件</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#u5B89_u5168_u9650_u5236"><span class="toc-number">4.6.</span> <span class="toc-text">安全限制</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#u90A3_u662F_u4E0D_u662F_u7528JavaScript_u65E0_u6CD5_u8BF7_u6C42_u5916_u57DF_uFF08_u5C31_u662F_u5176_u4ED6_u7F51_u7AD9_uFF09_u7684URL_u4E86_u5462_uFF1F_u65B9_u6CD5_u8FD8_u662F_u6709_u7684_uFF0C_u5927_u6982_u6709_u8FD9_u4E48_u51E0_u79CD_uFF1A"><span class="toc-number">4.6.1.</span> <span class="toc-text">那是不是用JavaScript无法请求外域（就是其他网站）的URL了呢？方法还是有的，大概有这么几种：</span></a></li></ol></li></ol></li></ol>
 </div>
 <style>
     .left-col .switch-btn {
@@ -499,7 +561,7 @@
     
       <div class="duoshuo" id="comments">
     <!-- 多说评论框 start -->
-    <div class="ds-thread" data-thread-key="2016/02/02/Ajax入门（一）从0开始到一次成功的GET请求/" data-title="Ajax入门(一) 从0开始到一次成功的GET请求" data-url="http://yoursite.com/2016/02/02/Ajax入门（一）从0开始到一次成功的GET请求/"></div>
+    <div class="ds-thread" data-thread-key="2016/02/10/JavaScript学习笔记---Ajax入门(一)/" data-title="JavaScript学习笔记---Ajax入门(一)" data-url="http://yoursite.com/2016/02/10/JavaScript学习笔记---Ajax入门(一)/"></div>
     <!-- 多说评论框 end -->
     <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
     <script type="text/javascript">
@@ -529,13 +591,13 @@
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
 
         
-            <a href="/2016/01/26/tags-ajax/" title="下一篇: JavaScript学习笔记---Ajax">
+            <a href="/2016/01/26/JavaScript学习笔记---Ajax入门(零)/" title="下一篇: JavaScript学习笔记---Ajax入门(零)">
                 <i class="fa fa-angle-right"></i>
             </a>
         
     </div>
 
-    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2016/02/02/Ajax入门（一）从0开始到一次成功的GET请求/">Ajax入门(一) 从0开始到一次成功的GET请求</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/26/tags-ajax/">JavaScript学习笔记---Ajax</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/17/JavaScript之理解闭包/">JavaScript学习笔记---理解闭包</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/07/hello-lwy/">hello-lwy</a></li></ul>
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2016/02/10/JavaScript学习笔记---Ajax入门(一)/">JavaScript学习笔记---Ajax入门(一)</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/26/JavaScript学习笔记---Ajax入门(零)/">JavaScript学习笔记---Ajax入门(零)</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/17/JavaScript之理解闭包/">JavaScript学习笔记---理解闭包</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/07/hello-lwy/">hello-lwy</a></li></ul>
     <script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
     <script>
         $(".post-list").addClass("toc-article");
