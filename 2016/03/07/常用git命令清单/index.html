@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>常用git命令清单 | Lueny-blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="上传代码到github时经常忘的git指令,以下常用git指令做笔记记住~">
+<meta property="og:type" content="article">
+<meta property="og:title" content="常用git命令清单">
+<meta property="og:url" content="http://yoursite.com/2016/03/07/常用git命令清单/index.html">
+<meta property="og:site_name" content="Lueny-blog">
+<meta property="og:description" content="上传代码到github时经常忘的git指令,以下常用git指令做笔记记住~">
+<meta property="og:updated_time" content="2016-03-07T12:45:21.971Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="常用git命令清单">
+<meta name="twitter:description" content="上传代码到github时经常忘的git指令,以下常用git指令做笔记记住~">
+  
+    <link rel="alternative" href="/atom.xml" title="Lueny-blog" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="http://7xq76k.com1.z0.glb.clouddn.com/favicon.png">
+  
+  
+  <link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.5.0/animate.min.css" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+  <link rel="stylesheet" href="/font-awesome/css/font-awesome.min.css">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  
+  
+      <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  
+  <script>
+      var yiliaConfig = {
+          fancybox: true,
+          animate: true,
+          isHome: false,
+          isPost: true,
+          isArchive: false,
+          isTag: false,
+          isCategory: false,
+          open_in_new: false
+      }
+  </script>
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+    <header id="header" class="inner">
+        <a href="/" class="profilepic">
+            
+            <img lazy-src="/img/avatar.png" class="js-avatar">
+            
+        </a>
+
+        <hgroup>
+          <h1 class="header-author"><a href="/">Lueny</a></h1>
+        </hgroup>
+
+        
+        <p class="header-subtitle">文友的博客</p>
+        
+                
+
+
+        
+            <div id="switch-btn" class="switch-btn">
+                <div class="icon">
+                    <div class="icon-ctn">
+                        <div class="icon-wrap icon-house" data-idx="0">
+                            <div class="birdhouse"></div>
+                            <div class="birdhouse_holes"></div>
+                        </div>
+                        <div class="icon-wrap icon-ribbon hide" data-idx="1">
+                            <div class="ribbon"></div>
+                        </div>
+                        
+                        <div class="icon-wrap icon-link hide" data-idx="2">
+                            <div class="loopback_l"></div>
+                            <div class="loopback_r"></div>
+                        </div>
+                        
+                        
+                        <div class="icon-wrap icon-me hide" data-idx="3">
+                            <div class="user"></div>
+                            <div class="shoulder"></div>
+                        </div>
+                        
+                    </div>
+                    
+                </div>
+                <div class="tips-box hide">
+                    <div class="tips-arrow"></div>
+                    <ul class="tips-inner">
+                        <li>菜单</li>
+                        <li>标签</li>
+                        
+                        <li>友情链接</li>
+                        
+                        
+                        <li>关于我</li>
+                        
+                    </ul>
+                </div>
+            </div>
+        
+
+        <div id="switch-area" class="switch-area">
+            <div class="switch-wrap">
+                <section class="switch-part switch-part1">
+                    <nav class="header-menu">
+                        <ul>
+                        
+                            <li><a href="/">主页</a></li>
+                        
+                            <li><a href="/archives">归档</a></li>
+                        
+                        </ul>
+                    </nav>
+                    <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <li id="新浪微博"><a class="新浪微博" target="_blank" href="http://weibo.com/u/2312143500/home?topnav=1&wvr=6" title="新浪微博"></a></li>
+                            
+                                <li id="GitHub"><a class="GitHub" target="_blank" href="https://github.com/Lueny-cn" title="GitHub"></a></li>
+                            
+                                <li id="RSS"><a class="RSS" target="_blank" href="/atom.xml" title="RSS"></a></li>
+                            
+                        </ul>
+                    </nav>
+                </section>
+                
+                
+                <section class="switch-part switch-part2">
+                    <div class="widget tagcloud" id="js-tagcloud">
+                        <a href="/tags/Ajax/" style="font-size: 15px;">Ajax</a> <a href="/tags/JavaScript/" style="font-size: 20px;">JavaScript</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/随笔/" style="font-size: 10px;">随笔</a>
+                    </div>
+                </section>
+                
+                
+                
+                <section class="switch-part switch-part3">
+                    <div id="js-friends">
+                    
+                      <a target="_blank" class="main-nav-link switch-friends-link" href="https://hexo.io">Hexo</a>
+                    
+                      <a target="_blank" class="main-nav-link switch-friends-link" href="https://github.com/Lueny-cn">GitHub</a>
+                    
+                    </div>
+                </section>
+                
+
+                
+                
+                <section class="switch-part switch-part4">
+                
+                    <div id="js-aboutme">who am I？what is it？</div>
+                </section>
+                
+            </div>
+        </div>
+    </header>                
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+      <div class="overlay">
+          <div class="slider-trigger"></div>
+          <h1 class="header-author js-mobile-header hide"><a href="/" title="回到主页">Lueny</a></h1>
+      </div>
+    <div class="intrude-less">
+        <header id="header" class="inner">
+            <a href="/" class="profilepic">
+                <img lazy-src="/img/avatar.png" class="js-avatar">
+            </a>
+            <hgroup>
+              <h1 class="header-author"><a href="/" title="回到主页">Lueny</a></h1>
+            </hgroup>
+            
+            <p class="header-subtitle">文友的博客</p>
+            
+            <nav class="header-menu">
+                <ul>
+                
+                    <li><a href="/">主页</a></li>
+                
+                    <li><a href="/archives">归档</a></li>
+                
+                <div class="clearfix"></div>
+                </ul>
+            </nav>
+            <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <li id="新浪微博"><a class="新浪微博" target="_blank" href="http://weibo.com/u/2312143500/home?topnav=1&wvr=6" title="新浪微博"></a></li>
+                            
+                                <li id="GitHub"><a class="GitHub" target="_blank" href="https://github.com/Lueny-cn" title="GitHub"></a></li>
+                            
+                                <li id="RSS"><a class="RSS" target="_blank" href="/atom.xml" title="RSS"></a></li>
+                            
+                        </ul>
+            </nav>
+        </header>                
+    </div>
+</nav>
+      <div class="body-wrap"><article id="post-常用git命令清单" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/03/07/常用git命令清单/" class="article-date">
+      <time datetime="2016-03-07T13:14:23.000Z" itemprop="datePublished">2016-03-07</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      常用git命令清单
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+
+        
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/git/">git</a></li></ul>
+    </div>
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p>上传代码到github时经常忘的git指令,以下常用git指令做笔记记住~<br><a id="more"></a></p>
+<h3 id="u4E00_u3001_u65B0_u5EFA_u4EE3_u7801_u5E93"><a href="#u4E00_u3001_u65B0_u5EFA_u4EE3_u7801_u5E93" class="headerlink" title="一、新建代码库"></a>一、新建代码库</h3><h5 id="u5728_u5F53_u524D_u76EE_u5F55_u65B0_u5EFA_u4E00_u4E2AGit_u4EE3_u7801_u5E93"><a href="#u5728_u5F53_u524D_u76EE_u5F55_u65B0_u5EFA_u4E00_u4E2AGit_u4EE3_u7801_u5E93" class="headerlink" title="在当前目录新建一个Git代码库"></a>在当前目录新建一个Git代码库</h5><p>$ git init</p>
+<h5 id="u65B0_u5EFA_u4E00_u4E2A_u76EE_u5F55_uFF0C_u5C06_u5176_u521D_u59CB_u5316_u4E3AGit_u4EE3_u7801_u5E93"><a href="#u65B0_u5EFA_u4E00_u4E2A_u76EE_u5F55_uFF0C_u5C06_u5176_u521D_u59CB_u5316_u4E3AGit_u4EE3_u7801_u5E93" class="headerlink" title="新建一个目录，将其初始化为Git代码库"></a>新建一个目录，将其初始化为Git代码库</h5><p>$ git init [project-name]</p>
+<h5 id="u4E0B_u8F7D_u4E00_u4E2A_u9879_u76EE_u548C_u5B83_u7684_u6574_u4E2A_u4EE3_u7801_u5386_u53F2"><a href="#u4E0B_u8F7D_u4E00_u4E2A_u9879_u76EE_u548C_u5B83_u7684_u6574_u4E2A_u4EE3_u7801_u5386_u53F2" class="headerlink" title="下载一个项目和它的整个代码历史"></a>下载一个项目和它的整个代码历史</h5><p>$ git clone [url]</p>
+<h3 id="u4E8C_u3001_u914D_u7F6E"><a href="#u4E8C_u3001_u914D_u7F6E" class="headerlink" title="二、配置"></a>二、配置</h3><p>Git的设置文件为.gitconfig，它可以在用户主目录下（全局配置），也可以在项目目录下（项目配置）。</p>
+<h5 id="u663E_u793A_u5F53_u524D_u7684Git_u914D_u7F6E"><a href="#u663E_u793A_u5F53_u524D_u7684Git_u914D_u7F6E" class="headerlink" title="显示当前的Git配置"></a>显示当前的Git配置</h5><p>$ git config –list</p>
+<h5 id="u7F16_u8F91Git_u914D_u7F6E_u6587_u4EF6"><a href="#u7F16_u8F91Git_u914D_u7F6E_u6587_u4EF6" class="headerlink" title="编辑Git配置文件"></a>编辑Git配置文件</h5><p>$ git config -e [–global]</p>
+<h5 id="u8BBE_u7F6E_u63D0_u4EA4_u4EE3_u7801_u65F6_u7684_u7528_u6237_u4FE1_u606F"><a href="#u8BBE_u7F6E_u63D0_u4EA4_u4EE3_u7801_u65F6_u7684_u7528_u6237_u4FE1_u606F" class="headerlink" title="设置提交代码时的用户信息"></a>设置提交代码时的用户信息</h5><p>$ git config [–global] user.name “[name]”<br>$ git config [–global] user.email “[email address]”</p>
+<h3 id="u4E09_u3001_u589E_u52A0/_u5220_u9664_u6587_u4EF6"><a href="#u4E09_u3001_u589E_u52A0/_u5220_u9664_u6587_u4EF6" class="headerlink" title="三、增加/删除文件"></a>三、增加/删除文件</h3><h5 id="u6DFB_u52A0_u6307_u5B9A_u6587_u4EF6_u5230_u6682_u5B58_u533A"><a href="#u6DFB_u52A0_u6307_u5B9A_u6587_u4EF6_u5230_u6682_u5B58_u533A" class="headerlink" title="添加指定文件到暂存区"></a>添加指定文件到暂存区</h5><p>$ git add [file1] [file2] …</p>
+<h5 id="u6DFB_u52A0_u6307_u5B9A_u76EE_u5F55_u5230_u6682_u5B58_u533A_uFF0C_u5305_u62EC_u5B50_u76EE_u5F55"><a href="#u6DFB_u52A0_u6307_u5B9A_u76EE_u5F55_u5230_u6682_u5B58_u533A_uFF0C_u5305_u62EC_u5B50_u76EE_u5F55" class="headerlink" title="添加指定目录到暂存区，包括子目录"></a>添加指定目录到暂存区，包括子目录</h5><p>$ git add [dir]</p>
+<h5 id="u6DFB_u52A0_u5F53_u524D_u76EE_u5F55_u7684_u6240_u6709_u6587_u4EF6_u5230_u6682_u5B58_u533A"><a href="#u6DFB_u52A0_u5F53_u524D_u76EE_u5F55_u7684_u6240_u6709_u6587_u4EF6_u5230_u6682_u5B58_u533A" class="headerlink" title="添加当前目录的所有文件到暂存区"></a>添加当前目录的所有文件到暂存区</h5><p>$ git add .</p>
+<h5 id="u5220_u9664_u5DE5_u4F5C_u533A_u6587_u4EF6_uFF0C_u5E76_u4E14_u5C06_u8FD9_u6B21_u5220_u9664_u653E_u5165_u6682_u5B58_u533A"><a href="#u5220_u9664_u5DE5_u4F5C_u533A_u6587_u4EF6_uFF0C_u5E76_u4E14_u5C06_u8FD9_u6B21_u5220_u9664_u653E_u5165_u6682_u5B58_u533A" class="headerlink" title="删除工作区文件，并且将这次删除放入暂存区"></a>删除工作区文件，并且将这次删除放入暂存区</h5><p>$ git rm [file1] [file2] …</p>
+<h5 id="u505C_u6B62_u8FFD_u8E2A_u6307_u5B9A_u6587_u4EF6_uFF0C_u4F46_u8BE5_u6587_u4EF6_u4F1A_u4FDD_u7559_u5728_u5DE5_u4F5C_u533A"><a href="#u505C_u6B62_u8FFD_u8E2A_u6307_u5B9A_u6587_u4EF6_uFF0C_u4F46_u8BE5_u6587_u4EF6_u4F1A_u4FDD_u7559_u5728_u5DE5_u4F5C_u533A" class="headerlink" title="停止追踪指定文件，但该文件会保留在工作区"></a>停止追踪指定文件，但该文件会保留在工作区</h5><p>$ git rm –cached [file]</p>
+<h5 id="u6539_u540D_u6587_u4EF6_uFF0C_u5E76_u4E14_u5C06_u8FD9_u4E2A_u6539_u540D_u653E_u5165_u6682_u5B58_u533A"><a href="#u6539_u540D_u6587_u4EF6_uFF0C_u5E76_u4E14_u5C06_u8FD9_u4E2A_u6539_u540D_u653E_u5165_u6682_u5B58_u533A" class="headerlink" title="改名文件，并且将这个改名放入暂存区"></a>改名文件，并且将这个改名放入暂存区</h5><p>$ git mv [file-original] [file-renamed]</p>
+<h3 id="u56DB_u3001_u4EE3_u7801_u63D0_u4EA4"><a href="#u56DB_u3001_u4EE3_u7801_u63D0_u4EA4" class="headerlink" title="四、代码提交"></a>四、代码提交</h3><h5 id="u63D0_u4EA4_u6682_u5B58_u533A_u5230_u4ED3_u5E93_u533A"><a href="#u63D0_u4EA4_u6682_u5B58_u533A_u5230_u4ED3_u5E93_u533A" class="headerlink" title="提交暂存区到仓库区"></a>提交暂存区到仓库区</h5><p>$ git commit -m [message]</p>
+<h5 id="u63D0_u4EA4_u6682_u5B58_u533A_u7684_u6307_u5B9A_u6587_u4EF6_u5230_u4ED3_u5E93_u533A"><a href="#u63D0_u4EA4_u6682_u5B58_u533A_u7684_u6307_u5B9A_u6587_u4EF6_u5230_u4ED3_u5E93_u533A" class="headerlink" title="提交暂存区的指定文件到仓库区"></a>提交暂存区的指定文件到仓库区</h5><p>$ git commit [file1] [file2] … -m [message]</p>
+<h5 id="u63D0_u4EA4_u5DE5_u4F5C_u533A_u81EA_u4E0A_u6B21commit_u4E4B_u540E_u7684_u53D8_u5316_uFF0C_u76F4_u63A5_u5230_u4ED3_u5E93_u533A"><a href="#u63D0_u4EA4_u5DE5_u4F5C_u533A_u81EA_u4E0A_u6B21commit_u4E4B_u540E_u7684_u53D8_u5316_uFF0C_u76F4_u63A5_u5230_u4ED3_u5E93_u533A" class="headerlink" title="提交工作区自上次commit之后的变化，直接到仓库区"></a>提交工作区自上次commit之后的变化，直接到仓库区</h5><p>$ git commit -a</p>
+<h5 id="u63D0_u4EA4_u65F6_u663E_u793A_u6240_u6709diff_u4FE1_u606F"><a href="#u63D0_u4EA4_u65F6_u663E_u793A_u6240_u6709diff_u4FE1_u606F" class="headerlink" title="提交时显示所有diff信息"></a>提交时显示所有diff信息</h5><p>$ git commit -v</p>
+<h5 id="u4F7F_u7528_u4E00_u6B21_u65B0_u7684commit_uFF0C_u66FF_u4EE3_u4E0A_u4E00_u6B21_u63D0_u4EA4"><a href="#u4F7F_u7528_u4E00_u6B21_u65B0_u7684commit_uFF0C_u66FF_u4EE3_u4E0A_u4E00_u6B21_u63D0_u4EA4" class="headerlink" title="使用一次新的commit，替代上一次提交"></a>使用一次新的commit，替代上一次提交</h5><h5 id="u5982_u679C_u4EE3_u7801_u6CA1_u6709_u4EFB_u4F55_u65B0_u53D8_u5316_uFF0C_u5219_u7528_u6765_u6539_u5199_u4E0A_u4E00_u6B21commit_u7684_u63D0_u4EA4_u4FE1_u606F"><a href="#u5982_u679C_u4EE3_u7801_u6CA1_u6709_u4EFB_u4F55_u65B0_u53D8_u5316_uFF0C_u5219_u7528_u6765_u6539_u5199_u4E0A_u4E00_u6B21commit_u7684_u63D0_u4EA4_u4FE1_u606F" class="headerlink" title="如果代码没有任何新变化，则用来改写上一次commit的提交信息"></a>如果代码没有任何新变化，则用来改写上一次commit的提交信息</h5><p>$ git commit –amend -m [message]</p>
+<h5 id="u91CD_u505A_u4E0A_u4E00_u6B21commit_uFF0C_u5E76_u5305_u62EC_u6307_u5B9A_u6587_u4EF6_u7684_u65B0_u53D8_u5316"><a href="#u91CD_u505A_u4E0A_u4E00_u6B21commit_uFF0C_u5E76_u5305_u62EC_u6307_u5B9A_u6587_u4EF6_u7684_u65B0_u53D8_u5316" class="headerlink" title="重做上一次commit，并包括指定文件的新变化"></a>重做上一次commit，并包括指定文件的新变化</h5><p>$ git commit –amend [file1] [file2] …</p>
+<h3 id="u4E94_u3001_u5206_u652F"><a href="#u4E94_u3001_u5206_u652F" class="headerlink" title="五、分支"></a>五、分支</h3><h5 id="u5217_u51FA_u6240_u6709_u672C_u5730_u5206_u652F"><a href="#u5217_u51FA_u6240_u6709_u672C_u5730_u5206_u652F" class="headerlink" title="列出所有本地分支"></a>列出所有本地分支</h5><p>$ git branch</p>
+<h5 id="u5217_u51FA_u6240_u6709_u8FDC_u7A0B_u5206_u652F"><a href="#u5217_u51FA_u6240_u6709_u8FDC_u7A0B_u5206_u652F" class="headerlink" title="列出所有远程分支"></a>列出所有远程分支</h5><p>$ git branch -r</p>
+<h5 id="u5217_u51FA_u6240_u6709_u672C_u5730_u5206_u652F_u548C_u8FDC_u7A0B_u5206_u652F"><a href="#u5217_u51FA_u6240_u6709_u672C_u5730_u5206_u652F_u548C_u8FDC_u7A0B_u5206_u652F" class="headerlink" title="列出所有本地分支和远程分支"></a>列出所有本地分支和远程分支</h5><p>$ git branch -a</p>
+<h5 id="u65B0_u5EFA_u4E00_u4E2A_u5206_u652F_uFF0C_u4F46_u4F9D_u7136_u505C_u7559_u5728_u5F53_u524D_u5206_u652F"><a href="#u65B0_u5EFA_u4E00_u4E2A_u5206_u652F_uFF0C_u4F46_u4F9D_u7136_u505C_u7559_u5728_u5F53_u524D_u5206_u652F" class="headerlink" title="新建一个分支，但依然停留在当前分支"></a>新建一个分支，但依然停留在当前分支</h5><p>$ git branch [branch-name]</p>
+<h5 id="u65B0_u5EFA_u4E00_u4E2A_u5206_u652F_uFF0C_u5E76_u5207_u6362_u5230_u8BE5_u5206_u652F"><a href="#u65B0_u5EFA_u4E00_u4E2A_u5206_u652F_uFF0C_u5E76_u5207_u6362_u5230_u8BE5_u5206_u652F" class="headerlink" title="新建一个分支，并切换到该分支"></a>新建一个分支，并切换到该分支</h5><p>$ git checkout -b [branch]</p>
+<h5 id="u65B0_u5EFA_u4E00_u4E2A_u5206_u652F_uFF0C_u6307_u5411_u6307_u5B9Acommit"><a href="#u65B0_u5EFA_u4E00_u4E2A_u5206_u652F_uFF0C_u6307_u5411_u6307_u5B9Acommit" class="headerlink" title="新建一个分支，指向指定commit"></a>新建一个分支，指向指定commit</h5><p>$ git branch [branch] [commit]</p>
+<h5 id="u65B0_u5EFA_u4E00_u4E2A_u5206_u652F_uFF0C_u4E0E_u6307_u5B9A_u7684_u8FDC_u7A0B_u5206_u652F_u5EFA_u7ACB_u8FFD_u8E2A_u5173_u7CFB"><a href="#u65B0_u5EFA_u4E00_u4E2A_u5206_u652F_uFF0C_u4E0E_u6307_u5B9A_u7684_u8FDC_u7A0B_u5206_u652F_u5EFA_u7ACB_u8FFD_u8E2A_u5173_u7CFB" class="headerlink" title="新建一个分支，与指定的远程分支建立追踪关系"></a>新建一个分支，与指定的远程分支建立追踪关系</h5><p>$ git branch –track [branch] [remote-branch]</p>
+<h5 id="u5207_u6362_u5230_u6307_u5B9A_u5206_u652F_uFF0C_u5E76_u66F4_u65B0_u5DE5_u4F5C_u533A"><a href="#u5207_u6362_u5230_u6307_u5B9A_u5206_u652F_uFF0C_u5E76_u66F4_u65B0_u5DE5_u4F5C_u533A" class="headerlink" title="切换到指定分支，并更新工作区"></a>切换到指定分支，并更新工作区</h5><p>$ git checkout [branch-name]</p>
+<h5 id="u5EFA_u7ACB_u8FFD_u8E2A_u5173_u7CFB_uFF0C_u5728_u73B0_u6709_u5206_u652F_u4E0E_u6307_u5B9A_u7684_u8FDC_u7A0B_u5206_u652F_u4E4B_u95F4"><a href="#u5EFA_u7ACB_u8FFD_u8E2A_u5173_u7CFB_uFF0C_u5728_u73B0_u6709_u5206_u652F_u4E0E_u6307_u5B9A_u7684_u8FDC_u7A0B_u5206_u652F_u4E4B_u95F4" class="headerlink" title="建立追踪关系，在现有分支与指定的远程分支之间"></a>建立追踪关系，在现有分支与指定的远程分支之间</h5><p>$ git branch –set-upstream [branch] [remote-branch]</p>
+<h5 id="u5408_u5E76_u6307_u5B9A_u5206_u652F_u5230_u5F53_u524D_u5206_u652F"><a href="#u5408_u5E76_u6307_u5B9A_u5206_u652F_u5230_u5F53_u524D_u5206_u652F" class="headerlink" title="合并指定分支到当前分支"></a>合并指定分支到当前分支</h5><p>$ git merge [branch]</p>
+<h5 id="u9009_u62E9_u4E00_u4E2Acommit_uFF0C_u5408_u5E76_u8FDB_u5F53_u524D_u5206_u652F"><a href="#u9009_u62E9_u4E00_u4E2Acommit_uFF0C_u5408_u5E76_u8FDB_u5F53_u524D_u5206_u652F" class="headerlink" title="选择一个commit，合并进当前分支"></a>选择一个commit，合并进当前分支</h5><p>$ git cherry-pick [commit]</p>
+<h5 id="u5220_u9664_u5206_u652F"><a href="#u5220_u9664_u5206_u652F" class="headerlink" title="删除分支"></a>删除分支</h5><p>$ git branch -d [branch-name]</p>
+<h5 id="u5220_u9664_u8FDC_u7A0B_u5206_u652F"><a href="#u5220_u9664_u8FDC_u7A0B_u5206_u652F" class="headerlink" title="删除远程分支"></a>删除远程分支</h5><p>$ git push origin –delete [branch-name]<br>$ git branch -dr [remote/branch]</p>
+<h3 id="u516D_u3001_u6807_u7B7E"><a href="#u516D_u3001_u6807_u7B7E" class="headerlink" title="六、标签"></a>六、标签</h3><h5 id="u5217_u51FA_u6240_u6709tag"><a href="#u5217_u51FA_u6240_u6709tag" class="headerlink" title="列出所有tag"></a>列出所有tag</h5><p>$ git tag</p>
+<h5 id="u65B0_u5EFA_u4E00_u4E2Atag_u5728_u5F53_u524Dcommit"><a href="#u65B0_u5EFA_u4E00_u4E2Atag_u5728_u5F53_u524Dcommit" class="headerlink" title="新建一个tag在当前commit"></a>新建一个tag在当前commit</h5><p>$ git tag [tag]</p>
+<h5 id="u65B0_u5EFA_u4E00_u4E2Atag_u5728_u6307_u5B9Acommit"><a href="#u65B0_u5EFA_u4E00_u4E2Atag_u5728_u6307_u5B9Acommit" class="headerlink" title="新建一个tag在指定commit"></a>新建一个tag在指定commit</h5><p>$ git tag [tag] [commit]</p>
+<h5 id="u5220_u9664_u672C_u5730tag"><a href="#u5220_u9664_u672C_u5730tag" class="headerlink" title="删除本地tag"></a>删除本地tag</h5><p>$ git tag -d [tag]</p>
+<h5 id="u5220_u9664_u8FDC_u7A0Btag"><a href="#u5220_u9664_u8FDC_u7A0Btag" class="headerlink" title="删除远程tag"></a>删除远程tag</h5><p>$ git push origin :refs/tags/[tagName]</p>
+<h5 id="u67E5_u770Btag_u4FE1_u606F"><a href="#u67E5_u770Btag_u4FE1_u606F" class="headerlink" title="查看tag信息"></a>查看tag信息</h5><p>$ git show [tag]</p>
+<h5 id="u63D0_u4EA4_u6307_u5B9Atag"><a href="#u63D0_u4EA4_u6307_u5B9Atag" class="headerlink" title="提交指定tag"></a>提交指定tag</h5><p>$ git push [remote] [tag]</p>
+<h5 id="u63D0_u4EA4_u6240_u6709tag"><a href="#u63D0_u4EA4_u6240_u6709tag" class="headerlink" title="提交所有tag"></a>提交所有tag</h5><p>$ git push [remote] –tags</p>
+<h5 id="u65B0_u5EFA_u4E00_u4E2A_u5206_u652F_uFF0C_u6307_u5411_u67D0_u4E2Atag"><a href="#u65B0_u5EFA_u4E00_u4E2A_u5206_u652F_uFF0C_u6307_u5411_u67D0_u4E2Atag" class="headerlink" title="新建一个分支，指向某个tag"></a>新建一个分支，指向某个tag</h5><p>$ git checkout -b [branch] [tag]</p>
+<h3 id="u4E03_u3001_u67E5_u770B_u4FE1_u606F"><a href="#u4E03_u3001_u67E5_u770B_u4FE1_u606F" class="headerlink" title="七、查看信息"></a>七、查看信息</h3><h5 id="u663E_u793A_u6709_u53D8_u66F4_u7684_u6587_u4EF6"><a href="#u663E_u793A_u6709_u53D8_u66F4_u7684_u6587_u4EF6" class="headerlink" title="显示有变更的文件"></a>显示有变更的文件</h5><p>$ git status</p>
+<h5 id="u663E_u793A_u5F53_u524D_u5206_u652F_u7684_u7248_u672C_u5386_u53F2"><a href="#u663E_u793A_u5F53_u524D_u5206_u652F_u7684_u7248_u672C_u5386_u53F2" class="headerlink" title="显示当前分支的版本历史"></a>显示当前分支的版本历史</h5><p>$ git log</p>
+<h5 id="u663E_u793Acommit_u5386_u53F2_uFF0C_u4EE5_u53CA_u6BCF_u6B21commit_u53D1_u751F_u53D8_u66F4_u7684_u6587_u4EF6"><a href="#u663E_u793Acommit_u5386_u53F2_uFF0C_u4EE5_u53CA_u6BCF_u6B21commit_u53D1_u751F_u53D8_u66F4_u7684_u6587_u4EF6" class="headerlink" title="显示commit历史，以及每次commit发生变更的文件"></a>显示commit历史，以及每次commit发生变更的文件</h5><p>$ git log –stat</p>
+<h5 id="u663E_u793A_u67D0_u4E2Acommit_u4E4B_u540E_u7684_u6240_u6709_u53D8_u52A8_uFF0C_u6BCF_u4E2Acommit_u5360_u636E_u4E00_u884C"><a href="#u663E_u793A_u67D0_u4E2Acommit_u4E4B_u540E_u7684_u6240_u6709_u53D8_u52A8_uFF0C_u6BCF_u4E2Acommit_u5360_u636E_u4E00_u884C" class="headerlink" title="显示某个commit之后的所有变动，每个commit占据一行"></a>显示某个commit之后的所有变动，每个commit占据一行</h5><p>$ git log [tag] HEAD –pretty=format:%s</p>
+<h5 id="u663E_u793A_u67D0_u4E2Acommit_u4E4B_u540E_u7684_u6240_u6709_u53D8_u52A8_uFF0C_u5176_u201D_u63D0_u4EA4_u8BF4_u660E_u201D_u5FC5_u987B_u7B26_u5408_u641C_u7D22_u6761_u4EF6"><a href="#u663E_u793A_u67D0_u4E2Acommit_u4E4B_u540E_u7684_u6240_u6709_u53D8_u52A8_uFF0C_u5176_u201D_u63D0_u4EA4_u8BF4_u660E_u201D_u5FC5_u987B_u7B26_u5408_u641C_u7D22_u6761_u4EF6" class="headerlink" title="显示某个commit之后的所有变动，其”提交说明”必须符合搜索条件"></a>显示某个commit之后的所有变动，其”提交说明”必须符合搜索条件</h5><p>$ git log [tag] HEAD –grep feature</p>
+<h5 id="u663E_u793A_u67D0_u4E2A_u6587_u4EF6_u7684_u7248_u672C_u5386_u53F2_uFF0C_u5305_u62EC_u6587_u4EF6_u6539_u540D"><a href="#u663E_u793A_u67D0_u4E2A_u6587_u4EF6_u7684_u7248_u672C_u5386_u53F2_uFF0C_u5305_u62EC_u6587_u4EF6_u6539_u540D" class="headerlink" title="显示某个文件的版本历史，包括文件改名"></a>显示某个文件的版本历史，包括文件改名</h5><p>$ git log –follow [file]<br>$ git whatchanged [file]</p>
+<h5 id="u663E_u793A_u6307_u5B9A_u6587_u4EF6_u76F8_u5173_u7684_u6BCF_u4E00_u6B21diff"><a href="#u663E_u793A_u6307_u5B9A_u6587_u4EF6_u76F8_u5173_u7684_u6BCF_u4E00_u6B21diff" class="headerlink" title="显示指定文件相关的每一次diff"></a>显示指定文件相关的每一次diff</h5><p>$ git log -p [file]</p>
+<h5 id="u663E_u793A_u6307_u5B9A_u6587_u4EF6_u662F_u4EC0_u4E48_u4EBA_u5728_u4EC0_u4E48_u65F6_u95F4_u4FEE_u6539_u8FC7"><a href="#u663E_u793A_u6307_u5B9A_u6587_u4EF6_u662F_u4EC0_u4E48_u4EBA_u5728_u4EC0_u4E48_u65F6_u95F4_u4FEE_u6539_u8FC7" class="headerlink" title="显示指定文件是什么人在什么时间修改过"></a>显示指定文件是什么人在什么时间修改过</h5><p>$ git blame [file]</p>
+<h5 id="u663E_u793A_u6682_u5B58_u533A_u548C_u5DE5_u4F5C_u533A_u7684_u5DEE_u5F02"><a href="#u663E_u793A_u6682_u5B58_u533A_u548C_u5DE5_u4F5C_u533A_u7684_u5DEE_u5F02" class="headerlink" title="显示暂存区和工作区的差异"></a>显示暂存区和工作区的差异</h5><p>$ git diff</p>
+<h5 id="u663E_u793A_u6682_u5B58_u533A_u548C_u4E0A_u4E00_u4E2Acommit_u7684_u5DEE_u5F02"><a href="#u663E_u793A_u6682_u5B58_u533A_u548C_u4E0A_u4E00_u4E2Acommit_u7684_u5DEE_u5F02" class="headerlink" title="显示暂存区和上一个commit的差异"></a>显示暂存区和上一个commit的差异</h5><p>$ git diff –cached [file]</p>
+<h5 id="u663E_u793A_u5DE5_u4F5C_u533A_u4E0E_u5F53_u524D_u5206_u652F_u6700_u65B0commit_u4E4B_u95F4_u7684_u5DEE_u5F02"><a href="#u663E_u793A_u5DE5_u4F5C_u533A_u4E0E_u5F53_u524D_u5206_u652F_u6700_u65B0commit_u4E4B_u95F4_u7684_u5DEE_u5F02" class="headerlink" title="显示工作区与当前分支最新commit之间的差异"></a>显示工作区与当前分支最新commit之间的差异</h5><p>$ git diff HEAD</p>
+<h5 id="u663E_u793A_u4E24_u6B21_u63D0_u4EA4_u4E4B_u95F4_u7684_u5DEE_u5F02"><a href="#u663E_u793A_u4E24_u6B21_u63D0_u4EA4_u4E4B_u95F4_u7684_u5DEE_u5F02" class="headerlink" title="显示两次提交之间的差异"></a>显示两次提交之间的差异</h5><p>$ git diff [first-branch]…[second-branch]</p>
+<h5 id="u663E_u793A_u67D0_u6B21_u63D0_u4EA4_u7684_u5143_u6570_u636E_u548C_u5185_u5BB9_u53D8_u5316"><a href="#u663E_u793A_u67D0_u6B21_u63D0_u4EA4_u7684_u5143_u6570_u636E_u548C_u5185_u5BB9_u53D8_u5316" class="headerlink" title="显示某次提交的元数据和内容变化"></a>显示某次提交的元数据和内容变化</h5><p>$ git show [commit]</p>
+<h5 id="u663E_u793A_u67D0_u6B21_u63D0_u4EA4_u53D1_u751F_u53D8_u5316_u7684_u6587_u4EF6"><a href="#u663E_u793A_u67D0_u6B21_u63D0_u4EA4_u53D1_u751F_u53D8_u5316_u7684_u6587_u4EF6" class="headerlink" title="显示某次提交发生变化的文件"></a>显示某次提交发生变化的文件</h5><p>$ git show –name-only [commit]</p>
+<h5 id="u663E_u793A_u67D0_u6B21_u63D0_u4EA4_u65F6_uFF0C_u67D0_u4E2A_u6587_u4EF6_u7684_u5185_u5BB9"><a href="#u663E_u793A_u67D0_u6B21_u63D0_u4EA4_u65F6_uFF0C_u67D0_u4E2A_u6587_u4EF6_u7684_u5185_u5BB9" class="headerlink" title="显示某次提交时，某个文件的内容"></a>显示某次提交时，某个文件的内容</h5><p>$ git show [commit]:[filename]</p>
+<h5 id="u663E_u793A_u5F53_u524D_u5206_u652F_u7684_u6700_u8FD1_u51E0_u6B21_u63D0_u4EA4"><a href="#u663E_u793A_u5F53_u524D_u5206_u652F_u7684_u6700_u8FD1_u51E0_u6B21_u63D0_u4EA4" class="headerlink" title="显示当前分支的最近几次提交"></a>显示当前分支的最近几次提交</h5><p>$ git reflog</p>
+<h3 id="u516B_u3001_u8FDC_u7A0B_u540C_u6B65"><a href="#u516B_u3001_u8FDC_u7A0B_u540C_u6B65" class="headerlink" title="八、远程同步"></a>八、远程同步</h3><h5 id="u4E0B_u8F7D_u8FDC_u7A0B_u4ED3_u5E93_u7684_u6240_u6709_u53D8_u52A8"><a href="#u4E0B_u8F7D_u8FDC_u7A0B_u4ED3_u5E93_u7684_u6240_u6709_u53D8_u52A8" class="headerlink" title="下载远程仓库的所有变动"></a>下载远程仓库的所有变动</h5><p>$ git fetch [remote]</p>
+<h5 id="u663E_u793A_u6240_u6709_u8FDC_u7A0B_u4ED3_u5E93"><a href="#u663E_u793A_u6240_u6709_u8FDC_u7A0B_u4ED3_u5E93" class="headerlink" title="显示所有远程仓库"></a>显示所有远程仓库</h5><p>$ git remote -v</p>
+<h5 id="u663E_u793A_u67D0_u4E2A_u8FDC_u7A0B_u4ED3_u5E93_u7684_u4FE1_u606F"><a href="#u663E_u793A_u67D0_u4E2A_u8FDC_u7A0B_u4ED3_u5E93_u7684_u4FE1_u606F" class="headerlink" title="显示某个远程仓库的信息"></a>显示某个远程仓库的信息</h5><p>$ git remote show [remote]</p>
+<h5 id="u589E_u52A0_u4E00_u4E2A_u65B0_u7684_u8FDC_u7A0B_u4ED3_u5E93_uFF0C_u5E76_u547D_u540D"><a href="#u589E_u52A0_u4E00_u4E2A_u65B0_u7684_u8FDC_u7A0B_u4ED3_u5E93_uFF0C_u5E76_u547D_u540D" class="headerlink" title="增加一个新的远程仓库，并命名"></a>增加一个新的远程仓库，并命名</h5><p>$ git remote add [shortname] [url]</p>
+<h5 id="u53D6_u56DE_u8FDC_u7A0B_u4ED3_u5E93_u7684_u53D8_u5316_uFF0C_u5E76_u4E0E_u672C_u5730_u5206_u652F_u5408_u5E76"><a href="#u53D6_u56DE_u8FDC_u7A0B_u4ED3_u5E93_u7684_u53D8_u5316_uFF0C_u5E76_u4E0E_u672C_u5730_u5206_u652F_u5408_u5E76" class="headerlink" title="取回远程仓库的变化，并与本地分支合并"></a>取回远程仓库的变化，并与本地分支合并</h5><p>$ git pull [remote] [branch]</p>
+<h5 id="u4E0A_u4F20_u672C_u5730_u6307_u5B9A_u5206_u652F_u5230_u8FDC_u7A0B_u4ED3_u5E93"><a href="#u4E0A_u4F20_u672C_u5730_u6307_u5B9A_u5206_u652F_u5230_u8FDC_u7A0B_u4ED3_u5E93" class="headerlink" title="上传本地指定分支到远程仓库"></a>上传本地指定分支到远程仓库</h5><p>$ git push [remote] [branch]</p>
+<h5 id="u5F3A_u884C_u63A8_u9001_u5F53_u524D_u5206_u652F_u5230_u8FDC_u7A0B_u4ED3_u5E93_uFF0C_u5373_u4F7F_u6709_u51B2_u7A81"><a href="#u5F3A_u884C_u63A8_u9001_u5F53_u524D_u5206_u652F_u5230_u8FDC_u7A0B_u4ED3_u5E93_uFF0C_u5373_u4F7F_u6709_u51B2_u7A81" class="headerlink" title="强行推送当前分支到远程仓库，即使有冲突"></a>强行推送当前分支到远程仓库，即使有冲突</h5><p>$ git push [remote] –force</p>
+<h5 id="u63A8_u9001_u6240_u6709_u5206_u652F_u5230_u8FDC_u7A0B_u4ED3_u5E93"><a href="#u63A8_u9001_u6240_u6709_u5206_u652F_u5230_u8FDC_u7A0B_u4ED3_u5E93" class="headerlink" title="推送所有分支到远程仓库"></a>推送所有分支到远程仓库</h5><p>$ git push [remote] –all</p>
+<h3 id="u4E5D_u3001_u64A4_u9500"><a href="#u4E5D_u3001_u64A4_u9500" class="headerlink" title="九、撤销"></a>九、撤销</h3><h5 id="u6062_u590D_u6682_u5B58_u533A_u7684_u6307_u5B9A_u6587_u4EF6_u5230_u5DE5_u4F5C_u533A"><a href="#u6062_u590D_u6682_u5B58_u533A_u7684_u6307_u5B9A_u6587_u4EF6_u5230_u5DE5_u4F5C_u533A" class="headerlink" title="恢复暂存区的指定文件到工作区"></a>恢复暂存区的指定文件到工作区</h5><p>$ git checkout [file]</p>
+<h5 id="u6062_u590D_u67D0_u4E2Acommit_u7684_u6307_u5B9A_u6587_u4EF6_u5230_u6682_u5B58_u533A_u548C_u5DE5_u4F5C_u533A"><a href="#u6062_u590D_u67D0_u4E2Acommit_u7684_u6307_u5B9A_u6587_u4EF6_u5230_u6682_u5B58_u533A_u548C_u5DE5_u4F5C_u533A" class="headerlink" title="恢复某个commit的指定文件到暂存区和工作区"></a>恢复某个commit的指定文件到暂存区和工作区</h5><p>$ git checkout [commit] [file]</p>
+<h5 id="u6062_u590D_u6682_u5B58_u533A_u7684_u6240_u6709_u6587_u4EF6_u5230_u5DE5_u4F5C_u533A"><a href="#u6062_u590D_u6682_u5B58_u533A_u7684_u6240_u6709_u6587_u4EF6_u5230_u5DE5_u4F5C_u533A" class="headerlink" title="恢复暂存区的所有文件到工作区"></a>恢复暂存区的所有文件到工作区</h5><p>$ git checkout .</p>
+<h5 id="u91CD_u7F6E_u6682_u5B58_u533A_u7684_u6307_u5B9A_u6587_u4EF6_uFF0C_u4E0E_u4E0A_u4E00_u6B21commit_u4FDD_u6301_u4E00_u81F4_uFF0C_u4F46_u5DE5_u4F5C_u533A_u4E0D_u53D8"><a href="#u91CD_u7F6E_u6682_u5B58_u533A_u7684_u6307_u5B9A_u6587_u4EF6_uFF0C_u4E0E_u4E0A_u4E00_u6B21commit_u4FDD_u6301_u4E00_u81F4_uFF0C_u4F46_u5DE5_u4F5C_u533A_u4E0D_u53D8" class="headerlink" title="重置暂存区的指定文件，与上一次commit保持一致，但工作区不变"></a>重置暂存区的指定文件，与上一次commit保持一致，但工作区不变</h5><p>$ git reset [file]</p>
+<h5 id="u91CD_u7F6E_u6682_u5B58_u533A_u4E0E_u5DE5_u4F5C_u533A_uFF0C_u4E0E_u4E0A_u4E00_u6B21commit_u4FDD_u6301_u4E00_u81F4"><a href="#u91CD_u7F6E_u6682_u5B58_u533A_u4E0E_u5DE5_u4F5C_u533A_uFF0C_u4E0E_u4E0A_u4E00_u6B21commit_u4FDD_u6301_u4E00_u81F4" class="headerlink" title="重置暂存区与工作区，与上一次commit保持一致"></a>重置暂存区与工作区，与上一次commit保持一致</h5><p>$ git reset –hard</p>
+<h5 id="u91CD_u7F6E_u5F53_u524D_u5206_u652F_u7684_u6307_u9488_u4E3A_u6307_u5B9Acommit_uFF0C_u540C_u65F6_u91CD_u7F6E_u6682_u5B58_u533A_uFF0C_u4F46_u5DE5_u4F5C_u533A_u4E0D_u53D8"><a href="#u91CD_u7F6E_u5F53_u524D_u5206_u652F_u7684_u6307_u9488_u4E3A_u6307_u5B9Acommit_uFF0C_u540C_u65F6_u91CD_u7F6E_u6682_u5B58_u533A_uFF0C_u4F46_u5DE5_u4F5C_u533A_u4E0D_u53D8" class="headerlink" title="重置当前分支的指针为指定commit，同时重置暂存区，但工作区不变"></a>重置当前分支的指针为指定commit，同时重置暂存区，但工作区不变</h5><p>$ git reset [commit]</p>
+<h5 id="u91CD_u7F6E_u5F53_u524D_u5206_u652F_u7684HEAD_u4E3A_u6307_u5B9Acommit_uFF0C_u540C_u65F6_u91CD_u7F6E_u6682_u5B58_u533A_u548C_u5DE5_u4F5C_u533A_uFF0C_u4E0E_u6307_u5B9Acommit_u4E00_u81F4"><a href="#u91CD_u7F6E_u5F53_u524D_u5206_u652F_u7684HEAD_u4E3A_u6307_u5B9Acommit_uFF0C_u540C_u65F6_u91CD_u7F6E_u6682_u5B58_u533A_u548C_u5DE5_u4F5C_u533A_uFF0C_u4E0E_u6307_u5B9Acommit_u4E00_u81F4" class="headerlink" title="重置当前分支的HEAD为指定commit，同时重置暂存区和工作区，与指定commit一致"></a>重置当前分支的HEAD为指定commit，同时重置暂存区和工作区，与指定commit一致</h5><p>$ git reset –hard [commit]</p>
+<h5 id="u91CD_u7F6E_u5F53_u524DHEAD_u4E3A_u6307_u5B9Acommit_uFF0C_u4F46_u4FDD_u6301_u6682_u5B58_u533A_u548C_u5DE5_u4F5C_u533A_u4E0D_u53D8"><a href="#u91CD_u7F6E_u5F53_u524DHEAD_u4E3A_u6307_u5B9Acommit_uFF0C_u4F46_u4FDD_u6301_u6682_u5B58_u533A_u548C_u5DE5_u4F5C_u533A_u4E0D_u53D8" class="headerlink" title="重置当前HEAD为指定commit，但保持暂存区和工作区不变"></a>重置当前HEAD为指定commit，但保持暂存区和工作区不变</h5><p>$ git reset –keep [commit]</p>
+<h5 id="u65B0_u5EFA_u4E00_u4E2Acommit_uFF0C_u7528_u6765_u64A4_u9500_u6307_u5B9Acommit"><a href="#u65B0_u5EFA_u4E00_u4E2Acommit_uFF0C_u7528_u6765_u64A4_u9500_u6307_u5B9Acommit" class="headerlink" title="新建一个commit，用来撤销指定commit"></a>新建一个commit，用来撤销指定commit</h5><h5 id="u540E_u8005_u7684_u6240_u6709_u53D8_u5316_u90FD_u5C06_u88AB_u524D_u8005_u62B5_u6D88_uFF0C_u5E76_u4E14_u5E94_u7528_u5230_u5F53_u524D_u5206_u652F"><a href="#u540E_u8005_u7684_u6240_u6709_u53D8_u5316_u90FD_u5C06_u88AB_u524D_u8005_u62B5_u6D88_uFF0C_u5E76_u4E14_u5E94_u7528_u5230_u5F53_u524D_u5206_u652F" class="headerlink" title="后者的所有变化都将被前者抵消，并且应用到当前分支"></a>后者的所有变化都将被前者抵消，并且应用到当前分支</h5><p>$ git revert [commit]</p>
+<h3 id="u5341_u3001_u5176_u4ED6"><a href="#u5341_u3001_u5176_u4ED6" class="headerlink" title="十、其他"></a>十、其他</h3><h5 id="u751F_u6210_u4E00_u4E2A_u53EF_u4F9B_u53D1_u5E03_u7684_u538B_u7F29_u5305"><a href="#u751F_u6210_u4E00_u4E2A_u53EF_u4F9B_u53D1_u5E03_u7684_u538B_u7F29_u5305" class="headerlink" title="生成一个可供发布的压缩包"></a>生成一个可供发布的压缩包</h5><p>$ git archive</p>
+
+      
+    </div>
+    
+  </div>
+  
+    
+    <div class="copyright">
+        <p><span>本文标题:</span><a href="/2016/03/07/常用git命令清单/">常用git命令清单</a></p>
+        <p><span>文章作者:</span><a href="/" title="访问 Lueny 的个人博客">Lueny</a></p>
+        <p><span>发布时间:</span>2016年03月07日 - 21时14分</p>
+        <p><span>最后更新:</span>2016年03月07日 - 20时45分</p>
+        <p>
+            <span>原始链接:</span><a class="post-url" href="/2016/03/07/常用git命令清单/" title="常用git命令清单">http://yoursite.com/2016/03/07/常用git命令清单/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2016/03/07/常用git命令清单/　　作者: Lueny" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <script src="/js/clipboard.min.js"></script>
+            <script> var clipboard = new Clipboard('.copy-path'); </script>
+        </p>
+        <p>
+            <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/cn/" title="中国大陆 (CC BY-NC-SA 3.0 CN)" target = "_blank">"署名-非商用-相同方式共享 3.0"</a> 转载请保留原文链接及作者。
+        </p>
+    </div>
+
+
+
+    <nav id="article-nav">
+        
+        
+            <div id="article-nav-older" class="article-nav-title">
+                <a href="/2016/02/10/JavaScript学习笔记---Ajax入门(一)/">
+                    JavaScript学习笔记---Ajax入门(一)
+                </a>
+            </div>
+        
+    </nav>
+
+  
+</article>
+
+    <div id="toc" class="toc-article">
+    <strong class="toc-title">文章目录</strong>
+    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#u4E00_u3001_u65B0_u5EFA_u4EE3_u7801_u5E93"><span class="toc-number">1.</span> <span class="toc-text">一、新建代码库</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#u5728_u5F53_u524D_u76EE_u5F55_u65B0_u5EFA_u4E00_u4E2AGit_u4EE3_u7801_u5E93"><span class="toc-number">1.0.1.</span> <span class="toc-text">在当前目录新建一个Git代码库</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#u65B0_u5EFA_u4E00_u4E2A_u76EE_u5F55_uFF0C_u5C06_u5176_u521D_u59CB_u5316_u4E3AGit_u4EE3_u7801_u5E93"><span class="toc-number">1.0.2.</span> <span class="toc-text">新建一个目录，将其初始化为Git代码库</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#u4E0B_u8F7D_u4E00_u4E2A_u9879_u76EE_u548C_u5B83_u7684_u6574_u4E2A_u4EE3_u7801_u5386_u53F2"><span class="toc-number">1.0.3.</span> <span class="toc-text">下载一个项目和它的整个代码历史</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#u4E8C_u3001_u914D_u7F6E"><span class="toc-number">2.</span> <span class="toc-text">二、配置</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#u663E_u793A_u5F53_u524D_u7684Git_u914D_u7F6E"><span class="toc-number">2.0.1.</span> <span class="toc-text">显示当前的Git配置</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#u7F16_u8F91Git_u914D_u7F6E_u6587_u4EF6"><span class="toc-number">2.0.2.</span> <span class="toc-text">编辑Git配置文件</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#u8BBE_u7F6E_u63D0_u4EA4_u4EE3_u7801_u65F6_u7684_u7528_u6237_u4FE1_u606F"><span class="toc-number">2.0.3.</span> <span class="toc-text">设置提交代码时的用户信息</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#u4E09_u3001_u589E_u52A0/_u5220_u9664_u6587_u4EF6"><span class="toc-number">3.</span> <span class="toc-text">三、增加/删除文件</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#u6DFB_u52A0_u6307_u5B9A_u6587_u4EF6_u5230_u6682_u5B58_u533A"><span class="toc-number">3.0.1.</span> <span class="toc-text">添加指定文件到暂存区</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#u6DFB_u52A0_u6307_u5B9A_u76EE_u5F55_u5230_u6682_u5B58_u533A_uFF0C_u5305_u62EC_u5B50_u76EE_u5F55"><span class="toc-number">3.0.2.</span> <span class="toc-text">添加指定目录到暂存区，包括子目录</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#u6DFB_u52A0_u5F53_u524D_u76EE_u5F55_u7684_u6240_u6709_u6587_u4EF6_u5230_u6682_u5B58_u533A"><span class="toc-number">3.0.3.</span> <span class="toc-text">添加当前目录的所有文件到暂存区</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#u5220_u9664_u5DE5_u4F5C_u533A_u6587_u4EF6_uFF0C_u5E76_u4E14_u5C06_u8FD9_u6B21_u5220_u9664_u653E_u5165_u6682_u5B58_u533A"><span class="toc-number">3.0.4.</span> <span class="toc-text">删除工作区文件，并且将这次删除放入暂存区</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#u505C_u6B62_u8FFD_u8E2A_u6307_u5B9A_u6587_u4EF6_uFF0C_u4F46_u8BE5_u6587_u4EF6_u4F1A_u4FDD_u7559_u5728_u5DE5_u4F5C_u533A"><span class="toc-number">3.0.5.</span> <span class="toc-text">停止追踪指定文件，但该文件会保留在工作区</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#u6539_u540D_u6587_u4EF6_uFF0C_u5E76_u4E14_u5C06_u8FD9_u4E2A_u6539_u540D_u653E_u5165_u6682_u5B58_u533A"><span class="toc-number">3.0.6.</span> <span class="toc-text">改名文件，并且将这个改名放入暂存区</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#u56DB_u3001_u4EE3_u7801_u63D0_u4EA4"><span class="toc-number">4.</span> <span class="toc-text">四、代码提交</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#u63D0_u4EA4_u6682_u5B58_u533A_u5230_u4ED3_u5E93_u533A"><span class="toc-number">4.0.1.</span> <span class="toc-text">提交暂存区到仓库区</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#u63D0_u4EA4_u6682_u5B58_u533A_u7684_u6307_u5B9A_u6587_u4EF6_u5230_u4ED3_u5E93_u533A"><span class="toc-number">4.0.2.</span> <span class="toc-text">提交暂存区的指定文件到仓库区</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#u63D0_u4EA4_u5DE5_u4F5C_u533A_u81EA_u4E0A_u6B21commit_u4E4B_u540E_u7684_u53D8_u5316_uFF0C_u76F4_u63A5_u5230_u4ED3_u5E93_u533A"><span class="toc-number">4.0.3.</span> <span class="toc-text">提交工作区自上次commit之后的变化，直接到仓库区</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#u63D0_u4EA4_u65F6_u663E_u793A_u6240_u6709diff_u4FE1_u606F"><span class="toc-number">4.0.4.</span> <span class="toc-text">提交时显示所有diff信息</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#u4F7F_u7528_u4E00_u6B21_u65B0_u7684commit_uFF0C_u66FF_u4EE3_u4E0A_u4E00_u6B21_u63D0_u4EA4"><span class="toc-number">4.0.5.</span> <span class="toc-text">使用一次新的commit，替代上一次提交</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#u5982_u679C_u4EE3_u7801_u6CA1_u6709_u4EFB_u4F55_u65B0_u53D8_u5316_uFF0C_u5219_u7528_u6765_u6539_u5199_u4E0A_u4E00_u6B21commit_u7684_u63D0_u4EA4_u4FE1_u606F"><span class="toc-number">4.0.6.</span> <span class="toc-text">如果代码没有任何新变化，则用来改写上一次commit的提交信息</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#u91CD_u505A_u4E0A_u4E00_u6B21commit_uFF0C_u5E76_u5305_u62EC_u6307_u5B9A_u6587_u4EF6_u7684_u65B0_u53D8_u5316"><span class="toc-number">4.0.7.</span> <span class="toc-text">重做上一次commit，并包括指定文件的新变化</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#u4E94_u3001_u5206_u652F"><span class="toc-number">5.</span> <span class="toc-text">五、分支</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#u5217_u51FA_u6240_u6709_u672C_u5730_u5206_u652F"><span class="toc-number">5.0.1.</span> <span class="toc-text">列出所有本地分支</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#u5217_u51FA_u6240_u6709_u8FDC_u7A0B_u5206_u652F"><span class="toc-number">5.0.2.</span> <span class="toc-text">列出所有远程分支</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#u5217_u51FA_u6240_u6709_u672C_u5730_u5206_u652F_u548C_u8FDC_u7A0B_u5206_u652F"><span class="toc-number">5.0.3.</span> <span class="toc-text">列出所有本地分支和远程分支</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#u65B0_u5EFA_u4E00_u4E2A_u5206_u652F_uFF0C_u4F46_u4F9D_u7136_u505C_u7559_u5728_u5F53_u524D_u5206_u652F"><span class="toc-number">5.0.4.</span> <span class="toc-text">新建一个分支，但依然停留在当前分支</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#u65B0_u5EFA_u4E00_u4E2A_u5206_u652F_uFF0C_u5E76_u5207_u6362_u5230_u8BE5_u5206_u652F"><span class="toc-number">5.0.5.</span> <span class="toc-text">新建一个分支，并切换到该分支</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#u65B0_u5EFA_u4E00_u4E2A_u5206_u652F_uFF0C_u6307_u5411_u6307_u5B9Acommit"><span class="toc-number">5.0.6.</span> <span class="toc-text">新建一个分支，指向指定commit</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#u65B0_u5EFA_u4E00_u4E2A_u5206_u652F_uFF0C_u4E0E_u6307_u5B9A_u7684_u8FDC_u7A0B_u5206_u652F_u5EFA_u7ACB_u8FFD_u8E2A_u5173_u7CFB"><span class="toc-number">5.0.7.</span> <span class="toc-text">新建一个分支，与指定的远程分支建立追踪关系</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#u5207_u6362_u5230_u6307_u5B9A_u5206_u652F_uFF0C_u5E76_u66F4_u65B0_u5DE5_u4F5C_u533A"><span class="toc-number">5.0.8.</span> <span class="toc-text">切换到指定分支，并更新工作区</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#u5EFA_u7ACB_u8FFD_u8E2A_u5173_u7CFB_uFF0C_u5728_u73B0_u6709_u5206_u652F_u4E0E_u6307_u5B9A_u7684_u8FDC_u7A0B_u5206_u652F_u4E4B_u95F4"><span class="toc-number">5.0.9.</span> <span class="toc-text">建立追踪关系，在现有分支与指定的远程分支之间</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#u5408_u5E76_u6307_u5B9A_u5206_u652F_u5230_u5F53_u524D_u5206_u652F"><span class="toc-number">5.0.10.</span> <span class="toc-text">合并指定分支到当前分支</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#u9009_u62E9_u4E00_u4E2Acommit_uFF0C_u5408_u5E76_u8FDB_u5F53_u524D_u5206_u652F"><span class="toc-number">5.0.11.</span> <span class="toc-text">选择一个commit，合并进当前分支</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#u5220_u9664_u5206_u652F"><span class="toc-number">5.0.12.</span> <span class="toc-text">删除分支</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#u5220_u9664_u8FDC_u7A0B_u5206_u652F"><span class="toc-number">5.0.13.</span> <span class="toc-text">删除远程分支</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#u516D_u3001_u6807_u7B7E"><span class="toc-number">6.</span> <span class="toc-text">六、标签</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#u5217_u51FA_u6240_u6709tag"><span class="toc-number">6.0.1.</span> <span class="toc-text">列出所有tag</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#u65B0_u5EFA_u4E00_u4E2Atag_u5728_u5F53_u524Dcommit"><span class="toc-number">6.0.2.</span> <span class="toc-text">新建一个tag在当前commit</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#u65B0_u5EFA_u4E00_u4E2Atag_u5728_u6307_u5B9Acommit"><span class="toc-number">6.0.3.</span> <span class="toc-text">新建一个tag在指定commit</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#u5220_u9664_u672C_u5730tag"><span class="toc-number">6.0.4.</span> <span class="toc-text">删除本地tag</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#u5220_u9664_u8FDC_u7A0Btag"><span class="toc-number">6.0.5.</span> <span class="toc-text">删除远程tag</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#u67E5_u770Btag_u4FE1_u606F"><span class="toc-number">6.0.6.</span> <span class="toc-text">查看tag信息</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#u63D0_u4EA4_u6307_u5B9Atag"><span class="toc-number">6.0.7.</span> <span class="toc-text">提交指定tag</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#u63D0_u4EA4_u6240_u6709tag"><span class="toc-number">6.0.8.</span> <span class="toc-text">提交所有tag</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#u65B0_u5EFA_u4E00_u4E2A_u5206_u652F_uFF0C_u6307_u5411_u67D0_u4E2Atag"><span class="toc-number">6.0.9.</span> <span class="toc-text">新建一个分支，指向某个tag</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#u4E03_u3001_u67E5_u770B_u4FE1_u606F"><span class="toc-number">7.</span> <span class="toc-text">七、查看信息</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#u663E_u793A_u6709_u53D8_u66F4_u7684_u6587_u4EF6"><span class="toc-number">7.0.1.</span> <span class="toc-text">显示有变更的文件</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#u663E_u793A_u5F53_u524D_u5206_u652F_u7684_u7248_u672C_u5386_u53F2"><span class="toc-number">7.0.2.</span> <span class="toc-text">显示当前分支的版本历史</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#u663E_u793Acommit_u5386_u53F2_uFF0C_u4EE5_u53CA_u6BCF_u6B21commit_u53D1_u751F_u53D8_u66F4_u7684_u6587_u4EF6"><span class="toc-number">7.0.3.</span> <span class="toc-text">显示commit历史，以及每次commit发生变更的文件</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#u663E_u793A_u67D0_u4E2Acommit_u4E4B_u540E_u7684_u6240_u6709_u53D8_u52A8_uFF0C_u6BCF_u4E2Acommit_u5360_u636E_u4E00_u884C"><span class="toc-number">7.0.4.</span> <span class="toc-text">显示某个commit之后的所有变动，每个commit占据一行</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#u663E_u793A_u67D0_u4E2Acommit_u4E4B_u540E_u7684_u6240_u6709_u53D8_u52A8_uFF0C_u5176_u201D_u63D0_u4EA4_u8BF4_u660E_u201D_u5FC5_u987B_u7B26_u5408_u641C_u7D22_u6761_u4EF6"><span class="toc-number">7.0.5.</span> <span class="toc-text">显示某个commit之后的所有变动，其”提交说明”必须符合搜索条件</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#u663E_u793A_u67D0_u4E2A_u6587_u4EF6_u7684_u7248_u672C_u5386_u53F2_uFF0C_u5305_u62EC_u6587_u4EF6_u6539_u540D"><span class="toc-number">7.0.6.</span> <span class="toc-text">显示某个文件的版本历史，包括文件改名</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#u663E_u793A_u6307_u5B9A_u6587_u4EF6_u76F8_u5173_u7684_u6BCF_u4E00_u6B21diff"><span class="toc-number">7.0.7.</span> <span class="toc-text">显示指定文件相关的每一次diff</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#u663E_u793A_u6307_u5B9A_u6587_u4EF6_u662F_u4EC0_u4E48_u4EBA_u5728_u4EC0_u4E48_u65F6_u95F4_u4FEE_u6539_u8FC7"><span class="toc-number">7.0.8.</span> <span class="toc-text">显示指定文件是什么人在什么时间修改过</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#u663E_u793A_u6682_u5B58_u533A_u548C_u5DE5_u4F5C_u533A_u7684_u5DEE_u5F02"><span class="toc-number">7.0.9.</span> <span class="toc-text">显示暂存区和工作区的差异</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#u663E_u793A_u6682_u5B58_u533A_u548C_u4E0A_u4E00_u4E2Acommit_u7684_u5DEE_u5F02"><span class="toc-number">7.0.10.</span> <span class="toc-text">显示暂存区和上一个commit的差异</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#u663E_u793A_u5DE5_u4F5C_u533A_u4E0E_u5F53_u524D_u5206_u652F_u6700_u65B0commit_u4E4B_u95F4_u7684_u5DEE_u5F02"><span class="toc-number">7.0.11.</span> <span class="toc-text">显示工作区与当前分支最新commit之间的差异</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#u663E_u793A_u4E24_u6B21_u63D0_u4EA4_u4E4B_u95F4_u7684_u5DEE_u5F02"><span class="toc-number">7.0.12.</span> <span class="toc-text">显示两次提交之间的差异</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#u663E_u793A_u67D0_u6B21_u63D0_u4EA4_u7684_u5143_u6570_u636E_u548C_u5185_u5BB9_u53D8_u5316"><span class="toc-number">7.0.13.</span> <span class="toc-text">显示某次提交的元数据和内容变化</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#u663E_u793A_u67D0_u6B21_u63D0_u4EA4_u53D1_u751F_u53D8_u5316_u7684_u6587_u4EF6"><span class="toc-number">7.0.14.</span> <span class="toc-text">显示某次提交发生变化的文件</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#u663E_u793A_u67D0_u6B21_u63D0_u4EA4_u65F6_uFF0C_u67D0_u4E2A_u6587_u4EF6_u7684_u5185_u5BB9"><span class="toc-number">7.0.15.</span> <span class="toc-text">显示某次提交时，某个文件的内容</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#u663E_u793A_u5F53_u524D_u5206_u652F_u7684_u6700_u8FD1_u51E0_u6B21_u63D0_u4EA4"><span class="toc-number">7.0.16.</span> <span class="toc-text">显示当前分支的最近几次提交</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#u516B_u3001_u8FDC_u7A0B_u540C_u6B65"><span class="toc-number">8.</span> <span class="toc-text">八、远程同步</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#u4E0B_u8F7D_u8FDC_u7A0B_u4ED3_u5E93_u7684_u6240_u6709_u53D8_u52A8"><span class="toc-number">8.0.1.</span> <span class="toc-text">下载远程仓库的所有变动</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#u663E_u793A_u6240_u6709_u8FDC_u7A0B_u4ED3_u5E93"><span class="toc-number">8.0.2.</span> <span class="toc-text">显示所有远程仓库</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#u663E_u793A_u67D0_u4E2A_u8FDC_u7A0B_u4ED3_u5E93_u7684_u4FE1_u606F"><span class="toc-number">8.0.3.</span> <span class="toc-text">显示某个远程仓库的信息</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#u589E_u52A0_u4E00_u4E2A_u65B0_u7684_u8FDC_u7A0B_u4ED3_u5E93_uFF0C_u5E76_u547D_u540D"><span class="toc-number">8.0.4.</span> <span class="toc-text">增加一个新的远程仓库，并命名</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#u53D6_u56DE_u8FDC_u7A0B_u4ED3_u5E93_u7684_u53D8_u5316_uFF0C_u5E76_u4E0E_u672C_u5730_u5206_u652F_u5408_u5E76"><span class="toc-number">8.0.5.</span> <span class="toc-text">取回远程仓库的变化，并与本地分支合并</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#u4E0A_u4F20_u672C_u5730_u6307_u5B9A_u5206_u652F_u5230_u8FDC_u7A0B_u4ED3_u5E93"><span class="toc-number">8.0.6.</span> <span class="toc-text">上传本地指定分支到远程仓库</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#u5F3A_u884C_u63A8_u9001_u5F53_u524D_u5206_u652F_u5230_u8FDC_u7A0B_u4ED3_u5E93_uFF0C_u5373_u4F7F_u6709_u51B2_u7A81"><span class="toc-number">8.0.7.</span> <span class="toc-text">强行推送当前分支到远程仓库，即使有冲突</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#u63A8_u9001_u6240_u6709_u5206_u652F_u5230_u8FDC_u7A0B_u4ED3_u5E93"><span class="toc-number">8.0.8.</span> <span class="toc-text">推送所有分支到远程仓库</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#u4E5D_u3001_u64A4_u9500"><span class="toc-number">9.</span> <span class="toc-text">九、撤销</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#u6062_u590D_u6682_u5B58_u533A_u7684_u6307_u5B9A_u6587_u4EF6_u5230_u5DE5_u4F5C_u533A"><span class="toc-number">9.0.1.</span> <span class="toc-text">恢复暂存区的指定文件到工作区</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#u6062_u590D_u67D0_u4E2Acommit_u7684_u6307_u5B9A_u6587_u4EF6_u5230_u6682_u5B58_u533A_u548C_u5DE5_u4F5C_u533A"><span class="toc-number">9.0.2.</span> <span class="toc-text">恢复某个commit的指定文件到暂存区和工作区</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#u6062_u590D_u6682_u5B58_u533A_u7684_u6240_u6709_u6587_u4EF6_u5230_u5DE5_u4F5C_u533A"><span class="toc-number">9.0.3.</span> <span class="toc-text">恢复暂存区的所有文件到工作区</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#u91CD_u7F6E_u6682_u5B58_u533A_u7684_u6307_u5B9A_u6587_u4EF6_uFF0C_u4E0E_u4E0A_u4E00_u6B21commit_u4FDD_u6301_u4E00_u81F4_uFF0C_u4F46_u5DE5_u4F5C_u533A_u4E0D_u53D8"><span class="toc-number">9.0.4.</span> <span class="toc-text">重置暂存区的指定文件，与上一次commit保持一致，但工作区不变</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#u91CD_u7F6E_u6682_u5B58_u533A_u4E0E_u5DE5_u4F5C_u533A_uFF0C_u4E0E_u4E0A_u4E00_u6B21commit_u4FDD_u6301_u4E00_u81F4"><span class="toc-number">9.0.5.</span> <span class="toc-text">重置暂存区与工作区，与上一次commit保持一致</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#u91CD_u7F6E_u5F53_u524D_u5206_u652F_u7684_u6307_u9488_u4E3A_u6307_u5B9Acommit_uFF0C_u540C_u65F6_u91CD_u7F6E_u6682_u5B58_u533A_uFF0C_u4F46_u5DE5_u4F5C_u533A_u4E0D_u53D8"><span class="toc-number">9.0.6.</span> <span class="toc-text">重置当前分支的指针为指定commit，同时重置暂存区，但工作区不变</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#u91CD_u7F6E_u5F53_u524D_u5206_u652F_u7684HEAD_u4E3A_u6307_u5B9Acommit_uFF0C_u540C_u65F6_u91CD_u7F6E_u6682_u5B58_u533A_u548C_u5DE5_u4F5C_u533A_uFF0C_u4E0E_u6307_u5B9Acommit_u4E00_u81F4"><span class="toc-number">9.0.7.</span> <span class="toc-text">重置当前分支的HEAD为指定commit，同时重置暂存区和工作区，与指定commit一致</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#u91CD_u7F6E_u5F53_u524DHEAD_u4E3A_u6307_u5B9Acommit_uFF0C_u4F46_u4FDD_u6301_u6682_u5B58_u533A_u548C_u5DE5_u4F5C_u533A_u4E0D_u53D8"><span class="toc-number">9.0.8.</span> <span class="toc-text">重置当前HEAD为指定commit，但保持暂存区和工作区不变</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#u65B0_u5EFA_u4E00_u4E2Acommit_uFF0C_u7528_u6765_u64A4_u9500_u6307_u5B9Acommit"><span class="toc-number">9.0.9.</span> <span class="toc-text">新建一个commit，用来撤销指定commit</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#u540E_u8005_u7684_u6240_u6709_u53D8_u5316_u90FD_u5C06_u88AB_u524D_u8005_u62B5_u6D88_uFF0C_u5E76_u4E14_u5E94_u7528_u5230_u5F53_u524D_u5206_u652F"><span class="toc-number">9.0.10.</span> <span class="toc-text">后者的所有变化都将被前者抵消，并且应用到当前分支</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#u5341_u3001_u5176_u4ED6"><span class="toc-number">10.</span> <span class="toc-text">十、其他</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#u751F_u6210_u4E00_u4E2A_u53EF_u4F9B_u53D1_u5E03_u7684_u538B_u7F29_u5305"><span class="toc-number">10.0.1.</span> <span class="toc-text">生成一个可供发布的压缩包</span></a></li></ol></li></ol></li></ol>
+</div>
+<style>
+    .left-col .switch-btn {
+        display: none;
+    }
+    .left-col .switch-area {
+        display: none;
+    }
+</style>
+
+<input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
+
+<script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js" type="text/javascript"></script>
+<script>
+    var valueHide = "隐藏目录";
+    var valueShow = "显示目录";
+
+    if ($(".left-col").is(":hidden")) {
+        $("#tocButton").attr("value", valueShow);
+    }
+
+    $("#tocButton").click(function() {
+        if ($("#toc").is(":hidden")) {
+            $("#tocButton").attr("value", valueHide);
+            $("#toc").slideDown(320);
+            $(".switch-btn, .switch-area").fadeOut(300);
+        }
+        else {
+            $("#tocButton").attr("value", valueShow);
+            $("#toc").slideUp(350);
+            $(".switch-btn, .switch-area").fadeIn(500);
+        }
+    })
+
+    if ($(".toc").length < 1) {
+        $("#toc, #tocButton").hide();
+        $(".switch-btn, .switch-area").show();
+    }
+</script>
+
+
+
+
+<div class="share">
+    <div class="bdsharebuttonbox">
+    <a href="#" class="bds_more" data-cmd="more"></a>
+    <a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+    <a href="#" class="bds_sqq" data-cmd="sqq" title="分享给 QQ 好友"></a>
+    <a href="#" class="bds_copy" data-cmd="copy" title="复制网址"></a>
+    <a href="#" class="bds_mail" data-cmd="mail" title="通过邮件分享"></a>
+    <a href="#" class="bds_weixin" data-cmd="weixin" title="生成文章二维码"></a>
+    </div>
+    <script>
+        window._bd_share_config={
+            "common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+    </script>
+</div>
+
+
+
+    
+      <div class="duoshuo" id="comments">
+    <!-- 多说评论框 start -->
+    <div class="ds-thread" data-thread-key="2016/03/07/常用git命令清单/" data-title="常用git命令清单" data-url="http://yoursite.com/2016/03/07/常用git命令清单/"></div>
+    <!-- 多说评论框 end -->
+    <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+    <script type="text/javascript">
+    var duoshuoQuery = {short_name:"lueny-cn"};
+    (function() {
+        var ds = document.createElement('script');
+        ds.type = 'text/javascript';ds.async = true;
+        ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+        ds.charset = 'UTF-8';
+        (document.getElementsByTagName('head')[0] 
+         || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+    </script>
+    <!-- 多说公共JS代码 end -->
+</div>
+
+    
+
+
+
+
+    <div class="scroll" id="post-nav-button">
+        
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
+        
+
+        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+
+        
+            <a href="/2016/02/10/JavaScript学习笔记---Ajax入门(一)/" title="下一篇: JavaScript学习笔记---Ajax入门(一)">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        
+    </div>
+
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2016/03/07/常用git命令清单/">常用git命令清单</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/10/JavaScript学习笔记---Ajax入门(一)/">JavaScript学习笔记---Ajax入门(一)</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/26/JavaScript学习笔记---Ajax入门(零)/">JavaScript学习笔记---Ajax入门(零)</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/17/JavaScript之理解闭包/">JavaScript学习笔记---理解闭包</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/07/hello-lwy/">hello-lwy</a></li></ul>
+    <script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+    <script>
+        $(".post-list").addClass("toc-article");
+        $(".post-list-item a").attr("target","_blank");
+        $("#post-nav-button > a:nth-child(2)").click(function() {
+            $(".fa-bars, .fa-times").toggle();
+            $(".post-list").toggle(300);
+            if ($(".toc").length > 0) {
+                $("#toc, #tocButton").toggle(200, function() {
+                    if ($(".switch-area").is(":visible")) {
+                        $("#toc, .switch-btn, .switch-area").toggle();
+                        $("#tocButton").attr("value", valueHide);
+                        }
+                    })
+            }
+            else {
+                $(".switch-btn, .switch-area").fadeToggle(300);
+            }
+        })
+    </script>
+
+
+
+
+    <script>
+        
+    </script>
+</div>
+      <footer id="footer">
+    <div class="outer">
+        <div id="footer-info">
+            <div class="footer-left">
+                &copy; 2016 Lueny
+            </div>
+            <div class="footer-right">
+                <a href="http://hexo.io/" target="_blank" title="快速、简洁且高效的静态博客框架">Hexo</a>  Theme <a href="https://github.com/MOxFIVE/hexo-theme-yelee" target="_blank" title="简而不减双栏 Hexo 博客主题">Yelee</a> by MOxFIVE
+            </div>
+        </div>
+        <div class="visit">
+            <span id="busuanzi_container_site_pv" style='display:none'>
+                <span id="site-visit" >本站到访数: 
+                    <span id="busuanzi_value_site_uv"></span>
+                </span>
+            </span>
+            <span id="busuanzi_container_page_pv" style='display:none'>
+                <span id="page-visit">, 本页阅读量: 
+                    <span id="busuanzi_value_page_pv"></span>
+                </span>
+            </span>
+        </div>
+    </div>
+</footer>
+    </div>
+    <script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js" type="text/javascript"></script>
+<script src="/js/main.js" type="text/javascript"></script>
+
+    <script>
+        $(document).ready(function() {
+            var iPad = window.navigator.userAgent.indexOf('iPad');
+            if (iPad > -1 || $(".left-col").css("display") === "none") {
+                var bgColorList = ["#9db3f4", "#414141", "#e5a859", "#f5dfc6", "#c084a0", "#847e72", "#cd8390", "#996731"];
+                var bgColor = Math.ceil(Math.random() * (bgColorList.length - 1));
+                $("body").css({"background-color": bgColorList[bgColor], "background-size": "cover"});
+            }
+            else {
+                //var backgroundnum = 5;
+                //var backgroundimg = "url(/background/bg-x.jpg)".replace(/x/gi, Math.ceil(Math.random() * backgroundnum));
+                //$("body").css({"background": backgroundimg, "background-attachment": "fixed", "background-size": "cover"});
+                $("body").css({"background-color": "#f5f5f5"});
+            }
+        })
+    </script>
+
+
+
+
+<div class="scroll" id="scroll">
+    <a href="#" title="返回顶部"><i class="fa fa-arrow-up"></i></a>
+    <a href="#comments" title="查看评论"><i class="fa fa-comments-o"></i></a>
+    <a href="#footer" title="转到底部"><i class="fa fa-arrow-down"></i></a>
+</div>
+
+<script>
+    $(document).ready(function() {
+        if ($("#comments").length < 1) {
+            $("#scroll > a:nth-child(2)").hide();
+        };
+    })
+</script>
+
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+  </div>
+</body>
+</html>
