@@ -214,7 +214,7 @@
   
     <div class="article-meta">
       <a href="/2016/03/10/sort/" class="article-date">
-      <time datetime="2016-03-10T06:09:48.363Z" itemprop="datePublished">2016-03-10</time>
+      <time datetime="2016-03-10T06:15:02.949Z" itemprop="datePublished">2016-03-10</time>
 </a>
     </div>
   
@@ -227,7 +227,7 @@
       
           
         <hr>
-<p>title: JavaScript排序算法<br>date: 2016-01-17 21:14:23<br>tags: JavaS<br>```JavaScript<br>//8种排序算法<br>var a = [];<br>var printf = function() {<br>    console.log(arguments[1] + “: “);<br>    console.log(arguments[0]);<br>};</p>
+<p>title: JavaScript排序算法<br>date: 2016-01-17 21:14:23<br>tags: JavaScript<br>```JavaScript<br>//8种排序算法<br>var a = [];<br>var printf = function() {<br>    console.log(arguments[1] + “: “);<br>    console.log(arguments[0]);<br>};</p>
 <p>//原型方法封装<br>if (!Function.prototype.sortMethod) {<br>    Function.prototype.sortMethod = function(name, func) {<br>        this.prototype[name] = func;<br>        return this;<br>    };<br>}</p>
 <p>//插入排序<br>//思路: 从 无序区 的第一个元素开始和它前面有序区的元素进行比较，<br>//如果比前面的元素小，那么前面的元素向后移动，否则就将此元素插入到相应的位置。<br>Array.sortMethod(‘insertSort’, function() {<br>    var len = this.length,<br>        i, j, temp;<br>    for (i = 1; i &lt; len; i++) {<br>        temp = this[i];<br>        j = i - 1;<br>        while (j &gt;= 0 &amp;&amp; temp &lt; this[j]) {<br>            this[j + 1] = this[j];<br>            j–;<br>        }<br>        this[j + 1] = temp;<br>    }<br>    return this;<br>});</p>
 <p>/**</p>
