@@ -3,21 +3,21 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Lueny-blog</title>
+  <title>JavaScript排序算法 | Lueny-blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="title: JavaScript排序算法date: 2016-01-17 21:14:23tags: JavaScript```JavaScript//8种排序算法var a = [];var printf = function() {    console.log(arguments[1] + “: “);    console.log(arguments[0]);};
-//原型方法封装if">
+  <meta name="description" content="```JavaScript//8种排序算法var a = [];var printf = function() {    console.log(arguments[1] + “: “);    console.log(arguments[0]);};
+//原型方法封装if (!Function.prototype.sortMethod) {    Function.prototype.sortM">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Lueny-blog">
-<meta property="og:url" content="http://yoursite.com/2016/03/10/sort/index.html">
+<meta property="og:title" content="JavaScript排序算法">
+<meta property="og:url" content="http://yoursite.com/2016/01/17/sort/index.html">
 <meta property="og:site_name" content="Lueny-blog">
-<meta property="og:description" content="title: JavaScript排序算法date: 2016-01-17 21:14:23tags: JavaScript```JavaScript//8种排序算法var a = [];var printf = function() {    console.log(arguments[1] + “: “);    console.log(arguments[0]);};
-//原型方法封装if">
-<meta property="og:updated_time" content="2016-03-10T06:15:02.949Z">
+<meta property="og:description" content="```JavaScript//8种排序算法var a = [];var printf = function() {    console.log(arguments[1] + “: “);    console.log(arguments[0]);};
+//原型方法封装if (!Function.prototype.sortMethod) {    Function.prototype.sortM">
+<meta property="og:updated_time" content="2016-03-10T06:16:36.453Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Lueny-blog">
-<meta name="twitter:description" content="title: JavaScript排序算法date: 2016-01-17 21:14:23tags: JavaScript```JavaScript//8种排序算法var a = [];var printf = function() {    console.log(arguments[1] + “: “);    console.log(arguments[0]);};
-//原型方法封装if">
+<meta name="twitter:title" content="JavaScript排序算法">
+<meta name="twitter:description" content="```JavaScript//8种排序算法var a = [];var printf = function() {    console.log(arguments[1] + “: “);    console.log(arguments[0]);};
+//原型方法封装if (!Function.prototype.sortMethod) {    Function.prototype.sortM">
   
     <link rel="alternative" href="/atom.xml" title="Lueny-blog" type="application/atom+xml">
   
@@ -212,8 +212,8 @@
       <div class="body-wrap"><article id="post-sort" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2016/03/10/sort/" class="article-date">
-      <time datetime="2016-03-10T06:15:02.949Z" itemprop="datePublished">2016-03-10</time>
+      <a href="/2016/01/17/sort/" class="article-date">
+      <time datetime="2016-01-17T13:14:23.000Z" itemprop="datePublished">2016-01-17</time>
 </a>
     </div>
   
@@ -222,11 +222,32 @@
       <input type="hidden" class="isFancy" />
     
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      JavaScript排序算法
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+
+        
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
+    </div>
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
     <div class="article-entry" itemprop="articleBody">
       
           
-        <hr>
-<p>title: JavaScript排序算法<br>date: 2016-01-17 21:14:23<br>tags: JavaScript<br>```JavaScript<br>//8种排序算法<br>var a = [];<br>var printf = function() {<br>    console.log(arguments[1] + “: “);<br>    console.log(arguments[0]);<br>};</p>
+        <p>```JavaScript<br>//8种排序算法<br>var a = [];<br>var printf = function() {<br>    console.log(arguments[1] + “: “);<br>    console.log(arguments[0]);<br>};</p>
 <p>//原型方法封装<br>if (!Function.prototype.sortMethod) {<br>    Function.prototype.sortMethod = function(name, func) {<br>        this.prototype[name] = func;<br>        return this;<br>    };<br>}</p>
 <p>//插入排序<br>//思路: 从 无序区 的第一个元素开始和它前面有序区的元素进行比较，<br>//如果比前面的元素小，那么前面的元素向后移动，否则就将此元素插入到相应的位置。<br>Array.sortMethod(‘insertSort’, function() {<br>    var len = this.length,<br>        i, j, temp;<br>    for (i = 1; i &lt; len; i++) {<br>        temp = this[i];<br>        j = i - 1;<br>        while (j &gt;= 0 &amp;&amp; temp &lt; this[j]) {<br>            this[j + 1] = this[j];<br>            j–;<br>        }<br>        this[j + 1] = temp;<br>    }<br>    return this;<br>});</p>
 <p>/**</p>
@@ -350,13 +371,13 @@ return this;
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/2016/03/10/sort/"></a></p>
+        <p><span>本文标题:</span><a href="/2016/01/17/sort/">JavaScript排序算法</a></p>
         <p><span>文章作者:</span><a href="/" title="访问 Lueny 的个人博客">Lueny</a></p>
-        <p><span>发布时间:</span>2016年03月10日 - 14时15分</p>
-        <p><span>最后更新:</span>2016年03月10日 - 14时15分</p>
+        <p><span>发布时间:</span>2016年01月17日 - 21时14分</p>
+        <p><span>最后更新:</span>2016年03月10日 - 14时16分</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2016/03/10/sort/" title="">http://yoursite.com/2016/03/10/sort/</a>
-            <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2016/03/10/sort/　　作者: Lueny" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/2016/01/17/sort/" title="JavaScript排序算法">http://yoursite.com/2016/01/17/sort/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2016/01/17/sort/　　作者: Lueny" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script src="/js/clipboard.min.js"></script>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
@@ -369,10 +390,16 @@ return this;
 
     <nav id="article-nav">
         
+            <div id="article-nav-newer" class="article-nav-title">
+                <a href="/2016/01/17/JavaScript之理解闭包/">
+                    JavaScript学习笔记---理解闭包
+                </a>
+            </div>
+        
         
             <div id="article-nav-older" class="article-nav-title">
-                <a href="/2016/03/07/常用git命令清单/">
-                    常用git命令清单
+                <a href="/2016/01/07/hello-lwy/">
+                    hello-lwy
                 </a>
             </div>
         
@@ -447,7 +474,7 @@ return this;
     
       <div class="duoshuo" id="comments">
     <!-- 多说评论框 start -->
-    <div class="ds-thread" data-thread-key="2016/03/10/sort/" data-title="" data-url="http://yoursite.com/2016/03/10/sort/"></div>
+    <div class="ds-thread" data-thread-key="2016/01/17/sort/" data-title="JavaScript排序算法" data-url="http://yoursite.com/2016/01/17/sort/"></div>
     <!-- 多说评论框 end -->
     <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
     <script type="text/javascript">
@@ -471,19 +498,21 @@ return this;
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
+            <a href="/2016/01/17/JavaScript之理解闭包/" title="上一篇: JavaScript学习笔记---理解闭包">
+                <i class="fa fa-angle-left"></i>
+            </a>
         
 
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
 
         
-            <a href="/2016/03/07/常用git命令清单/" title="下一篇: 常用git命令清单">
+            <a href="/2016/01/07/hello-lwy/" title="下一篇: hello-lwy">
                 <i class="fa fa-angle-right"></i>
             </a>
         
     </div>
 
-    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2016/03/10/sort/">sort</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/03/07/常用git命令清单/">常用git命令清单</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/10/JavaScript学习笔记---Ajax入门(一)/">JavaScript学习笔记---Ajax入门(一)</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/26/JavaScript学习笔记---Ajax入门(零)/">JavaScript学习笔记---Ajax入门(零)</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/17/JavaScript之理解闭包/">JavaScript学习笔记---理解闭包</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/07/hello-lwy/">hello-lwy</a></li></ul>
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2016/03/07/常用git命令清单/">常用git命令清单</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/10/JavaScript学习笔记---Ajax入门(一)/">JavaScript学习笔记---Ajax入门(一)</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/26/JavaScript学习笔记---Ajax入门(零)/">JavaScript学习笔记---Ajax入门(零)</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/17/JavaScript之理解闭包/">JavaScript学习笔记---理解闭包</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/17/sort/">JavaScript排序算法</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/07/hello-lwy/">hello-lwy</a></li></ul>
     <script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
     <script>
         $(".post-list").addClass("toc-article");
