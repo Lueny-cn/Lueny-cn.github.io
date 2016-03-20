@@ -12,7 +12,7 @@
 <meta property="og:site_name" content="Lueny-blog">
 <meta property="og:description" content="排序算法应该是程序猿应该掌握的最基本的算法吧, 下面就是最近整理的一些常用的排序算法, 写下来备忘。">
 <meta property="og:image" content="http://7xq76k.com1.z0.glb.clouddn.com/sort.png">
-<meta property="og:updated_time" content="2016-03-20T05:30:53.542Z">
+<meta property="og:updated_time" content="2016-03-20T06:12:56.854Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JavaScript实现常用排序算法">
 <meta name="twitter:description" content="排序算法应该是程序猿应该掌握的最基本的算法吧, 下面就是最近整理的一些常用的排序算法, 写下来备忘。">
@@ -254,8 +254,8 @@
 </ul>
 </blockquote>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Array</span>.sortMethod(<span class="string">'insertSort'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> len = <span class="keyword">this</span>.length,</span><br><span class="line">        i, j, temp;</span><br><span class="line">    <span class="keyword">for</span> (i = <span class="number">1</span>; i &lt; len; i++) &#123;</span><br><span class="line">        temp = <span class="keyword">this</span>[i];</span><br><span class="line">        j = i - <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">while</span> (j &gt;= <span class="number">0</span> &amp;&amp; temp &lt; <span class="keyword">this</span>[j]) &#123;</span><br><span class="line">            <span class="keyword">this</span>[j + <span class="number">1</span>] = <span class="keyword">this</span>[j];</span><br><span class="line">            j--;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">this</span>[j + <span class="number">1</span>] = temp;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">this</span>;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-<h3 id="u4E8C_u5206_u63D2_u5165_u6392_u5E8F"><a href="#u4E8C_u5206_u63D2_u5165_u6392_u5E8F" class="headerlink" title="二分插入排序"></a>二分插入排序</h3><pre><code>在直接插入排序的基础上改进,其与直接插入排序算法最大的区别在于查找插入位置时使用的是二分查找的方式，在速度上有一定提升。
-</code></pre><blockquote>
+<h3 id="u4E8C_u5206_u63D2_u5165_u6392_u5E8F"><a href="#u4E8C_u5206_u63D2_u5165_u6392_u5E8F" class="headerlink" title="二分插入排序"></a>二分插入排序</h3><p>在直接插入排序的基础上改进,其与直接插入排序算法最大的区别在于查找插入位置时使用的是二分查找的方式，在速度上有一定提升。</p>
+<blockquote>
 <ul>
 <li>思路:先在 有序区 通过二分查找的方法找到移动元素的起始位置，然后通过这个起始位置将后面所有的元素后移。</li>
 <li>平均复杂度: O(nlog n)</li>
@@ -337,7 +337,7 @@
         <p><span>本文标题:</span><a href="/2016/03/17/sort/">JavaScript实现常用排序算法</a></p>
         <p><span>文章作者:</span><a href="/" title="访问 Lueny 的个人博客">Lueny</a></p>
         <p><span>发布时间:</span>2016年03月17日 - 21时14分</p>
-        <p><span>最后更新:</span>2016年03月20日 - 13时30分</p>
+        <p><span>最后更新:</span>2016年03月20日 - 14时12分</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/2016/03/17/sort/" title="JavaScript实现常用排序算法">http://yoursite.com/2016/03/17/sort/</a>
             <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2016/03/17/sort/　　作者: Lueny" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
