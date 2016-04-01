@@ -8,12 +8,7 @@
   <meta name="description" content="什么是格雷码?
 格雷码(Gray Code)是一个数列集合，每个数使用二进位来表示，假设使用n位元来表示每个数字，任两个相邻数之间只有一个位元值不同
 
-比如3元格雷码: 
-
-000 001 011 010 110 111 101 100
-
-那我们怎么生成3元格雷码呢?
-生成格雷码思路一:以二进制为0值的格雷码为第零项，第一项改变最右边的位元，第二项改变右起第一个为1的位元的左边位元，第三、四项方法">
+比如3元格雷码:000 001 011 010 110 111 101 100">
 <meta property="og:type" content="article">
 <meta property="og:title" content="编程题笔记-格雷码生成">
 <meta property="og:url" content="http://yoursite.com/2016/03/26/getGray/index.html">
@@ -21,25 +16,15 @@
 <meta property="og:description" content="什么是格雷码?
 格雷码(Gray Code)是一个数列集合，每个数使用二进位来表示，假设使用n位元来表示每个数字，任两个相邻数之间只有一个位元值不同
 
-比如3元格雷码: 
-
-000 001 011 010 110 111 101 100
-
-那我们怎么生成3元格雷码呢?
-生成格雷码思路一:以二进制为0值的格雷码为第零项，第一项改变最右边的位元，第二项改变右起第一个为1的位元的左边位元，第三、四项方法">
+比如3元格雷码:000 001 011 010 110 111 101 100">
 <meta property="og:image" content="http://7xq76k.com1.z0.glb.clouddn.com/grayCode.png">
-<meta property="og:updated_time" content="2016-04-01T07:51:19.275Z">
+<meta property="og:updated_time" content="2016-04-01T07:57:14.527Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="编程题笔记-格雷码生成">
 <meta name="twitter:description" content="什么是格雷码?
 格雷码(Gray Code)是一个数列集合，每个数使用二进位来表示，假设使用n位元来表示每个数字，任两个相邻数之间只有一个位元值不同
 
-比如3元格雷码: 
-
-000 001 011 010 110 111 101 100
-
-那我们怎么生成3元格雷码呢?
-生成格雷码思路一:以二进制为0值的格雷码为第零项，第一项改变最右边的位元，第二项改变右起第一个为1的位元的左边位元，第三、四项方法">
+比如3元格雷码:000 001 011 010 110 111 101 100">
   
     <link rel="alternative" href="/atom.xml" title="Lueny-blog" type="application/atom+xml">
   
@@ -161,7 +146,7 @@
                 
                 <section class="switch-part switch-part2">
                     <div class="widget tagcloud" id="js-tagcloud">
-                        <a href="/tags/Ajax/" style="font-size: 15px;">Ajax</a> <a href="/tags/JavaScript/" style="font-size: 20px;">JavaScript</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/算法/" style="font-size: 10px;">算法</a> <a href="/tags/随笔/" style="font-size: 10px;">随笔</a>
+                        <a href="/tags/Ajax/" style="font-size: 15px;">Ajax</a> <a href="/tags/JavaScript/" style="font-size: 20px;">JavaScript</a> <a href="/tags/JavaScript-算法/" style="font-size: 10px;">JavaScript 算法</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/算法/" style="font-size: 10px;">算法</a> <a href="/tags/随笔/" style="font-size: 10px;">随笔</a>
                     </div>
                 </section>
                 
@@ -271,13 +256,13 @@
           
         <h2 id="u4EC0_u4E48_u662F_u683C_u96F7_u7801_3F"><a href="#u4EC0_u4E48_u662F_u683C_u96F7_u7801_3F" class="headerlink" title="什么是格雷码?"></a>什么是格雷码?</h2><blockquote>
 <p>格雷码(Gray Code)是一个数列集合，每个数使用二进位来表示，假设使用n位元来表示每个数字，<strong>任两个相邻数之间只有一个位元值不同</strong></p>
+<ul>
+<li>比如3元格雷码:<br>000 001 011 010 110 111 101 100</li>
+</ul>
 </blockquote>
-<p>比如3元格雷码: </p>
-<blockquote>
-<p>000 001 011 010 110 111 101 100</p>
-</blockquote>
+<a id="more"></a>
 <p>那我们怎么生成3元格雷码呢?</p>
-<h3 id="u751F_u6210_u683C_u96F7_u7801_u601D_u8DEF_u4E00_3A"><a href="#u751F_u6210_u683C_u96F7_u7801_u601D_u8DEF_u4E00_3A" class="headerlink" title="生成格雷码思路一:"></a>生成格雷码思路一:</h3><p>以二进制为0值的格雷码为第零项，第一项改变最右边的位元，第二项改变右起第一个为1的位元的左边位元，第三、四项方法同第一、二项，如此反复，即可排列出n个位元的格雷码。</p>
+<h3 id="u751F_u6210_u683C_u96F7_u7801_u601D_u8DEF_u4E00"><a href="#u751F_u6210_u683C_u96F7_u7801_u601D_u8DEF_u4E00" class="headerlink" title="生成格雷码思路一"></a>生成格雷码思路一</h3><p>以二进制为0值的格雷码为第零项，第一项改变最右边的位元，第二项改变右起第一个为1的位元的左边位元，第三、四项方法同第一、二项，如此反复，即可排列出n个位元的格雷码。</p>
 <blockquote>
 <p>步骤: 生成3位元的格雷码，初始值: 000</p>
 <ul>
@@ -290,7 +275,7 @@
 <li>第七步：改变最右边的位元值：100</li>
 </ul>
 </blockquote>
-<h3 id="u751F_u6210_u683C_u96F7_u7801_u601D_u8DEF_u4E8C_3A"><a href="#u751F_u6210_u683C_u96F7_u7801_u601D_u8DEF_u4E8C_3A" class="headerlink" title="生成格雷码思路二:"></a>生成格雷码思路二:</h3><p>从格雷码的排列得出这样的规律: 除了最高位（左边第一位），格雷码的位元完全上下对称（看下面列表）。比如第一个格雷码与最后一个格雷码对称（除了第一位），第二个格雷码与倒数第二个对称，以此类推。</p>
+<h3 id="u751F_u6210_u683C_u96F7_u7801_u601D_u8DEF_u4E8C"><a href="#u751F_u6210_u683C_u96F7_u7801_u601D_u8DEF_u4E8C" class="headerlink" title="生成格雷码思路二"></a>生成格雷码思路二</h3><p>从格雷码的排列得出这样的规律: 除了最高位（左边第一位），格雷码的位元完全上下对称（看下面列表）。比如第一个格雷码与最后一个格雷码对称（除了第一位），第二个格雷码与倒数第二个对称，以此类推。</p>
 <blockquote>
 <ul>
 <li>维基百科：n位元的格雷码可以从n-1位元的格雷码以上下镜射后加上新位元的方式快速的得到</li>
@@ -298,7 +283,8 @@
 </blockquote>
 <div style="text-align: center"><br><img title="GetGray" src="http://7xq76k.com1.z0.glb.clouddn.com/grayCode.png"><br></div>
 
-<h3 id="JavaScript_u4EE3_u7801"><a href="#JavaScript_u4EE3_u7801" class="headerlink" title="JavaScript代码"></a>JavaScript代码</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//对称性生成法</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">getGray</span>(<span class="params">n</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> grayArr = [];</span><br><span class="line">    <span class="keyword">if</span>(n &lt; <span class="number">1</span> ) <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    <span class="keyword">if</span>(n == <span class="number">1</span>) &#123;</span><br><span class="line">        grayArr.push(<span class="string">"0"</span>);</span><br><span class="line">        grayArr.push(<span class="string">"1"</span>);</span><br><span class="line">        <span class="keyword">return</span> grayArr;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">var</span> gray = getGray(n - <span class="number">1</span>);</span><br><span class="line">    <span class="keyword">var</span> len = <span class="built_in">Math</span>.pow(<span class="number">2</span>, n - <span class="number">1</span>);</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; len; i++) &#123;</span><br><span class="line">        grayArr.push(<span class="string">"0"</span> + gray[i]);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> i = len - <span class="number">1</span>; i &gt;= <span class="number">0</span>; i--) &#123;</span><br><span class="line">        grayArr.push(<span class="string">"1"</span> + gray[i]);</span><br><span class="line">    &#125; </span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> grayArr; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="JavaScript_u4EE3_u7801"><a href="#JavaScript_u4EE3_u7801" class="headerlink" title="JavaScript代码"></a>JavaScript代码</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//利用格雷码n-1位后对称性生成 n 位格雷码</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">getGray</span>(<span class="params">n</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> grayArr = [];</span><br><span class="line">    <span class="keyword">if</span>(n &lt; <span class="number">1</span> ) <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    <span class="keyword">if</span>(n == <span class="number">1</span>) &#123;</span><br><span class="line">        grayArr.push(<span class="string">"0"</span>);</span><br><span class="line">        grayArr.push(<span class="string">"1"</span>);</span><br><span class="line">        <span class="keyword">return</span> grayArr;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">var</span> gray = getGray(n - <span class="number">1</span>);</span><br><span class="line">    <span class="keyword">var</span> len = <span class="built_in">Math</span>.pow(<span class="number">2</span>, n - <span class="number">1</span>);</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; len; i++) &#123;</span><br><span class="line">        grayArr.push(<span class="string">"0"</span> + gray[i]);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> i = len - <span class="number">1</span>; i &gt;= <span class="number">0</span>; i--) &#123;</span><br><span class="line">        grayArr.push(<span class="string">"1"</span> + gray[i]);</span><br><span class="line">    &#125; </span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> grayArr; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>参考资料: <a href="https://zh.wikipedia.org/zh-cn/格雷码" target="_blank" rel="external">格雷码- 维基百科，自由的百科全书</a></p>
 
       
     </div>
@@ -310,7 +296,7 @@
         <p><span>本文标题:</span><a href="/2016/03/26/getGray/">编程题笔记-格雷码生成</a></p>
         <p><span>文章作者:</span><a href="/" title="访问 Lueny 的个人博客">Lueny</a></p>
         <p><span>发布时间:</span>2016年03月26日 - 22时50分</p>
-        <p><span>最后更新:</span>2016年04月01日 - 15时51分</p>
+        <p><span>最后更新:</span>2016年04月01日 - 15时57分</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/2016/03/26/getGray/" title="编程题笔记-格雷码生成">http://yoursite.com/2016/03/26/getGray/</a>
             <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2016/03/26/getGray/　　作者: Lueny" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
@@ -340,7 +326,7 @@
 
     <div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
-    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#u4EC0_u4E48_u662F_u683C_u96F7_u7801_3F"><span class="toc-number">1.</span> <span class="toc-text">什么是格雷码?</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#u751F_u6210_u683C_u96F7_u7801_u601D_u8DEF_u4E00_3A"><span class="toc-number">1.1.</span> <span class="toc-text">生成格雷码思路一:</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#u751F_u6210_u683C_u96F7_u7801_u601D_u8DEF_u4E8C_3A"><span class="toc-number">1.2.</span> <span class="toc-text">生成格雷码思路二:</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#JavaScript_u4EE3_u7801"><span class="toc-number">1.3.</span> <span class="toc-text">JavaScript代码</span></a></li></ol></li></ol>
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#u4EC0_u4E48_u662F_u683C_u96F7_u7801_3F"><span class="toc-number">1.</span> <span class="toc-text">什么是格雷码?</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#u751F_u6210_u683C_u96F7_u7801_u601D_u8DEF_u4E00"><span class="toc-number">1.1.</span> <span class="toc-text">生成格雷码思路一</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#u751F_u6210_u683C_u96F7_u7801_u601D_u8DEF_u4E8C"><span class="toc-number">1.2.</span> <span class="toc-text">生成格雷码思路二</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#JavaScript_u4EE3_u7801"><span class="toc-number">1.3.</span> <span class="toc-text">JavaScript代码</span></a></li></ol></li></ol>
 </div>
 <style>
     .left-col .switch-btn {
