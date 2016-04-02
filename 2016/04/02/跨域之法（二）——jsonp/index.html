@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>跨域之法（二）——JSONP | Lueny-blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="jsonp可能是很多人第一次跨域使用的一种方法，使用起来比较简单，而且也不绕。
+jsonp全称 json padding,为什么？接下来你就知道了">
+<meta property="og:type" content="article">
+<meta property="og:title" content="跨域之法（二）——JSONP">
+<meta property="og:url" content="http://yoursite.com/2016/04/02/跨域之法（二）——jsonp/index.html">
+<meta property="og:site_name" content="Lueny-blog">
+<meta property="og:description" content="jsonp可能是很多人第一次跨域使用的一种方法，使用起来比较简单，而且也不绕。
+jsonp全称 json padding,为什么？接下来你就知道了">
+<meta property="og:updated_time" content="2016-04-02T13:01:07.147Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="跨域之法（二）——JSONP">
+<meta name="twitter:description" content="jsonp可能是很多人第一次跨域使用的一种方法，使用起来比较简单，而且也不绕。
+jsonp全称 json padding,为什么？接下来你就知道了">
+  
+    <link rel="alternative" href="/atom.xml" title="Lueny-blog" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="http://7xq76k.com1.z0.glb.clouddn.com/favicon.png">
+  
+  
+  <link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.5.0/animate.min.css" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+  <link rel="stylesheet" href="/font-awesome/css/font-awesome.min.css">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  
+  
+      <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  
+  <script>
+      var yiliaConfig = {
+          fancybox: true,
+          animate: true,
+          isHome: false,
+          isPost: true,
+          isArchive: false,
+          isTag: false,
+          isCategory: false,
+          open_in_new: false
+      }
+  </script>
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+    <header id="header" class="inner">
+        <a href="/" class="profilepic">
+            
+            <img lazy-src="/img/avatar.png" class="js-avatar">
+            
+        </a>
+
+        <hgroup>
+          <h1 class="header-author"><a href="/">Lueny</a></h1>
+        </hgroup>
+
+        
+        <p class="header-subtitle">文友的博客</p>
+        
+                
+
+
+        
+            <div id="switch-btn" class="switch-btn">
+                <div class="icon">
+                    <div class="icon-ctn">
+                        <div class="icon-wrap icon-house" data-idx="0">
+                            <div class="birdhouse"></div>
+                            <div class="birdhouse_holes"></div>
+                        </div>
+                        <div class="icon-wrap icon-ribbon hide" data-idx="1">
+                            <div class="ribbon"></div>
+                        </div>
+                        
+                        <div class="icon-wrap icon-link hide" data-idx="2">
+                            <div class="loopback_l"></div>
+                            <div class="loopback_r"></div>
+                        </div>
+                        
+                        
+                        <div class="icon-wrap icon-me hide" data-idx="3">
+                            <div class="user"></div>
+                            <div class="shoulder"></div>
+                        </div>
+                        
+                    </div>
+                    
+                </div>
+                <div class="tips-box hide">
+                    <div class="tips-arrow"></div>
+                    <ul class="tips-inner">
+                        <li>菜单</li>
+                        <li>标签</li>
+                        
+                        <li>友情链接</li>
+                        
+                        
+                        <li>关于我</li>
+                        
+                    </ul>
+                </div>
+            </div>
+        
+
+        <div id="switch-area" class="switch-area">
+            <div class="switch-wrap">
+                <section class="switch-part switch-part1">
+                    <nav class="header-menu">
+                        <ul>
+                        
+                            <li><a href="/">主页</a></li>
+                        
+                            <li><a href="/archives">归档</a></li>
+                        
+                        </ul>
+                    </nav>
+                    <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <li id="新浪微博"><a class="新浪微博" target="_blank" href="http://weibo.com/u/2312143500/home?topnav=1&wvr=6" title="新浪微博"></a></li>
+                            
+                                <li id="GitHub"><a class="GitHub" target="_blank" href="https://github.com/Lueny-cn" title="GitHub"></a></li>
+                            
+                                <li id="RSS"><a class="RSS" target="_blank" href="/atom.xml" title="RSS"></a></li>
+                            
+                        </ul>
+                    </nav>
+                </section>
+                
+                
+                <section class="switch-part switch-part2">
+                    <div class="widget tagcloud" id="js-tagcloud">
+                        <a href="/tags/Ajax/" style="font-size: 15px;">Ajax</a> <a href="/tags/JavaScript/" style="font-size: 20px;">JavaScript</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/web/" style="font-size: 10px;">web</a> <a href="/tags/算法/" style="font-size: 15px;">算法</a> <a href="/tags/随笔/" style="font-size: 10px;">随笔</a>
+                    </div>
+                </section>
+                
+                
+                
+                <section class="switch-part switch-part3">
+                    <div id="js-friends">
+                    
+                      <a target="_blank" class="main-nav-link switch-friends-link" href="https://hexo.io">Hexo</a>
+                    
+                      <a target="_blank" class="main-nav-link switch-friends-link" href="https://github.com/Lueny-cn">GitHub</a>
+                    
+                    </div>
+                </section>
+                
+
+                
+                
+                <section class="switch-part switch-part4">
+                
+                    <div id="js-aboutme">who am I？what is it？</div>
+                </section>
+                
+            </div>
+        </div>
+    </header>                
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+      <div class="overlay">
+          <div class="slider-trigger"></div>
+          <h1 class="header-author js-mobile-header hide"><a href="/" title="回到主页">Lueny</a></h1>
+      </div>
+    <div class="intrude-less">
+        <header id="header" class="inner">
+            <a href="/" class="profilepic">
+                <img lazy-src="/img/avatar.png" class="js-avatar">
+            </a>
+            <hgroup>
+              <h1 class="header-author"><a href="/" title="回到主页">Lueny</a></h1>
+            </hgroup>
+            
+            <p class="header-subtitle">文友的博客</p>
+            
+            <nav class="header-menu">
+                <ul>
+                
+                    <li><a href="/">主页</a></li>
+                
+                    <li><a href="/archives">归档</a></li>
+                
+                <div class="clearfix"></div>
+                </ul>
+            </nav>
+            <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <li id="新浪微博"><a class="新浪微博" target="_blank" href="http://weibo.com/u/2312143500/home?topnav=1&wvr=6" title="新浪微博"></a></li>
+                            
+                                <li id="GitHub"><a class="GitHub" target="_blank" href="https://github.com/Lueny-cn" title="GitHub"></a></li>
+                            
+                                <li id="RSS"><a class="RSS" target="_blank" href="/atom.xml" title="RSS"></a></li>
+                            
+                        </ul>
+            </nav>
+        </header>                
+    </div>
+</nav>
+      <div class="body-wrap"><article id="post-跨域之法（二）——jsonp" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/04/02/跨域之法（二）——jsonp/" class="article-date">
+      <time datetime="2016-04-02T08:55:02.000Z" itemprop="datePublished">2016-04-02</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      跨域之法（二）——JSONP
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+
+        
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p><code>jsonp</code>可能是很多人第一次跨域使用的一种方法，使用起来比较简单，而且也不绕。</p>
+<p><strong>jsonp全称 json padding</strong>,为什么？接下来你就知道了<br><a id="more"></a></p>
+<h2 id="u5148_u8BF4_u8BF4JSONP_u662F_u600E_u4E48_u4EA7_u751F_u7684"><a href="#u5148_u8BF4_u8BF4JSONP_u662F_u600E_u4E48_u4EA7_u751F_u7684" class="headerlink" title="先说说JSONP是怎么产生的"></a>先说说JSONP是怎么产生的</h2><ol>
+<li><p>当我们请求不在当前域下的文件的时候，无论是静态页面、动态网页、<code>web</code>服务、<code>WCF</code>，只要是不同源的，就会被认定为跨域，全都是失败的</p>
+</li>
+<li><p>不知道你有没有发现过，Web页面上调用有<code>src</code>属性的文件时则,不受是否跨域的影响</p>
+</li>
+<li><p>于是可以判断，我们可以在远程的服务器上面把数据写在<code>js</code>文件中，让我们页面去调用那个<code>js</code>文件</p>
+</li>
+<li><p>然后我们就结合了<code>json</code>这个天然的数据装载，让客户端通过与调用脚本的方式，来调用跨域服务器上动态生成的js格式文件(一般以JSON为后缀)</p>
+</li>
+<li><p>服务器之所以要动态生成JSON文件，目的就在于把客户端需要的数据装入进去。</p>
+</li>
+<li><p>客户端在对<code>JSON</code>文件调用成功之后，也就获得了自己所需的数据，剩下的就是按照自己需求进行处理和展现了，也就是<code>json</code>+<code>padding</code>的时候了</p>
+</li>
+<li><p>为了便于客户端使用数据，逐渐形成了一种非正式传输协议，人们把它称作<code>jsonp</code>，该协议的一个要点就是允许用户传递一个<code>callback</code>参数给服务端，然后服务端返回数据时会将这个<code>callback</code>参数作为函数名来包裹住<code>json</code>数据，这样客户端就可以随意定制自己的函数来自动处理返回数据了。</p>
+</li>
+</ol>
+<h2 id="u5982_u4F55_u8DE8_u57DF"><a href="#u5982_u4F55_u8DE8_u57DF" class="headerlink" title="如何跨域"></a>如何跨域</h2><h3 id="u7B80_u5355_u8C03_u7528_u51FD_u6570"><a href="#u7B80_u5355_u8C03_u7528_u51FD_u6570" class="headerlink" title="简单调用函数"></a>简单调用函数</h3><p>我们知道，哪怕跨域js文件中的代码（当然指符合web脚本安全策略的），web页面也是可以无条件执行的。(下面的案例是在本地搭建不同端口的服务器上测试的)</p>
+<p>本地服务器 <a href="http://localhost:8026/cross" target="_blank" rel="external">http://localhost:8026/cross</a> 下有个jsonp.html页面代码如下：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="doctype">&lt;!DOCTYPE&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">html</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">head</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="title">title</span>&gt;</span>JSONP Page<span class="tag">&lt;/<span class="title">title</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="title">script</span> <span class="attribute">type</span>=<span class="value">"text/javascript"</span> <span class="attribute">src</span>=<span class="value">"http://remoteserver.com/remote.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="title">script</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="title">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="title">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">html</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>远程服务器 <a href="http://localhost:8027/cross" target="_blank" rel="external">http://localhost:8027/cross</a> 根目录下有个 remote.js 文件代码如下：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">alert(<span class="string">'我是远程文件'</span>);</span><br></pre></td></tr></table></figure></p>
+<p>毫无疑问，页面将会弹出一个提示窗体，显示跨域调用成功。</p>
+<h3 id="u5229_u7528_u8C03_u7528_u51FD_u6570_u83B7_u5F97_u8FD4_u56DE"><a href="#u5229_u7528_u8C03_u7528_u51FD_u6570_u83B7_u5F97_u8FD4_u56DE" class="headerlink" title="利用调用函数获得返回"></a>利用调用函数获得返回</h3><p>现在我们在jsonp.html页面定义一个函数，然后在远程remote.js中传入数据进行调用。<br>jsonp.html页面代码如下：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="doctype">&lt;!DOCTYPE&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">html</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">title</span>&gt;</span>JSONP Page<span class="tag">&lt;/<span class="title">title</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">script</span> <span class="attribute">type</span>=<span class="value">"text/javascript"</span>&gt;</span><span class="actionscript"> </span><br><span class="line">        <span class="keyword">var</span> localHandler =<span class="function"><span class="keyword">function</span><span class="params">(data)</span></span>&#123;</span><br><span class="line">             alert(<span class="string">'我是本地函数，可以被跨域的remote.js文件调用，远程js带来的数据是：'</span>+ data.result);</span><br><span class="line">        &#125;;</span><br><span class="line">    </span><span class="tag">&lt;/<span class="title">script</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">script</span> <span class="attribute">type</span>=<span class="value">"text/javascript"</span> <span class="attribute">src</span>=<span class="value">"http://localhost:8027/cross/remote.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="title">script</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="title">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">body</span>&gt;</span><span class="tag">&lt;/<span class="title">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">html</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>remote.js文件代码如下：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">localHandler(&#123;<span class="string">"result"</span>:<span class="string">"我是远程js带来的数据"</span>&#125;);</span><br></pre></td></tr></table></figure></p>
+<p>运行之后查看结果，页面成功弹出提示窗口，显示本地函数被跨域的远程js调用成功，并且还接收到了远程js带来的数据。<br>很欣喜，跨域远程获取数据的目的基本实现了。</p>
+<p>但是又一个问题出现了，<strong>怎么让远程js知道它应该调用的本地函数叫什么名字？</strong>毕竟是jsonp的服务者都要面对很多服务对象，而这些服务对象各自的本地函数都不相同啊？我们接着往下看。</p>
+<h3 id="u8C03_u7528_u52A8_u6001_u751F_u6210_u7684js"><a href="#u8C03_u7528_u52A8_u6001_u751F_u6210_u7684js" class="headerlink" title="调用动态生成的js"></a>调用动态生成的js</h3><p>聪明的开发者很容易想到，只要服务端提供的js脚本是动态生成的就行了呗，这样调用者可以传一个参数过去告诉服务端“我想要一段调用XXX函数的js代码，请你返回给我”，于是服务器就可以按照客户端的需求来生成js脚本并响应了。<br>看jsonp.html页面的代码：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="doctype">&lt;!DOCTYPE&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">html</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">head</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="title">title</span>&gt;</span>JSONP Page<span class="tag">&lt;/<span class="title">title</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="title">script</span> <span class="attribute">type</span>=<span class="value">"text/javascript"</span>&gt;</span><span class="actionscript"></span><br><span class="line">            <span class="function"><span class="keyword">function</span> <span class="title">localHandler</span><span class="params">(data)</span> </span>&#123;</span><br><span class="line">                alert(<span class="string">'我是本地函数，通过后台回调回来的数据是：\n'</span>+ data.result);</span><br><span class="line">               &#125;;</span><br><span class="line">           </span><span class="tag">&lt;/<span class="title">script</span>&gt;</span></span><br><span class="line">           <span class="tag">&lt;<span class="title">script</span> <span class="attribute">type</span>=<span class="value">"text/javascript"</span> <span class="attribute">src</span>=<span class="value">"http://localhost:8027/cross/test.php?callback=localHandler"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="title">script</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="title">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">body</span>&gt;</span><span class="tag">&lt;/<span class="title">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">html</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>这次的代码变化比较大，不再直接把远程js文件写死，而是编码实现动态查询，而这也正是jsonp客户端实现的核心部分，本例中的重点也就在于如何完成jsonp调用的全过程。</p>
+<p><strong>callback参数则告诉服务器，我的本地回调函数叫做localHandler，所以请把查询结果传入这个函数中进行调用</strong>。</p>
+<p>服务器会把这个叫做 <a href="http://localhost:8027/cross/test.php" target="_blank" rel="external">http://localhost:8027/cross/test.php</a> 的页面生成了一段这样的代码提供给jsonp.html（服务端的数据是用php写的, 其实就是字符串拼接）：<br><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="preprocessor">&lt;?php</span></span><br><span class="line">    header(<span class="string">"Content-Type:text/javascript"</span>);</span><br><span class="line">    <span class="variable">$callback</span> = <span class="variable">$_GET</span>[<span class="string">"callback"</span>];</span><br><span class="line">    <span class="variable">$a</span> = <span class="variable">$callback</span>.<span class="string">"(&#123;result:\"我是远程js带来的数据\"&#125;);"</span>;</span><br><span class="line">    <span class="keyword">echo</span> <span class="variable">$a</span>;</span><br><span class="line"><span class="preprocessor">?&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>我们看到，传递给localHandler函数的是一个json，运行一下页面，成功弹出提示窗口，jsonp的执行全过程顺利完成！</p>
+<h2 id="jQuery_u7684jsonp"><a href="#jQuery_u7684jsonp" class="headerlink" title="jQuery的jsonp"></a>jQuery的jsonp</h2><p>jquery的jsonp与js略有不同，可以在键值对里面表明<code>callback</code>和回调函数的名字，如果回调函数名字不确定，可以用“？”代替<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="doctype">&lt;!DOCTYPE&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">html</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">head</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="title">title</span>&gt;</span>JSONP Page<span class="tag">&lt;/<span class="title">title</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="title">script</span> <span class="attribute">type</span>=<span class="value">"text/javascript"</span> <span class="attribute">src</span>=<span class="value">"jquery.min.js"</span>&gt;</span><span class="undefined"></span><br><span class="line">        </span><span class="tag">&lt;/<span class="title">script</span>&gt;</span><span class="tag">&lt;<span class="title">script</span> <span class="attribute">type</span>=<span class="value">"text/javascript"</span>&gt;</span><span class="javascript"></span><br><span class="line">         jQuery(<span class="built_in">document</span>).ready(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123; </span><br><span class="line">            $.ajax(&#123;</span><br><span class="line">                 type: <span class="string">"get"</span>,</span><br><span class="line">                 <span class="keyword">async</span>: <span class="literal">false</span>,</span><br><span class="line">                 url: <span class="string">"http://flightQuery.com/jsonp/flightResult.aspx?code=CA1998"</span>,</span><br><span class="line">                 dataType: <span class="string">"jsonp"</span>,</span><br><span class="line">                 jsonp: <span class="string">"callback"</span>,</span><br><span class="line">                 <span class="comment">//传递给请求处理程序或页面的，</span></span><br><span class="line">                 <span class="comment">//用以获得jsonp回调函数名的参数名(一般默认为:callback)             </span></span><br><span class="line">                 jsonpCallback:<span class="string">"flightHandler"</span>,</span><br><span class="line">                 <span class="comment">//自定义的jsonp回调函数名称，默认为jQuery自动生成的随机函数名，</span></span><br><span class="line">                 <span class="comment">//也可以写"?"，jQuery会自动为你处理数据             </span></span><br><span class="line">                 success: <span class="function"><span class="keyword">function</span>(<span class="params">json</span>)</span>&#123;</span><br><span class="line">                     alert(<span class="string">'您查询到航班信息：票价：'</span>+ json.price +<span class="string">' 元,余票: '</span>+ json.tickets +<span class="string">' 张。'</span>);</span><br><span class="line">                 &#125;,</span><br><span class="line">                 error: <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">                     alert(<span class="string">'fail'</span>);</span><br><span class="line">                 &#125;</span><br><span class="line">             &#125;);</span><br><span class="line">         &#125;);</span><br><span class="line">        </span><span class="tag">&lt;/<span class="title">script</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="title">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">body</span>&gt;</span><span class="tag">&lt;/<span class="title">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">html</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>jquery在处理jsonp类型的ajax时自动帮你生成回调函数并把数据取出来供success属性方法来调用.</p>
+<p><strong>但是jsonp和ajax并不是一回事</strong><br><!-- **但是jsonp和ajax并不是一回事**
+**但是jsonp和ajax并不是一回事** --></p>
+
+      
+    </div>
+    
+  </div>
+  
+    
+    <div class="copyright">
+        <p><span>本文标题:</span><a href="/2016/04/02/跨域之法（二）——jsonp/">跨域之法（二）——JSONP</a></p>
+        <p><span>文章作者:</span><a href="/" title="访问 Lueny 的个人博客">Lueny</a></p>
+        <p><span>发布时间:</span>2016年04月02日 - 16时55分</p>
+        <p><span>最后更新:</span>2016年04月02日 - 21时01分</p>
+        <p>
+            <span>原始链接:</span><a class="post-url" href="/2016/04/02/跨域之法（二）——jsonp/" title="跨域之法（二）——JSONP">http://yoursite.com/2016/04/02/跨域之法（二）——jsonp/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2016/04/02/跨域之法（二）——jsonp/　　作者: Lueny" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <script src="/js/clipboard.min.js"></script>
+            <script> var clipboard = new Clipboard('.copy-path'); </script>
+        </p>
+        <p>
+            <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/cn/" title="中国大陆 (CC BY-NC-SA 3.0 CN)" target = "_blank">"署名-非商用-相同方式共享 3.0"</a> 转载请保留原文链接及作者。
+        </p>
+    </div>
+
+
+
+    <nav id="article-nav">
+        
+        
+            <div id="article-nav-older" class="article-nav-title">
+                <a href="/2016/04/01/跨域之法（一）——为何要跨/">
+                    跨域之法（一）——为何需要跨
+                </a>
+            </div>
+        
+    </nav>
+
+  
+</article>
+
+    <div id="toc" class="toc-article">
+    <strong class="toc-title">文章目录</strong>
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#u5148_u8BF4_u8BF4JSONP_u662F_u600E_u4E48_u4EA7_u751F_u7684"><span class="toc-number">1.</span> <span class="toc-text">先说说JSONP是怎么产生的</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#u5982_u4F55_u8DE8_u57DF"><span class="toc-number">2.</span> <span class="toc-text">如何跨域</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#u7B80_u5355_u8C03_u7528_u51FD_u6570"><span class="toc-number">2.1.</span> <span class="toc-text">简单调用函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#u5229_u7528_u8C03_u7528_u51FD_u6570_u83B7_u5F97_u8FD4_u56DE"><span class="toc-number">2.2.</span> <span class="toc-text">利用调用函数获得返回</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#u8C03_u7528_u52A8_u6001_u751F_u6210_u7684js"><span class="toc-number">2.3.</span> <span class="toc-text">调用动态生成的js</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#jQuery_u7684jsonp"><span class="toc-number">3.</span> <span class="toc-text">jQuery的jsonp</span></a></li></ol>
+</div>
+<style>
+    .left-col .switch-btn {
+        display: none;
+    }
+    .left-col .switch-area {
+        display: none;
+    }
+</style>
+
+<input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
+
+<script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js" type="text/javascript"></script>
+<script>
+    var valueHide = "隐藏目录";
+    var valueShow = "显示目录";
+
+    if ($(".left-col").is(":hidden")) {
+        $("#tocButton").attr("value", valueShow);
+    }
+
+    $("#tocButton").click(function() {
+        if ($("#toc").is(":hidden")) {
+            $("#tocButton").attr("value", valueHide);
+            $("#toc").slideDown(320);
+            $(".switch-btn, .switch-area").fadeOut(300);
+        }
+        else {
+            $("#tocButton").attr("value", valueShow);
+            $("#toc").slideUp(350);
+            $(".switch-btn, .switch-area").fadeIn(500);
+        }
+    })
+
+    if ($(".toc").length < 1) {
+        $("#toc, #tocButton").hide();
+        $(".switch-btn, .switch-area").show();
+    }
+</script>
+
+
+
+
+<div class="share">
+    <div class="bdsharebuttonbox">
+    <a href="#" class="bds_more" data-cmd="more"></a>
+    <a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+    <a href="#" class="bds_sqq" data-cmd="sqq" title="分享给 QQ 好友"></a>
+    <a href="#" class="bds_copy" data-cmd="copy" title="复制网址"></a>
+    <a href="#" class="bds_mail" data-cmd="mail" title="通过邮件分享"></a>
+    <a href="#" class="bds_weixin" data-cmd="weixin" title="生成文章二维码"></a>
+    </div>
+    <script>
+        window._bd_share_config={
+            "common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+    </script>
+</div>
+
+
+
+    
+      <div class="duoshuo" id="comments">
+    <!-- 多说评论框 start -->
+    <div class="ds-thread" data-thread-key="2016/04/02/跨域之法（二）——jsonp/" data-title="跨域之法（二）——JSONP" data-url="http://yoursite.com/2016/04/02/跨域之法（二）——jsonp/"></div>
+    <!-- 多说评论框 end -->
+    <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+    <script type="text/javascript">
+    var duoshuoQuery = {short_name:"lueny-cn"};
+    (function() {
+        var ds = document.createElement('script');
+        ds.type = 'text/javascript';ds.async = true;
+        ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+        ds.charset = 'UTF-8';
+        (document.getElementsByTagName('head')[0] 
+         || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+    </script>
+    <!-- 多说公共JS代码 end -->
+</div>
+
+    
+
+
+
+
+    <div class="scroll" id="post-nav-button">
+        
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
+        
+
+        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+
+        
+            <a href="/2016/04/01/跨域之法（一）——为何要跨/" title="下一篇: 跨域之法（一）——为何需要跨">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        
+    </div>
+
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2016/04/02/跨域之法（二）——jsonp/">跨域之法（二）——JSONP</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/04/01/跨域之法（一）——为何要跨/">跨域之法（一）——为何需要跨</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/03/26/getGray/">编程题笔记-格雷码生成</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/03/17/sort/">JavaScript实现常用排序算法</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/03/07/常用git命令清单/">常用git命令清单</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/10/JavaScript学习笔记---Ajax入门(一)/">JavaScript学习笔记---Ajax入门(一)</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/26/JavaScript学习笔记---Ajax入门(零)/">JavaScript学习笔记---Ajax入门(零)</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/17/JavaScript之理解闭包/">JavaScript学习笔记---理解闭包</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/07/hello-lwy/">hello-lwy</a></li></ul>
+    <script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+    <script>
+        $(".post-list").addClass("toc-article");
+        $(".post-list-item a").attr("target","_blank");
+        $("#post-nav-button > a:nth-child(2)").click(function() {
+            $(".fa-bars, .fa-times").toggle();
+            $(".post-list").toggle(300);
+            if ($(".toc").length > 0) {
+                $("#toc, #tocButton").toggle(200, function() {
+                    if ($(".switch-area").is(":visible")) {
+                        $("#toc, .switch-btn, .switch-area").toggle();
+                        $("#tocButton").attr("value", valueHide);
+                        }
+                    })
+            }
+            else {
+                $(".switch-btn, .switch-area").fadeToggle(300);
+            }
+        })
+    </script>
+
+
+
+
+    <script>
+        
+    </script>
+</div>
+      <footer id="footer">
+    <div class="outer">
+        <div id="footer-info">
+            <div class="footer-left">
+                &copy; 2016 Lueny
+            </div>
+            <div class="footer-right">
+                <a href="http://hexo.io/" target="_blank" title="快速、简洁且高效的静态博客框架">Hexo</a>  Theme <a href="https://github.com/MOxFIVE/hexo-theme-yelee" target="_blank" title="简而不减双栏 Hexo 博客主题">Yelee</a> by MOxFIVE
+            </div>
+        </div>
+        <div class="visit">
+            <span id="busuanzi_container_site_pv" style='display:none'>
+                <span id="site-visit" >本站到访数: 
+                    <span id="busuanzi_value_site_uv"></span>
+                </span>
+            </span>
+            <span id="busuanzi_container_page_pv" style='display:none'>
+                <span id="page-visit">, 本页阅读量: 
+                    <span id="busuanzi_value_page_pv"></span>
+                </span>
+            </span>
+        </div>
+    </div>
+</footer>
+    </div>
+    <script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js" type="text/javascript"></script>
+<script src="/js/main.js" type="text/javascript"></script>
+
+    <script>
+        $(document).ready(function() {
+            var iPad = window.navigator.userAgent.indexOf('iPad');
+            if (iPad > -1 || $(".left-col").css("display") === "none") {
+                var bgColorList = ["#9db3f4", "#414141", "#e5a859", "#f5dfc6", "#c084a0", "#847e72", "#cd8390", "#996731"];
+                var bgColor = Math.ceil(Math.random() * (bgColorList.length - 1));
+                $("body").css({"background-color": bgColorList[bgColor], "background-size": "cover"});
+            }
+            else {
+                //var backgroundnum = 5;
+                //var backgroundimg = "url(/background/bg-x.jpg)".replace(/x/gi, Math.ceil(Math.random() * backgroundnum));
+                //$("body").css({"background": backgroundimg, "background-attachment": "fixed", "background-size": "cover"});
+                $("body").css({"background-color": "#f5f5f5"});
+            }
+        })
+    </script>
+
+
+
+
+<div class="scroll" id="scroll">
+    <a href="#" title="返回顶部"><i class="fa fa-arrow-up"></i></a>
+    <a href="#comments" title="查看评论"><i class="fa fa-comments-o"></i></a>
+    <a href="#footer" title="转到底部"><i class="fa fa-arrow-down"></i></a>
+</div>
+
+<script>
+    $(document).ready(function() {
+        if ($("#comments").length < 1) {
+            $("#scroll > a:nth-child(2)").hide();
+        };
+    })
+</script>
+
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+  </div>
+</body>
+</html>

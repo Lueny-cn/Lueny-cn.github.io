@@ -12,7 +12,7 @@
 <meta property="og:site_name" content="Lueny-blog">
 <meta property="og:description" content="为什么要跨域?跨域，可能很多前端开发者都会遇到过，也可能知道有jsonp，iframe之类的跨域方法，在介绍跨域的方法之前，我们说说，什么是跨域，为什么要跨域？">
 <meta property="og:image" content="http://7xq76k.com1.z0.glb.clouddn.com/domain.png">
-<meta property="og:updated_time" content="2016-04-02T09:17:32.301Z">
+<meta property="og:updated_time" content="2016-04-02T13:12:44.914Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="跨域之法（一）——为何需要跨">
 <meta name="twitter:description" content="为什么要跨域?跨域，可能很多前端开发者都会遇到过，也可能知道有jsonp，iframe之类的跨域方法，在介绍跨域的方法之前，我们说说，什么是跨域，为什么要跨域？">
@@ -247,8 +247,18 @@
           
         <h2 id="u4E3A_u4EC0_u4E48_u8981_u8DE8_u57DF_3F"><a href="#u4E3A_u4EC0_u4E48_u8981_u8DE8_u57DF_3F" class="headerlink" title="为什么要跨域?"></a>为什么要跨域?</h2><p>跨域，可能很多前端开发者都会遇到过，也可能知道有jsonp，iframe之类的跨域方法，在介绍跨域的方法之前，我们说说，什么是跨域，为什么要跨域？<br><a id="more"></a><br>所谓跨域, 就是当前域到了另外的域，域不仅仅指的是不同的域名网站，可能同一个域名不同的端口号也算不同的域。浏览器是有规则的，只要协议、域名、端口有任何一个不同，都被当作是不同的域。协议指的是http，或者https等。</p>
 <p>下面给出一个列表，指出不同域的情况：<br><img src="http://7xq76k.com1.z0.glb.clouddn.com/domain.png" alt="domin"></p>
-<p>基于网络安全的同源策略(same-origin policy)的限制，正常情况下我们不能在不同域操作不同域下的对象的，比如a.com域下操作b.com域的数据。但也有特殊情况，有些情况是要访问到别的网站的，比如加载一张图片，这张图片可能在别的网站，还有加载一个js文件，也是有可能在别的网站的，还有嵌入一个frame元素，也可以访问到别的网站的内容。</p>
-<p>所以跨域正是利用了上面几点，比如jsonp就是利用的加载js文件的功能，比如在script标签中的src指定为目标网站的js.同理，还有image标签的src属性也可以跨域。还有iframe更能直接加载别的网站的内容到自己的网站里来,从iframe加载内容到本站后，是存在着数据交互的，可以用document.domain，window.name。在HTML5中引进了一个叫window.postMessage方法来跨域传送数据，过也是利用了iframe。除此之外，还有flash，服务器代理等跨域方法</p>
+<p>科普下什么是主域,子域,</p>
+<blockquote>
+<ul>
+<li>主域<br>主域 (Domain Name，现也有简称为”Domain”)，是用作识别您的网站，例如 yourdomain.com。 域名比IP地址更容易记住，可以让大众更快捷容易地通过域名找到你的网站。<br>域名，是没有重复的，一个域名只会代表一个位置，您选定一个独一无二的主域名后，需向认可的域名注册商注册您域名。 我们亦可为您注册域名。</li>
+<li>子域<br>子域名是一个另外的网页，有独立不同的内容，但不是一个新的域名。 子域名是无须申请的，当你登记了你自己的域名后，你就可以在你的域名前加上任何子域名。<br>例如:en.yourdomain.com 是 yourdomain.com 的子域名。</li>
+</ul>
+</blockquote>
+<p>基于网络安全的同源策略(same-origin policy)的限制，正常情况下我们不能在不同域操作不同域下的对象的，比如a.com域下操作b.com域的数据。</p>
+<p>但也有特殊情况，有些情况是要访问到别的网站的，比如加载一张图片，这张图片可能在别的网站，还有加载一个js文件，也是有可能在别的网站的，还有嵌入一个frame元素，也可以访问到别的网站的内容。</p>
+<p>所以跨域正是利用了上面几点，比如jsonp就是利用的加载js文件的功能，在script标签中的src指定为目标网站的js.同理，还有image标签的src属性也可以跨域。</p>
+<p>还有iframe更能直接加载别的网站的内容到自己的网站里来,从iframe加载内容到本站后，是存在着数据交互的，可以用document.domain，window.name。</p>
+<p>在HTML5中引进了一个叫window.postMessage方法来跨域传送数据，过也是利用了iframe。除此之外，还有flash，服务器代理等跨域方法</p>
 <p>接下来就详细地讲下前端怎么解决跨域问题。</p>
 
       
@@ -261,7 +271,7 @@
         <p><span>本文标题:</span><a href="/2016/04/01/跨域之法（一）——为何要跨/">跨域之法（一）——为何需要跨</a></p>
         <p><span>文章作者:</span><a href="/" title="访问 Lueny 的个人博客">Lueny</a></p>
         <p><span>发布时间:</span>2016年04月01日 - 15时57分</p>
-        <p><span>最后更新:</span>2016年04月02日 - 17时17分</p>
+        <p><span>最后更新:</span>2016年04月02日 - 21时12分</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/2016/04/01/跨域之法（一）——为何要跨/" title="跨域之法（一）——为何需要跨">http://yoursite.com/2016/04/01/跨域之法（一）——为何要跨/</a>
             <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2016/04/01/跨域之法（一）——为何要跨/　　作者: Lueny" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
@@ -276,6 +286,12 @@
 
 
     <nav id="article-nav">
+        
+            <div id="article-nav-newer" class="article-nav-title">
+                <a href="/2016/04/02/跨域之法（二）——jsonp/">
+                    跨域之法（二）——JSONP
+                </a>
+            </div>
         
         
             <div id="article-nav-older" class="article-nav-title">
@@ -379,7 +395,9 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
+            <a href="/2016/04/02/跨域之法（二）——jsonp/" title="上一篇: 跨域之法（二）——JSONP">
+                <i class="fa fa-angle-left"></i>
+            </a>
         
 
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
@@ -391,7 +409,7 @@
         
     </div>
 
-    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2016/04/01/跨域之法（一）——为何要跨/">跨域之法（一）——为何需要跨</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/03/26/getGray/">编程题笔记-格雷码生成</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/03/17/sort/">JavaScript实现常用排序算法</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/03/07/常用git命令清单/">常用git命令清单</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/10/JavaScript学习笔记---Ajax入门(一)/">JavaScript学习笔记---Ajax入门(一)</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/26/JavaScript学习笔记---Ajax入门(零)/">JavaScript学习笔记---Ajax入门(零)</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/17/JavaScript之理解闭包/">JavaScript学习笔记---理解闭包</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/07/hello-lwy/">hello-lwy</a></li></ul>
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2016/04/02/跨域之法（二）——jsonp/">跨域之法（二）——JSONP</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/04/01/跨域之法（一）——为何要跨/">跨域之法（一）——为何需要跨</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/03/26/getGray/">编程题笔记-格雷码生成</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/03/17/sort/">JavaScript实现常用排序算法</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/03/07/常用git命令清单/">常用git命令清单</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/10/JavaScript学习笔记---Ajax入门(一)/">JavaScript学习笔记---Ajax入门(一)</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/26/JavaScript学习笔记---Ajax入门(零)/">JavaScript学习笔记---Ajax入门(零)</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/17/JavaScript之理解闭包/">JavaScript学习笔记---理解闭包</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/07/hello-lwy/">hello-lwy</a></li></ul>
     <script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
     <script>
         $(".post-list").addClass("toc-article");
