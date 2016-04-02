@@ -5,21 +5,18 @@
   
   <title>JavaScript学习笔记---Ajax入门(一) | Lueny-blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="首先我们先理解好下面几个概念及其过程：
-网页浏览过程分析一个完整的HTTP请求过程,通常有下面7个步骤">
+  <meta name="description" content="通过上一篇文章,我们对Ajax有了大概的了解, 接下来再进一步剖析, 首先我们先理解好下面几个概念及其过程：">
 <meta property="og:type" content="article">
 <meta property="og:title" content="JavaScript学习笔记---Ajax入门(一)">
 <meta property="og:url" content="http://yoursite.com/2016/02/10/JavaScript学习笔记---Ajax入门(一)/index.html">
 <meta property="og:site_name" content="Lueny-blog">
-<meta property="og:description" content="首先我们先理解好下面几个概念及其过程：
-网页浏览过程分析一个完整的HTTP请求过程,通常有下面7个步骤">
+<meta property="og:description" content="通过上一篇文章,我们对Ajax有了大概的了解, 接下来再进一步剖析, 首先我们先理解好下面几个概念及其过程：">
 <meta property="og:image" content="http://7xq76k.com1.z0.glb.clouddn.com/http.png">
 <meta property="og:image" content="http://7xq76k.com1.z0.glb.clouddn.com/http2.png">
-<meta property="og:updated_time" content="2016-03-03T15:31:01.135Z">
+<meta property="og:updated_time" content="2016-04-01T08:16:27.408Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JavaScript学习笔记---Ajax入门(一)">
-<meta name="twitter:description" content="首先我们先理解好下面几个概念及其过程：
-网页浏览过程分析一个完整的HTTP请求过程,通常有下面7个步骤">
+<meta name="twitter:description" content="通过上一篇文章,我们对Ajax有了大概的了解, 接下来再进一步剖析, 首先我们先理解好下面几个概念及其过程：">
   
     <link rel="alternative" href="/atom.xml" title="Lueny-blog" type="application/atom+xml">
   
@@ -141,7 +138,7 @@
                 
                 <section class="switch-part switch-part2">
                     <div class="widget tagcloud" id="js-tagcloud">
-                        <a href="/tags/Ajax/" style="font-size: 15px;">Ajax</a> <a href="/tags/JavaScript/" style="font-size: 20px;">JavaScript</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/算法/" style="font-size: 15px;">算法</a> <a href="/tags/随笔/" style="font-size: 10px;">随笔</a>
+                        <a href="/tags/Ajax/" style="font-size: 15px;">Ajax</a> <a href="/tags/JavaScript/" style="font-size: 20px;">JavaScript</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/web/" style="font-size: 10px;">web</a> <a href="/tags/算法/" style="font-size: 15px;">算法</a> <a href="/tags/随笔/" style="font-size: 10px;">随笔</a>
                     </div>
                 </section>
                 
@@ -249,9 +246,8 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <p>首先我们先理解好下面几个概念及其过程：</p>
-<h2 id="u7F51_u9875_u6D4F_u89C8_u8FC7_u7A0B_u5206_u6790"><a href="#u7F51_u9875_u6D4F_u89C8_u8FC7_u7A0B_u5206_u6790" class="headerlink" title="网页浏览过程分析"></a>网页浏览过程分析</h2><h3 id="u4E00_u4E2A_u5B8C_u6574_u7684HTTP_u8BF7_u6C42_u8FC7_u7A0B_2C_u901A_u5E38_u6709_u4E0B_u97627_u4E2A_u6B65_u9AA4"><a href="#u4E00_u4E2A_u5B8C_u6574_u7684HTTP_u8BF7_u6C42_u8FC7_u7A0B_2C_u901A_u5E38_u6709_u4E0B_u97627_u4E2A_u6B65_u9AA4" class="headerlink" title="一个完整的HTTP请求过程,通常有下面7个步骤"></a>一个完整的HTTP请求过程,通常有下面7个步骤</h3><a id="more"></a>
-<blockquote>
+        <p>通过上一篇文章,我们对Ajax有了大概的了解, 接下来再进一步剖析, 首先我们先理解好下面几个概念及其过程：<br><a id="more"></a></p>
+<h2 id="u7F51_u9875_u6D4F_u89C8_u8FC7_u7A0B_u5206_u6790"><a href="#u7F51_u9875_u6D4F_u89C8_u8FC7_u7A0B_u5206_u6790" class="headerlink" title="网页浏览过程分析"></a>网页浏览过程分析</h2><h3 id="u4E00_u4E2A_u5B8C_u6574_u7684HTTP_u8BF7_u6C42_u8FC7_u7A0B_2C_u901A_u5E38_u6709_u4E0B_u97627_u4E2A_u6B65_u9AA4"><a href="#u4E00_u4E2A_u5B8C_u6574_u7684HTTP_u8BF7_u6C42_u8FC7_u7A0B_2C_u901A_u5E38_u6709_u4E0B_u97627_u4E2A_u6B65_u9AA4" class="headerlink" title="一个完整的HTTP请求过程,通常有下面7个步骤"></a>一个完整的HTTP请求过程,通常有下面7个步骤</h3><blockquote>
 <p>1、建立TCP连接<br>2、Web浏览器向Web服务器发送请求命令<br>3、Web浏览器发送请求头信息<br>4、Web服务器- 应答<br>5、Web服务器- 发送应答头信息<br>6、Web服务器- 向浏览器发送数据<br>7、Web服务器- 关闭TCP连接</p>
 </blockquote>
 <h2 id="Ajax_u539F_u7406"><a href="#Ajax_u539F_u7406" class="headerlink" title="Ajax原理"></a>Ajax原理</h2><h4 id="u7406_u89E3_u540C_u6B65_u548C_u5F02_u6B65_28_u57FA_u672C_u90FD_u7528_u5F02_u6B65_u8BF7_u6C42_29"><a href="#u7406_u89E3_u540C_u6B65_u548C_u5F02_u6B65_28_u57FA_u672C_u90FD_u7528_u5F02_u6B65_u8BF7_u6C42_29" class="headerlink" title="理解同步和异步(基本都用异步请求)."></a>理解同步和异步(基本都用异步请求).</h4><blockquote>
@@ -469,7 +465,7 @@
         <p><span>本文标题:</span><a href="/2016/02/10/JavaScript学习笔记---Ajax入门(一)/">JavaScript学习笔记---Ajax入门(一)</a></p>
         <p><span>文章作者:</span><a href="/" title="访问 Lueny 的个人博客">Lueny</a></p>
         <p><span>发布时间:</span>2016年02月10日 - 23时50分</p>
-        <p><span>最后更新:</span>2016年03月03日 - 23时31分</p>
+        <p><span>最后更新:</span>2016年04月01日 - 16时16分</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/2016/02/10/JavaScript学习笔记---Ajax入门(一)/" title="JavaScript学习笔记---Ajax入门(一)">http://yoursite.com/2016/02/10/JavaScript学习笔记---Ajax入门(一)/</a>
             <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2016/02/10/JavaScript学习笔记---Ajax入门(一)/　　作者: Lueny" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
@@ -607,7 +603,7 @@
         
     </div>
 
-    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2016/03/26/getGray/">编程题笔记-格雷码生成</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/03/17/sort/">JavaScript实现常用排序算法</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/03/07/常用git命令清单/">常用git命令清单</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/10/JavaScript学习笔记---Ajax入门(一)/">JavaScript学习笔记---Ajax入门(一)</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/26/JavaScript学习笔记---Ajax入门(零)/">JavaScript学习笔记---Ajax入门(零)</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/17/JavaScript之理解闭包/">JavaScript学习笔记---理解闭包</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/07/hello-lwy/">hello-lwy</a></li></ul>
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2016/04/01/跨域之法（一）——为何要跨/">跨域之法（一）——为何需要跨</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/03/26/getGray/">编程题笔记-格雷码生成</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/03/17/sort/">JavaScript实现常用排序算法</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/03/07/常用git命令清单/">常用git命令清单</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/10/JavaScript学习笔记---Ajax入门(一)/">JavaScript学习笔记---Ajax入门(一)</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/26/JavaScript学习笔记---Ajax入门(零)/">JavaScript学习笔记---Ajax入门(零)</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/17/JavaScript之理解闭包/">JavaScript学习笔记---理解闭包</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/07/hello-lwy/">hello-lwy</a></li></ul>
     <script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
     <script>
         $(".post-list").addClass("toc-article");
