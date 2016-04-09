@@ -210,11 +210,11 @@
 </nav>
       <div class="body-wrap">
   
-    <article id="post-window.name" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-跨域4-document.domain&amp;iframe" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2016/04/05/window.name/" class="article-date">
-      <time datetime="2016-04-05T04:05:02.000Z" itemprop="datePublished">2016-04-05</time>
+      <a href="/2016/04/09/跨域4-document.domain&iframe/" class="article-date">
+      <time datetime="2016-04-09T09:09:51.242Z" itemprop="datePublished">2016-04-09</time>
 </a>
     </div>
   
@@ -223,36 +223,15 @@
       <input type="hidden" class="isFancy" />
     
     
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/04/05/window.name/">跨域之法（三）—— window.name</a>
-    </h1>
-  
-
-      </header>
-      
-    
     <div class="article-entry" itemprop="articleBody">
       
           
-        <h3 id="u4E3B_u8981_u601D_u60F3"><a href="#u4E3B_u8981_u601D_u60F3" class="headerlink" title="主要思想"></a>主要思想</h3><p>通过在应用页面设置一个<code>iframe</code>,其源头指向拥有数据的文件或页面，让那个data（数据页面）把值赋在那个iframe的<code>window.name</code>上，然后由于<code>window.name</code>在浏览器环境中是一个<code>全局/window对象的属性</code>，且当在 frame 中加载新页面时，name 的属性值依旧保持不变。通过在 iframe 中加载一个资源，该目标页面将设置 frame 的 name 属性。此 name 属性值可被获取到，以访问 Web 服务发送的信息。但 name 属性仅对相同域名的 frame 可访问。这意味着为了访问 name 属性，当远程 Web 服务页面被加载后，必须导航 frame 回到原始域。(就是说先用data把数据放在iframe的window.name里面，然后切换到proxy ,这时proxy拿到window.name的数据，就可以向同域的app传值了)同源策略依旧防止其他 frame 访问 name 属性。一旦 name 属性获得，销毁 frame 。</p>
-<h3 id="u5177_u4F53_u5B9E_u73B0"><a href="#u5177_u4F53_u5B9E_u73B0" class="headerlink" title="具体实现"></a>具体实现</h3><p>有三个页面：</p>
-<blockquote>
-<ul>
-<li>a.com/app.html：应用页面。</li>
-<li>a.com/proxy.html：代理文件，一般是一个没有任何内容的html文件，需要和应用页面在同一域下。</li>
-<li>b.com/data.html：应用页面需要获取数据的页面，可称为数据页面。</li>
-</ul>
+              <hr>
+<p>title 跨域之法（四）—— document.domain+iframe<br>date 2016-04-05 20:30:26</p>
+<h2 id="tags_JavaScript"><a href="#tags_JavaScript" class="headerlink" title="tags JavaScript"></a>tags JavaScript</h2><h3 id="u524D_u63D0__u4E3B_u57DF_u76F8_u540C_u800C_u5B50_u57DF_u4E0D_u540C"><a href="#u524D_u63D0__u4E3B_u57DF_u76F8_u540C_u800C_u5B50_u57DF_u4E0D_u540C" class="headerlink" title="前提 主域相同而子域不同"></a>前提 主域相同而子域不同</h3><blockquote>
+<p>这两个域名必须属于同一个基础域名！而且所用的协议，端口都要一致，否则无法利用document.domain进行跨域<br>Javascript出于对安全性的考虑，而禁止两个或者多个不同域的页面进行互相操作。相同域的页面在相互操作的时候不会有任何问题。</p>
 </blockquote>
-<p>实现起来基本步骤如下：<br> 1、在应用页面（a.com/app.html）中创建一个iframe，把其src指向数据页面（b.com/data.html）。<br>数据页面会把数据附加到这个iframe的window.name上，data.html代码如下：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;script type=<span class="string">"text/javascript"</span>&gt;</span><br><span class="line">    <span class="built_in">window</span>.name = <span class="string">'I was there!'</span>;    <span class="comment">// 这里是要传输的数据，大小一般为2M，IE和firefox下可以大至32M左右</span></span><br><span class="line">                                     <span class="comment">// 数据格式可以自定义，如json、字符串</span></span><br><span class="line">&lt;<span class="regexp">/script&gt;</span></span><br></pre></td></tr></table></figure>
-<p> 2、在应用页面（a.com/app.html）中监听iframe的onload事件，在此事件中设置这个iframe的src指向本地域的代理文件（代理文件和应用页面在同一域下，所以可以相互通信）。app.html部分代码如下：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">&lt;script type=<span class="string">"text/javascript"</span>&gt;</span><br><span class="line">    <span class="keyword">var</span> state = <span class="number">0</span>, </span><br><span class="line">    iframe = <span class="built_in">document</span>.createElement(<span class="string">'iframe'</span>),</span><br><span class="line">    loadfn = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (state === <span class="number">1</span>) &#123;</span><br><span class="line">            <span class="keyword">var</span> data = iframe.contentWindow.name;    <span class="comment">// 读取数据</span></span><br><span class="line">            alert(data);    <span class="comment">//弹出'I was there!'</span></span><br><span class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (state === <span class="number">0</span>) &#123;</span><br><span class="line">            state = <span class="number">1</span>;</span><br><span class="line">            iframe.contentWindow.location = <span class="string">"http://a.com/proxy.html"</span>;    <span class="comment">// 设置的代理文件</span></span><br><span class="line">        &#125;  </span><br><span class="line">    &#125;;</span><br><span class="line">    iframe.src = <span class="string">'http://b.com/data.html'</span>;</span><br><span class="line">    <span class="keyword">if</span> (iframe.attachEvent) &#123;</span><br><span class="line">        iframe.attachEvent(<span class="string">'onload'</span>, loadfn);</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        iframe.onload  = loadfn;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">document</span>.body.appendChild(iframe);</span><br><span class="line"><span class="xml"><span class="tag">&lt;/<span class="title">script</span>&gt;</span></span></span><br></pre></td></tr></table></figure></p>
-<p> 3、获取数据以后销毁这个iframe，释放内存；这也保证了安全（不被其他域frame js访问）。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;script type=<span class="string">"text/javascript"</span>&gt;</span><br><span class="line">    iframe.contentWindow.document.write(<span class="string">''</span>);</span><br><span class="line">    iframe.contentWindow.close();</span><br><span class="line">    <span class="built_in">document</span>.body.removeChild(iframe);</span><br><span class="line"><span class="xml"><span class="tag">&lt;/<span class="title">script</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
-<h3 id="u603B_u7ED3"><a href="#u603B_u7ED3" class="headerlink" title="总结"></a>总结</h3><p>iframe的src属性由外域转向本地域，跨域数据即由iframe的window.name从外域传递到本地域。这个就巧妙地绕过了浏览器的跨域访问限制，但同时它又是安全操作。</p>
-
+          
       
     </div>
     
@@ -261,10 +240,10 @@
       
 
       
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
-    </div>
-
+      
+        <p class="article-more-link">
+          <a  href="/2016/04/09/跨域4-document.domain&iframe/#more">more >></a>
+        </p>
       
       <div class="clearfix"></div>
     </div>
@@ -281,10 +260,71 @@
 
 
   
-    <article id="post-JSONP" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-跨域3-window.name" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2016/04/02/JSONP/" class="article-date">
+      <a href="/2016/04/05/跨域3-window.name/" class="article-date">
+      <time datetime="2016-04-05T04:05:02.000Z" itemprop="datePublished">2016-04-05</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/04/05/跨域3-window.name/">跨域之法（三）—— window.name</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+              <h3 id="u4E3B_u8981_u601D_u60F3"><a href="#u4E3B_u8981_u601D_u60F3" class="headerlink" title="主要思想"></a>主要思想</h3><p>通过在应用页面设置一个<code>iframe</code>,其源头指向拥有数据的文件或页面，让那个data（数据页面）把值赋在那个iframe的<code>window.name</code>上，然后由于<code>window.name</code>在浏览器环境中是一个<code>全局/window对象的属性</code>，且当在 frame 中加载新页面时，name 的属性值依旧保持不变。通过在 iframe 中加载一个资源，该目标页面将设置 frame 的 name 属性。此 name 属性值可被获取到，以访问 Web 服务发送的信息。但 name 属性仅对相同域名的 frame 可访问。这意味着为了访问 name 属性，当远程 Web 服务页面被加载后，必须导航 frame 回到原始域。(就是说先用data把数据放在iframe的window.name里面，然后切换到proxy ,这时proxy拿到window.name的数据，就可以向同域的app传值了)同源策略依旧防止其他 frame 访问 name 属性。一旦 name 属性获得，销毁 frame 。<br>
+          
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
+    </div>
+
+      
+        <p class="article-more-link">
+          <a  href="/2016/04/05/跨域3-window.name/#more">more >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+  
+    <article id="post-跨域2-JSONP" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/04/02/跨域2-JSONP/" class="article-date">
       <time datetime="2016-04-02T08:55:02.000Z" itemprop="datePublished">2016-04-02</time>
 </a>
     </div>
@@ -298,7 +338,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2016/04/02/JSONP/">跨域之法（二）—— JSONP</a>
+      <a class="article-title" href="/2016/04/02/跨域2-JSONP/">跨域之法（二）—— JSONP</a>
     </h1>
   
 
@@ -325,7 +365,7 @@
 
       
         <p class="article-more-link">
-          <a  href="/2016/04/02/JSONP/#more">more >></a>
+          <a  href="/2016/04/02/跨域2-JSONP/#more">more >></a>
         </p>
       
       <div class="clearfix"></div>
@@ -771,65 +811,10 @@
 
 
   
-    <article id="post-hello-lwy" class="article article-type-post" itemscope itemprop="blogPost">
   
-    <div class="article-meta">
-      <a href="/2016/01/07/hello-lwy/" class="article-date">
-      <time datetime="2016-01-07T14:48:23.000Z" itemprop="datePublished">2016-01-07</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/01/07/hello-lwy/">hello-lwy</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <hr>
-<p>Hello world!</p>
-<p>  h2{<br>    margin: .5em auto;<br>    font-weight: bold;<br>    color: #9c9;<br>    padding-bottom: 5px;<br>    border-bottom: 1px solid #ddd;<br>    &amp;:hover {<br>      color:#88acdb;<br>    };<br>    text-align: center;<br>    &amp;::before, &amp;::after {<br>    content:” —— “;<br>    font-family: Arial;<br>    };<br>  },</p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/随笔/">随笔</a></li></ul>
-    </div>
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-  
+    <nav id="page-nav">
+      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
+    </nav>
   
 </div>
       <footer id="footer">
