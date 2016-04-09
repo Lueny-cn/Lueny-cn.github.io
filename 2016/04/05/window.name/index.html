@@ -3,19 +3,18 @@
 <head>
   <meta charset="utf-8">
   
-  <title>跨域之法（一）——初探跨域 | Lueny-blog</title>
+  <title>跨域之法（三）—— window.name | Lueny-blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="什么是跨域?&amp;nbsp;&amp;nbsp;所谓跨域, 就是当前域到了另外的域，域不仅仅指的是不同的域名网站，可能同一个域名不同的端口号也算不同的域。浏览器是有规则的，只要协议、域名、端口有任何一个不同，都被当作是不同的域。协议指的是http，或者https等。">
+  <meta name="description" content="主要思想通过在应用页面设置一个iframe,其源头指向拥有数据的文件或页面，让那个data（数据页面）把值赋在那个iframe的window.name上，然后由于window.name在浏览器环境中是一个全局/window对象的属性，且当在 frame 中加载新页面时，name 的属性值依旧保持不变。通过在 iframe 中加载一个资源，该目标页面将设置 frame 的 name 属性。此 nam">
 <meta property="og:type" content="article">
-<meta property="og:title" content="跨域之法（一）——初探跨域">
-<meta property="og:url" content="http://yoursite.com/2016/04/01/跨域之法（一）——初探跨域/index.html">
+<meta property="og:title" content="跨域之法（三）—— window.name">
+<meta property="og:url" content="http://yoursite.com/2016/04/05/window.name/index.html">
 <meta property="og:site_name" content="Lueny-blog">
-<meta property="og:description" content="什么是跨域?&amp;nbsp;&amp;nbsp;所谓跨域, 就是当前域到了另外的域，域不仅仅指的是不同的域名网站，可能同一个域名不同的端口号也算不同的域。浏览器是有规则的，只要协议、域名、端口有任何一个不同，都被当作是不同的域。协议指的是http，或者https等。">
-<meta property="og:image" content="http://7xq76k.com1.z0.glb.clouddn.com/domain.png">
-<meta property="og:updated_time" content="2016-04-04T06:50:45.504Z">
+<meta property="og:description" content="主要思想通过在应用页面设置一个iframe,其源头指向拥有数据的文件或页面，让那个data（数据页面）把值赋在那个iframe的window.name上，然后由于window.name在浏览器环境中是一个全局/window对象的属性，且当在 frame 中加载新页面时，name 的属性值依旧保持不变。通过在 iframe 中加载一个资源，该目标页面将设置 frame 的 name 属性。此 nam">
+<meta property="og:updated_time" content="2016-04-09T08:49:11.117Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="跨域之法（一）——初探跨域">
-<meta name="twitter:description" content="什么是跨域?&amp;nbsp;&amp;nbsp;所谓跨域, 就是当前域到了另外的域，域不仅仅指的是不同的域名网站，可能同一个域名不同的端口号也算不同的域。浏览器是有规则的，只要协议、域名、端口有任何一个不同，都被当作是不同的域。协议指的是http，或者https等。">
+<meta name="twitter:title" content="跨域之法（三）—— window.name">
+<meta name="twitter:description" content="主要思想通过在应用页面设置一个iframe,其源头指向拥有数据的文件或页面，让那个data（数据页面）把值赋在那个iframe的window.name上，然后由于window.name在浏览器环境中是一个全局/window对象的属性，且当在 frame 中加载新页面时，name 的属性值依旧保持不变。通过在 iframe 中加载一个资源，该目标页面将设置 frame 的 name 属性。此 nam">
   
     <link rel="alternative" href="/atom.xml" title="Lueny-blog" type="application/atom+xml">
   
@@ -207,11 +206,11 @@
         </header>                
     </div>
 </nav>
-      <div class="body-wrap"><article id="post-跨域之法（一）——初探跨域" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-window.name" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2016/04/01/跨域之法（一）——初探跨域/" class="article-date">
-      <time datetime="2016-04-01T07:57:25.000Z" itemprop="datePublished">2016-04-01</time>
+      <a href="/2016/04/05/window.name/" class="article-date">
+      <time datetime="2016-04-05T04:05:02.000Z" itemprop="datePublished">2016-04-05</time>
 </a>
     </div>
   
@@ -224,7 +223,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      跨域之法（一）——初探跨域
+      跨域之法（三）—— window.name
     </h1>
   
 
@@ -245,24 +244,21 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <h2 id="u4EC0_u4E48_u662F_u8DE8_u57DF_3F"><a href="#u4EC0_u4E48_u662F_u8DE8_u57DF_3F" class="headerlink" title="什么是跨域?"></a>什么是跨域?</h2><p>&nbsp;&nbsp;所谓跨域, 就是当前域到了另外的域，域不仅仅指的是不同的域名网站，可能同一个域名不同的端口号也算不同的域。浏览器是有规则的，只要协议、域名、端口有任何一个不同，都被当作是不同的域。协议指的是http，或者https等。<br><a id="more"></a><br>下面给出一个列表，指出不同域的情况：<br><br><img src="http://7xq76k.com1.z0.glb.clouddn.com/domain.png" alt="domin"></p>
+        <h3 id="u4E3B_u8981_u601D_u60F3"><a href="#u4E3B_u8981_u601D_u60F3" class="headerlink" title="主要思想"></a>主要思想</h3><p>通过在应用页面设置一个<code>iframe</code>,其源头指向拥有数据的文件或页面，让那个data（数据页面）把值赋在那个iframe的<code>window.name</code>上，然后由于<code>window.name</code>在浏览器环境中是一个<code>全局/window对象的属性</code>，且当在 frame 中加载新页面时，name 的属性值依旧保持不变。通过在 iframe 中加载一个资源，该目标页面将设置 frame 的 name 属性。此 name 属性值可被获取到，以访问 Web 服务发送的信息。但 name 属性仅对相同域名的 frame 可访问。这意味着为了访问 name 属性，当远程 Web 服务页面被加载后，必须导航 frame 回到原始域。(就是说先用data把数据放在iframe的window.name里面，然后切换到proxy ,这时proxy拿到window.name的数据，就可以向同域的app传值了)同源策略依旧防止其他 frame 访问 name 属性。一旦 name 属性获得，销毁 frame 。</p>
+<h3 id="u5177_u4F53_u5B9E_u73B0"><a href="#u5177_u4F53_u5B9E_u73B0" class="headerlink" title="具体实现"></a>具体实现</h3><p>有三个页面：</p>
 <blockquote>
-<p>注:<br><code>主域名</code> (Domain Name，现也有简称为”Domain”)，是用作识别您的网站，例如 yourdomain.com。 域名比IP地址更容易记住，可以让大众更快捷容易地通过域名找到你的网站。<br>域名，是没有重复的，一个域名只会代表一个位置，您选定一个独一无二的主域名后，需向认可的域名注册商注册您域名。 我们亦可为您注册域名。<br><code>子域名</code>是一个另外的网页，有独立不同的内容，但不是一个新的域名。 子域名是无须申请的，当你登记了你自己的域名后，你就可以在你的域名前加上任何子域名。<br>例如:en.yourdomain.com 是 yourdomain.com 的子域名。</p>
-</blockquote>
-<h3 id="u540C_u6E90_u7B56_u7565"><a href="#u540C_u6E90_u7B56_u7565" class="headerlink" title="同源策略"></a>同源策略</h3><blockquote>
-<p> 基于网络安全的 <a href="https://developer.mozilla.org/zh-CN/docs/Web/Security/Same-origin_policy" target="_blank" rel="external"><code>同源策略</code></a>( <small>MDN解释 </small>)的限制，正常情况下我们不能在不同域操作不同域下的对象的，比如a.com域下操作b.com域的数据。</p>
-<p> 但也有特殊情况，有些情况是要访问到别的网站的，比如加载一张图片，这张图片可能在别的网站，还有加载一个js文件，也是有可能在别的网站的，还有嵌入一个frame元素，也可以访问到别的网站的内容。</p>
-</blockquote>
-<h3 id="u8DE8_u57DF_u65B9_u5F0F"><a href="#u8DE8_u57DF_u65B9_u5F0F" class="headerlink" title="跨域方式"></a>跨域方式</h3><blockquote>
-<p>所以跨域正是利用了上面几点，比如:</p>
 <ul>
-<li><code>jsonp</code>利用加载js文件的功能，在<code>script</code>标签中的<code>src</code>指定为目标网站的js.同理，还有<code>image</code>标签的src属性也可以跨域。</li>
-<li><code>iframe</code>能直接加载别的网站的内容到自己的网站里来,从<code>iframe</code>加载内容到本站后，两边是存在着数据交互的，可以用<code>document.domain</code>，<code>window.name</code>。</li>
-<li>在<code>HTML5</code>中引进了一个叫<code>window.postMessage</code>方法来跨域传送数据，这其实也是利用了<code>iframe</code>。</li>
-<li>除此之外，还有<code>flash</code>，服务器代理等跨域方法</li>
+<li>a.com/app.html：应用页面。</li>
+<li>a.com/proxy.html：代理文件，一般是一个没有任何内容的html文件，需要和应用页面在同一域下。</li>
+<li>b.com/data.html：应用页面需要获取数据的页面，可称为数据页面。</li>
 </ul>
 </blockquote>
-<p><strong>接下来就详细地讲下前端怎么解决跨域问题。</strong></p>
+<p>实现起来基本步骤如下：<br> 1、在应用页面（a.com/app.html）中创建一个iframe，把其src指向数据页面（b.com/data.html）。<br>数据页面会把数据附加到这个iframe的window.name上，data.html代码如下：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;script type=<span class="string">"text/javascript"</span>&gt;</span><br><span class="line">    <span class="built_in">window</span>.name = <span class="string">'I was there!'</span>;    <span class="comment">// 这里是要传输的数据，大小一般为2M，IE和firefox下可以大至32M左右</span></span><br><span class="line">                                     <span class="comment">// 数据格式可以自定义，如json、字符串</span></span><br><span class="line">&lt;<span class="regexp">/script&gt;</span></span><br></pre></td></tr></table></figure>
+<p> 2、在应用页面（a.com/app.html）中监听iframe的onload事件，在此事件中设置这个iframe的src指向本地域的代理文件（代理文件和应用页面在同一域下，所以可以相互通信）。app.html部分代码如下：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">&lt;script type=<span class="string">"text/javascript"</span>&gt;</span><br><span class="line">    <span class="keyword">var</span> state = <span class="number">0</span>, </span><br><span class="line">    iframe = <span class="built_in">document</span>.createElement(<span class="string">'iframe'</span>),</span><br><span class="line">    loadfn = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (state === <span class="number">1</span>) &#123;</span><br><span class="line">            <span class="keyword">var</span> data = iframe.contentWindow.name;    <span class="comment">// 读取数据</span></span><br><span class="line">            alert(data);    <span class="comment">//弹出'I was there!'</span></span><br><span class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (state === <span class="number">0</span>) &#123;</span><br><span class="line">            state = <span class="number">1</span>;</span><br><span class="line">            iframe.contentWindow.location = <span class="string">"http://a.com/proxy.html"</span>;    <span class="comment">// 设置的代理文件</span></span><br><span class="line">        &#125;  </span><br><span class="line">    &#125;;</span><br><span class="line">    iframe.src = <span class="string">'http://b.com/data.html'</span>;</span><br><span class="line">    <span class="keyword">if</span> (iframe.attachEvent) &#123;</span><br><span class="line">        iframe.attachEvent(<span class="string">'onload'</span>, loadfn);</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        iframe.onload  = loadfn;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">document</span>.body.appendChild(iframe);</span><br><span class="line"><span class="xml"><span class="tag">&lt;/<span class="title">script</span>&gt;</span></span></span><br></pre></td></tr></table></figure></p>
+<p> 3、获取数据以后销毁这个iframe，释放内存；这也保证了安全（不被其他域frame js访问）。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;script type=<span class="string">"text/javascript"</span>&gt;</span><br><span class="line">    iframe.contentWindow.document.write(<span class="string">''</span>);</span><br><span class="line">    iframe.contentWindow.close();</span><br><span class="line">    <span class="built_in">document</span>.body.removeChild(iframe);</span><br><span class="line"><span class="xml"><span class="tag">&lt;/<span class="title">script</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
+<h3 id="u603B_u7ED3"><a href="#u603B_u7ED3" class="headerlink" title="总结"></a>总结</h3><p>iframe的src属性由外域转向本地域，跨域数据即由iframe的window.name从外域传递到本地域。这个就巧妙地绕过了浏览器的跨域访问限制，但同时它又是安全操作。</p>
 
       
     </div>
@@ -271,13 +267,13 @@
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/2016/04/01/跨域之法（一）——初探跨域/">跨域之法（一）——初探跨域</a></p>
+        <p><span>本文标题:</span><a href="/2016/04/05/window.name/">跨域之法（三）—— window.name</a></p>
         <p><span>文章作者:</span><a href="/" title="访问 Lueny 的个人博客">Lueny</a></p>
-        <p><span>发布时间:</span>2016年04月01日 - 15时57分</p>
-        <p><span>最后更新:</span>2016年04月04日 - 14时50分</p>
+        <p><span>发布时间:</span>2016年04月05日 - 12时05分</p>
+        <p><span>最后更新:</span>2016年04月09日 - 16时49分</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2016/04/01/跨域之法（一）——初探跨域/" title="跨域之法（一）——初探跨域">http://yoursite.com/2016/04/01/跨域之法（一）——初探跨域/</a>
-            <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2016/04/01/跨域之法（一）——初探跨域/　　作者: Lueny" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/2016/04/05/window.name/" title="跨域之法（三）—— window.name">http://yoursite.com/2016/04/05/window.name/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2016/04/05/window.name/　　作者: Lueny" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script src="/js/clipboard.min.js"></script>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
@@ -290,16 +286,10 @@
 
     <nav id="article-nav">
         
-            <div id="article-nav-newer" class="article-nav-title">
-                <a href="/2016/04/02/JSONP/">
-                    跨域之法（二）—— JSONP
-                </a>
-            </div>
-        
         
             <div id="article-nav-older" class="article-nav-title">
-                <a href="/2016/03/26/getGray/">
-                    编程题笔记-格雷码生成
+                <a href="/2016/04/02/JSONP/">
+                    跨域之法（二）—— JSONP
                 </a>
             </div>
         
@@ -310,7 +300,7 @@
 
     <div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
-    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#u4EC0_u4E48_u662F_u8DE8_u57DF_3F"><span class="toc-number">1.</span> <span class="toc-text">什么是跨域?</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#u540C_u6E90_u7B56_u7565"><span class="toc-number">1.1.</span> <span class="toc-text">同源策略</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#u8DE8_u57DF_u65B9_u5F0F"><span class="toc-number">1.2.</span> <span class="toc-text">跨域方式</span></a></li></ol></li></ol>
+    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#u4E3B_u8981_u601D_u60F3"><span class="toc-number">1.</span> <span class="toc-text">主要思想</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#u5177_u4F53_u5B9E_u73B0"><span class="toc-number">2.</span> <span class="toc-text">具体实现</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#u603B_u7ED3"><span class="toc-number">3.</span> <span class="toc-text">总结</span></a></li></ol>
 </div>
 <style>
     .left-col .switch-btn {
@@ -374,7 +364,7 @@
     
       <div class="duoshuo" id="comments">
     <!-- 多说评论框 start -->
-    <div class="ds-thread" data-thread-key="2016/04/01/跨域之法（一）——初探跨域/" data-title="跨域之法（一）——初探跨域" data-url="http://yoursite.com/2016/04/01/跨域之法（一）——初探跨域/"></div>
+    <div class="ds-thread" data-thread-key="2016/04/05/window.name/" data-title="跨域之法（三）—— window.name" data-url="http://yoursite.com/2016/04/05/window.name/"></div>
     <!-- 多说评论框 end -->
     <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
     <script type="text/javascript">
@@ -398,15 +388,13 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2016/04/02/JSONP/" title="上一篇: 跨域之法（二）—— JSONP">
-                <i class="fa fa-angle-left"></i>
-            </a>
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
         
 
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
 
         
-            <a href="/2016/03/26/getGray/" title="下一篇: 编程题笔记-格雷码生成">
+            <a href="/2016/04/02/JSONP/" title="下一篇: 跨域之法（二）—— JSONP">
                 <i class="fa fa-angle-right"></i>
             </a>
         
