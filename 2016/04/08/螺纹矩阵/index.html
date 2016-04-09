@@ -3,21 +3,21 @@
 <head>
   <meta charset="utf-8">
   
-  <title>hello-lwy | Lueny-blog</title>
+  <title>JavaScript实现螺旋矩阵 | Lueny-blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Hello world!
-  h2{    margin: .5em auto;    font-weight: bold;    color: #9c9;    padding-bottom: 5px;    border-bottom: 1px solid #ddd;    &amp;amp;:hover {      color:#88acdb;    };    text-align: cente">
+  <meta name="description" content="这个比较有意思吧~
+1234567891011121314151617181920212223242526272829303132333435363738394041424344454647var N = 9;//JavaScript二维数组的声明var a = new Array(); //先声明一维for (var i = 0; i &amp;lt; N; i++) &amp;#123;         //">
 <meta property="og:type" content="article">
-<meta property="og:title" content="hello-lwy">
-<meta property="og:url" content="http://yoursite.com/2016/01/07/hello-lwy/index.html">
+<meta property="og:title" content="JavaScript实现螺旋矩阵">
+<meta property="og:url" content="http://yoursite.com/2016/04/08/螺纹矩阵/index.html">
 <meta property="og:site_name" content="Lueny-blog">
-<meta property="og:description" content="Hello world!
-  h2{    margin: .5em auto;    font-weight: bold;    color: #9c9;    padding-bottom: 5px;    border-bottom: 1px solid #ddd;    &amp;amp;:hover {      color:#88acdb;    };    text-align: cente">
-<meta property="og:updated_time" content="2016-01-27T16:17:37.271Z">
+<meta property="og:description" content="这个比较有意思吧~
+1234567891011121314151617181920212223242526272829303132333435363738394041424344454647var N = 9;//JavaScript二维数组的声明var a = new Array(); //先声明一维for (var i = 0; i &amp;lt; N; i++) &amp;#123;         //">
+<meta property="og:updated_time" content="2016-04-09T13:33:29.134Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="hello-lwy">
-<meta name="twitter:description" content="Hello world!
-  h2{    margin: .5em auto;    font-weight: bold;    color: #9c9;    padding-bottom: 5px;    border-bottom: 1px solid #ddd;    &amp;amp;:hover {      color:#88acdb;    };    text-align: cente">
+<meta name="twitter:title" content="JavaScript实现螺旋矩阵">
+<meta name="twitter:description" content="这个比较有意思吧~
+1234567891011121314151617181920212223242526272829303132333435363738394041424344454647var N = 9;//JavaScript二维数组的声明var a = new Array(); //先声明一维for (var i = 0; i &amp;lt; N; i++) &amp;#123;         //">
   
     <link rel="alternative" href="/atom.xml" title="Lueny-blog" type="application/atom+xml">
   
@@ -209,11 +209,11 @@
         </header>                
     </div>
 </nav>
-      <div class="body-wrap"><article id="post-hello-lwy" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-螺纹矩阵" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2016/01/07/hello-lwy/" class="article-date">
-      <time datetime="2016-01-07T14:48:23.000Z" itemprop="datePublished">2016-01-07</time>
+      <a href="/2016/04/08/螺纹矩阵/" class="article-date">
+      <time datetime="2016-04-07T23:57:25.000Z" itemprop="datePublished">2016-04-08</time>
 </a>
     </div>
   
@@ -226,7 +226,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      hello-lwy
+      JavaScript实现螺旋矩阵
     </h1>
   
 
@@ -237,7 +237,7 @@
 
         
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/随笔/">随笔</a></li></ul>
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/算法/">算法</a></li></ul>
     </div>
 
         <div class="clearfix"></div>
@@ -247,10 +247,10 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <hr>
-<p>Hello world!</p>
-<p>  h2{<br>    margin: .5em auto;<br>    font-weight: bold;<br>    color: #9c9;<br>    padding-bottom: 5px;<br>    border-bottom: 1px solid #ddd;<br>    &amp;:hover {<br>      color:#88acdb;<br>    };<br>    text-align: center;<br>    &amp;::before, &amp;::after {<br>    content:” —— “;<br>    font-family: Arial;<br>    };<br>  },</p>
-
+        <p>这个比较有意思吧~</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> N = <span class="number">9</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">//JavaScript二维数组的声明</span></span><br><span class="line"><span class="keyword">var</span> a = <span class="keyword">new</span> <span class="built_in">Array</span>(); <span class="comment">//先声明一维</span></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; N; i++) &#123; </span><br><span class="line">    </span><br><span class="line">    <span class="comment">//声明二维，每一个一维数组里面的一个元素都是一个数组；</span></span><br><span class="line">    a[i] = <span class="keyword">new</span> <span class="built_in">Array</span>(); </span><br><span class="line"></span><br><span class="line">    <span class="comment">//初始化</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">var</span> j = <span class="number">0</span>; j &lt; N; j++) &#123; </span><br><span class="line">   </span><br><span class="line">     a[i][j] = <span class="string">""</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fun</span>(<span class="params">N</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> i, j, n, num = <span class="number">1</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> (n = <span class="number">0</span>; n &lt;= N / <span class="number">2</span>; n++) &#123;</span><br><span class="line">        <span class="comment">//上</span></span><br><span class="line">        <span class="keyword">for</span> (j = n; j &lt;= N - n - <span class="number">1</span>; j++)</span><br><span class="line">            a[n][j] = num++;</span><br><span class="line">        <span class="comment">//右</span></span><br><span class="line">        <span class="keyword">for</span> (i = n + <span class="number">1</span>; i &lt; N - n - <span class="number">1</span>; i++)</span><br><span class="line">            a[i][N - n - <span class="number">1</span>] = num++;</span><br><span class="line">        <span class="comment">//下</span></span><br><span class="line">        <span class="keyword">for</span> (j = N - n - <span class="number">1</span>; j &gt; n; j--)</span><br><span class="line">            a[N - n - <span class="number">1</span>][j] = num++;</span><br><span class="line">        <span class="comment">//右</span></span><br><span class="line">        <span class="keyword">for</span> (i = N - n - <span class="number">1</span>; i &gt; n; i--)</span><br><span class="line">            a[i][n] = num++;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">fun(N);</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; N; i++) &#123;</span><br><span class="line">    <span class="keyword">var</span> str = <span class="string">""</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">var</span> j = <span class="number">0</span>; j &lt; N; j++) &#123;</span><br><span class="line">        str += a[i][j] + <span class="string">" "</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">console</span>.log(str);</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>测试:</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//N = 9</span></span><br><span class="line"><span class="number">1</span> <span class="number">2</span> <span class="number">3</span> <span class="number">4</span> <span class="number">5</span> <span class="number">6</span> <span class="number">7</span> <span class="number">8</span> <span class="number">9</span> </span><br><span class="line"><span class="number">32</span> <span class="number">33</span> <span class="number">34</span> <span class="number">35</span> <span class="number">36</span> <span class="number">37</span> <span class="number">38</span> <span class="number">39</span> <span class="number">10</span> </span><br><span class="line"><span class="number">31</span> <span class="number">56</span> <span class="number">57</span> <span class="number">58</span> <span class="number">59</span> <span class="number">60</span> <span class="number">61</span> <span class="number">40</span> <span class="number">11</span> </span><br><span class="line"><span class="number">30</span> <span class="number">55</span> <span class="number">72</span> <span class="number">73</span> <span class="number">74</span> <span class="number">75</span> <span class="number">62</span> <span class="number">41</span> <span class="number">12</span> </span><br><span class="line"><span class="number">29</span> <span class="number">54</span> <span class="number">71</span> <span class="number">80</span> <span class="number">81</span> <span class="number">76</span> <span class="number">63</span> <span class="number">42</span> <span class="number">13</span> </span><br><span class="line"><span class="number">28</span> <span class="number">53</span> <span class="number">70</span> <span class="number">79</span> <span class="number">78</span> <span class="number">77</span> <span class="number">64</span> <span class="number">43</span> <span class="number">14</span> </span><br><span class="line"><span class="number">27</span> <span class="number">52</span> <span class="number">69</span> <span class="number">68</span> <span class="number">67</span> <span class="number">66</span> <span class="number">65</span> <span class="number">44</span> <span class="number">15</span> </span><br><span class="line"><span class="number">26</span> <span class="number">51</span> <span class="number">50</span> <span class="number">49</span> <span class="number">48</span> <span class="number">47</span> <span class="number">46</span> <span class="number">45</span> <span class="number">16</span> </span><br><span class="line"><span class="number">25</span> <span class="number">24</span> <span class="number">23</span> <span class="number">22</span> <span class="number">21</span> <span class="number">20</span> <span class="number">19</span> <span class="number">18</span> <span class="number">17</span></span><br></pre></td></tr></table></figure>
       
     </div>
     
@@ -258,13 +258,13 @@
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/2016/01/07/hello-lwy/">hello-lwy</a></p>
+        <p><span>本文标题:</span><a href="/2016/04/08/螺纹矩阵/">JavaScript实现螺旋矩阵</a></p>
         <p><span>文章作者:</span><a href="/" title="访问 Lueny 的个人博客">Lueny</a></p>
-        <p><span>发布时间:</span>2016年01月07日 - 22时48分</p>
-        <p><span>最后更新:</span>2016年01月28日 - 00时17分</p>
+        <p><span>发布时间:</span>2016年04月08日 - 07时57分</p>
+        <p><span>最后更新:</span>2016年04月09日 - 21时33分</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2016/01/07/hello-lwy/" title="hello-lwy">http://yoursite.com/2016/01/07/hello-lwy/</a>
-            <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2016/01/07/hello-lwy/　　作者: Lueny" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/2016/04/08/螺纹矩阵/" title="JavaScript实现螺旋矩阵">http://yoursite.com/2016/04/08/螺纹矩阵/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2016/04/08/螺纹矩阵/　　作者: Lueny" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script src="/js/clipboard.min.js"></script>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
@@ -277,12 +277,12 @@
 
     <nav id="article-nav">
         
-            <div id="article-nav-newer" class="article-nav-title">
-                <a href="/2016/01/17/JavaScript之理解闭包/">
-                    JavaScript学习笔记---理解闭包
+        
+            <div id="article-nav-older" class="article-nav-title">
+                <a href="/2016/04/05/跨域4-document.domain&iframe/">
+                    跨域之法（四）—— document.domain+iframe
                 </a>
             </div>
-        
         
     </nav>
 
@@ -355,7 +355,7 @@
     
       <div class="duoshuo" id="comments">
     <!-- 多说评论框 start -->
-    <div class="ds-thread" data-thread-key="2016/01/07/hello-lwy/" data-title="hello-lwy" data-url="http://yoursite.com/2016/01/07/hello-lwy/"></div>
+    <div class="ds-thread" data-thread-key="2016/04/08/螺纹矩阵/" data-title="JavaScript实现螺旋矩阵" data-url="http://yoursite.com/2016/04/08/螺纹矩阵/"></div>
     <!-- 多说评论框 end -->
     <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
     <script type="text/javascript">
@@ -379,15 +379,15 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2016/01/17/JavaScript之理解闭包/" title="上一篇: JavaScript学习笔记---理解闭包">
-                <i class="fa fa-angle-left"></i>
-            </a>
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
         
 
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
 
         
-            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
+            <a href="/2016/04/05/跨域4-document.domain&iframe/" title="下一篇: 跨域之法（四）—— document.domain+iframe">
+                <i class="fa fa-angle-right"></i>
+            </a>
         
     </div>
 
