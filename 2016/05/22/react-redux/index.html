@@ -13,7 +13,7 @@
 <meta property="og:site_name" content="Lueny-blog">
 <meta property="og:description" content="为什么要用react-redux?我们知道 React 的核心思想是 构建组件, 然后各个组件维护自己的状态(state)和UI，当状态变化时，自动重新渲染整个组件。
 可以看出 React 实现的是 MVC 中的 V 层，而React对组件间数据流的管理是比较弱的，父子组件之间数据传递还比较简单，子组件可以通过 this.props 访问到父组件的数据/方法，而非父子组件之间的通信一般是通过一个全">
-<meta property="og:updated_time" content="2016-05-22T14:08:16.127Z">
+<meta property="og:updated_time" content="2016-05-22T14:10:25.307Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="react-redux学习笔记">
 <meta name="twitter:description" content="为什么要用react-redux?我们知道 React 的核心思想是 构建组件, 然后各个组件维护自己的状态(state)和UI，当状态变化时，自动重新渲染整个组件。
@@ -250,11 +250,31 @@
         <h2 id="u4E3A_u4EC0_u4E48_u8981_u7528react-redux_3F"><a href="#u4E3A_u4EC0_u4E48_u8981_u7528react-redux_3F" class="headerlink" title="为什么要用react-redux?"></a>为什么要用react-redux?</h2><p>我们知道 React 的核心思想是 <strong>构建组件</strong>, 然后各个组件维护自己的状态(state)和UI，当状态变化时，自动重新渲染整个组件。</p>
 <p>可以看出 React 实现的是 MVC 中的 V 层，而React对组件间数据流的管理是比较弱的，父子组件之间数据传递还比较简单，子组件可以通过 <strong>this.props</strong> 访问到父组件的数据/方法，而非父子组件之间的通信一般是通过一个全局事件来进行监听，如果组件非常多的话，这对数据流的管理是非常不方便的。</p>
 <p>因此就引入react-redux，一开始使用的是Flux，后来 Dan Abramov 在 React Europe 2015 上作了一场令人印象深刻的演示 <a href="https://www.youtube.com/watch?v=xsSnOQynTHs" target="_blank" rel="external">Hot Reloading with Time Travel</a>，之后 Redux 迅速成为最受人关注的 Flux 实现之一。。 </p>
-<h2 id="react-redux_u6709_u4EC0_u4E48_u4E1C_u897F_u8981_u5B66_3F"><a href="#react-redux_u6709_u4EC0_u4E48_u4E1C_u897F_u8981_u5B66_3F" class="headerlink" title="react-redux有什么东西要学?"></a>react-redux有什么东西要学?</h2><h3 id="Action"><a href="#Action" class="headerlink" title="Action"></a>Action</h3><p>+用于描述发生了什么</p>
-<h3 id="Reducer"><a href="#Reducer" class="headerlink" title="Reducer"></a>Reducer</h3><p>+根据Action更新state</p>
-<h3 id="Store"><a href="#Store" class="headerlink" title="Store"></a>Store</h3><p>+维持应用的state<br>+提供getState()方法获取state<br>+提供dispatch(action)方法更新state<br>+通过subscribe(listener)注册监听器<br><strong>一个Redux应用只有一个单一的Store</strong></p>
-<h2 id="u6570_u636E_u6D41"><a href="#u6570_u636E_u6D41" class="headerlink" title="数据流"></a>数据流</h2><p>+严格的单向数据流是Redux架构的设计核心<br>   -应用中所有的数据都遵循相同的生命周期(鼓励做数据范式化)</p>
-<h2 id="Redux_u5E94_u7528_u4E2D_u6570_u636E_u7684_u751F_u547D_u5468_u671F_u9075_u5FAA_u4EE5_u4E0B4_u4E2A_u6B65_u9AA4_3A"><a href="#Redux_u5E94_u7528_u4E2D_u6570_u636E_u7684_u751F_u547D_u5468_u671F_u9075_u5FAA_u4EE5_u4E0B4_u4E2A_u6B65_u9AA4_3A" class="headerlink" title="Redux应用中数据的生命周期遵循以下4个步骤:"></a>Redux应用中数据的生命周期遵循以下4个步骤:</h2><p>+调用 store.dispatch(action)<br>+Redux Store调用传入的reducer函数(参数: state , action)<br>+根reducer把多个子reducer合并成一个单一的state树 ( combineReducer( { } ))<br>+Redux store 保存了根 reducer 返回的完整 state 树。</p>
+<h2 id="react-redux_u6709_u4EC0_u4E48_u4E1C_u897F_u8981_u5B66_3F"><a href="#react-redux_u6709_u4EC0_u4E48_u4E1C_u897F_u8981_u5B66_3F" class="headerlink" title="react-redux有什么东西要学?"></a>react-redux有什么东西要学?</h2><h3 id="Action"><a href="#Action" class="headerlink" title="Action"></a>Action</h3><ul>
+<li>用于描述发生了什么</li>
+</ul>
+<h3 id="Reducer"><a href="#Reducer" class="headerlink" title="Reducer"></a>Reducer</h3><ul>
+<li>根据Action更新state</li>
+</ul>
+<h3 id="Store"><a href="#Store" class="headerlink" title="Store"></a>Store</h3><ul>
+<li>维持应用的state</li>
+<li>提供getState()方法获取state</li>
+<li>提供dispatch(action)方法更新state</li>
+<li>通过subscribe(listener)注册监听器</li>
+</ul>
+<p><strong>一个Redux应用只有一个单一的Store</strong></p>
+<h2 id="u6570_u636E_u6D41"><a href="#u6570_u636E_u6D41" class="headerlink" title="数据流"></a>数据流</h2><ul>
+<li>严格的单向数据流是Redux架构的设计核心<ul>
+<li>应用中所有的数据都遵循相同的生命周期(鼓励做数据范式化)</li>
+</ul>
+</li>
+</ul>
+<h2 id="Redux_u5E94_u7528_u4E2D_u6570_u636E_u7684_u751F_u547D_u5468_u671F_u9075_u5FAA_u4EE5_u4E0B4_u4E2A_u6B65_u9AA4_3A"><a href="#Redux_u5E94_u7528_u4E2D_u6570_u636E_u7684_u751F_u547D_u5468_u671F_u9075_u5FAA_u4EE5_u4E0B4_u4E2A_u6B65_u9AA4_3A" class="headerlink" title="Redux应用中数据的生命周期遵循以下4个步骤:"></a>Redux应用中数据的生命周期遵循以下4个步骤:</h2><ul>
+<li>调用 store.dispatch(action)</li>
+<li>Redux Store调用传入的reducer函数(参数: state , action)</li>
+<li>根reducer把多个子reducer合并成一个单一的state树 ( combineReducer( { } ))</li>
+<li>Redux store 保存了根 reducer 返回的完整 state 树。</li>
+</ul>
 <h2 id="u5B9E_u8DF5_React+Redux"><a href="#u5B9E_u8DF5_React+Redux" class="headerlink" title="实践 React+Redux"></a>实践 React+Redux</h2><p>  redux和react之间没有关系,  redux 支持react、Angular、jQuery，Backbone甚至纯JavaScript)</p>
 <ol>
 <li>Redux 通过Action的形式来改变 state （全局）</li>
@@ -304,7 +324,7 @@
         <p><span>本文标题:</span><a href="/2016/05/22/react-redux/">react-redux学习笔记</a></p>
         <p><span>文章作者:</span><a href="/" title="访问 Lueny 的个人博客">Lueny</a></p>
         <p><span>发布时间:</span>2016年05月22日 - 22时06分</p>
-        <p><span>最后更新:</span>2016年05月22日 - 22时08分</p>
+        <p><span>最后更新:</span>2016年05月22日 - 22时10分</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/2016/05/22/react-redux/" title="react-redux学习笔记">http://yoursite.com/2016/05/22/react-redux/</a>
             <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2016/05/22/react-redux/　　作者: Lueny" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
