@@ -3,18 +3,21 @@
 <head>
   <meta charset="utf-8">
   
-  <title>跨域之法（三）—— window.name | Lueny-blog</title>
+  <title>react-redux学习笔记 | Lueny-blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="主要思想通过在应用页面设置一个iframe,其源头指向拥有数据的文件或页面，让那个data（数据页面）把值赋在那个iframe的window.name上，然后由于window.name在浏览器环境中是一个全局/window对象的属性，且当在 frame 中加载新页面时，name 的属性值依旧保持不变。通过在 iframe 中加载一个资源，该目标页面将设置 frame 的 name 属性。此 nam">
+  <meta name="description" content="为什么要用react-redux?我们知道 React 的核心思想是 构建组件, 然后各个组件维护自己的状态(state)和UI，当状态变化时，自动重新渲染整个组件。
+可以看出 React 实现的是 MVC 中的 V 层，而React对组件间数据流的管理是比较弱的，父子组件之间数据传递还比较简单，子组件可以通过 this.props 访问到父组件的数据/方法，而非父子组件之间的通信一般是通过一个全">
 <meta property="og:type" content="article">
-<meta property="og:title" content="跨域之法（三）—— window.name">
-<meta property="og:url" content="http://yoursite.com/2016/04/05/跨域3-window.name/index.html">
+<meta property="og:title" content="react-redux学习笔记">
+<meta property="og:url" content="http://yoursite.com/2016/05/22/react-redux/index.html">
 <meta property="og:site_name" content="Lueny-blog">
-<meta property="og:description" content="主要思想通过在应用页面设置一个iframe,其源头指向拥有数据的文件或页面，让那个data（数据页面）把值赋在那个iframe的window.name上，然后由于window.name在浏览器环境中是一个全局/window对象的属性，且当在 frame 中加载新页面时，name 的属性值依旧保持不变。通过在 iframe 中加载一个资源，该目标页面将设置 frame 的 name 属性。此 nam">
-<meta property="og:updated_time" content="2016-04-09T08:51:48.206Z">
+<meta property="og:description" content="为什么要用react-redux?我们知道 React 的核心思想是 构建组件, 然后各个组件维护自己的状态(state)和UI，当状态变化时，自动重新渲染整个组件。
+可以看出 React 实现的是 MVC 中的 V 层，而React对组件间数据流的管理是比较弱的，父子组件之间数据传递还比较简单，子组件可以通过 this.props 访问到父组件的数据/方法，而非父子组件之间的通信一般是通过一个全">
+<meta property="og:updated_time" content="2016-05-22T14:06:36.388Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="跨域之法（三）—— window.name">
-<meta name="twitter:description" content="主要思想通过在应用页面设置一个iframe,其源头指向拥有数据的文件或页面，让那个data（数据页面）把值赋在那个iframe的window.name上，然后由于window.name在浏览器环境中是一个全局/window对象的属性，且当在 frame 中加载新页面时，name 的属性值依旧保持不变。通过在 iframe 中加载一个资源，该目标页面将设置 frame 的 name 属性。此 nam">
+<meta name="twitter:title" content="react-redux学习笔记">
+<meta name="twitter:description" content="为什么要用react-redux?我们知道 React 的核心思想是 构建组件, 然后各个组件维护自己的状态(state)和UI，当状态变化时，自动重新渲染整个组件。
+可以看出 React 实现的是 MVC 中的 V 层，而React对组件间数据流的管理是比较弱的，父子组件之间数据传递还比较简单，子组件可以通过 this.props 访问到父组件的数据/方法，而非父子组件之间的通信一般是通过一个全">
   
     <link rel="alternative" href="/atom.xml" title="Lueny-blog" type="application/atom+xml">
   
@@ -206,11 +209,11 @@
         </header>                
     </div>
 </nav>
-      <div class="body-wrap"><article id="post-跨域3-window.name" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-react-redux" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2016/04/05/跨域3-window.name/" class="article-date">
-      <time datetime="2016-04-05T04:05:02.000Z" itemprop="datePublished">2016-04-05</time>
+      <a href="/2016/05/22/react-redux/" class="article-date">
+      <time datetime="2016-05-21T16:00:00.000Z" itemprop="datePublished">2016-05-22</time>
 </a>
     </div>
   
@@ -223,7 +226,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      跨域之法（三）—— window.name
+      react-redux学习笔记
     </h1>
   
 
@@ -234,7 +237,7 @@
 
         
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/react/">react</a></li></ul>
     </div>
 
         <div class="clearfix"></div>
@@ -244,21 +247,52 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <h3 id="u4E3B_u8981_u601D_u60F3"><a href="#u4E3B_u8981_u601D_u60F3" class="headerlink" title="主要思想"></a>主要思想</h3><p>通过在应用页面设置一个<code>iframe</code>,其源头指向拥有数据的文件或页面，让那个data（数据页面）把值赋在那个iframe的<code>window.name</code>上，然后由于<code>window.name</code>在浏览器环境中是一个<code>全局/window对象的属性</code>，且当在 frame 中加载新页面时，name 的属性值依旧保持不变。通过在 iframe 中加载一个资源，该目标页面将设置 frame 的 name 属性。此 name 属性值可被获取到，以访问 Web 服务发送的信息。但 name 属性仅对相同域名的 frame 可访问。这意味着为了访问 name 属性，当远程 Web 服务页面被加载后，必须导航 frame 回到原始域。(就是说先用data把数据放在iframe的window.name里面，然后切换到proxy ,这时proxy拿到window.name的数据，就可以向同域的app传值了)同源策略依旧防止其他 frame 访问 name 属性。一旦 name 属性获得，销毁 frame 。<br><a id="more"></a></p>
-<h3 id="u5177_u4F53_u5B9E_u73B0"><a href="#u5177_u4F53_u5B9E_u73B0" class="headerlink" title="具体实现"></a>具体实现</h3><p>有三个页面：</p>
-<blockquote>
-<ul>
-<li>a.com/app.html：应用页面。</li>
-<li>a.com/proxy.html：代理文件，一般是一个没有任何内容的html文件，需要和应用页面在同一域下。</li>
-<li>b.com/data.html：应用页面需要获取数据的页面，可称为数据页面。</li>
-</ul>
-</blockquote>
-<p>实现起来基本步骤如下：<br> 1、在应用页面（a.com/app.html）中创建一个iframe，把其src指向数据页面（b.com/data.html）。<br>数据页面会把数据附加到这个iframe的window.name上，data.html代码如下：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;script type=<span class="string">"text/javascript"</span>&gt;</span><br><span class="line">    <span class="built_in">window</span>.name = <span class="string">'I was there!'</span>;    <span class="comment">// 这里是要传输的数据，大小一般为2M，IE和firefox下可以大至32M左右</span></span><br><span class="line">                                     <span class="comment">// 数据格式可以自定义，如json、字符串</span></span><br><span class="line">&lt;<span class="regexp">/script&gt;</span></span><br></pre></td></tr></table></figure>
-<p> 2、在应用页面（a.com/app.html）中监听iframe的onload事件，在此事件中设置这个iframe的src指向本地域的代理文件（代理文件和应用页面在同一域下，所以可以相互通信）。app.html部分代码如下：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">&lt;script type=<span class="string">"text/javascript"</span>&gt;</span><br><span class="line">    <span class="keyword">var</span> state = <span class="number">0</span>, </span><br><span class="line">    iframe = <span class="built_in">document</span>.createElement(<span class="string">'iframe'</span>),</span><br><span class="line">    loadfn = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (state === <span class="number">1</span>) &#123;</span><br><span class="line">            <span class="keyword">var</span> data = iframe.contentWindow.name;    <span class="comment">// 读取数据</span></span><br><span class="line">            alert(data);    <span class="comment">//弹出'I was there!'</span></span><br><span class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (state === <span class="number">0</span>) &#123;</span><br><span class="line">            state = <span class="number">1</span>;</span><br><span class="line">            iframe.contentWindow.location = <span class="string">"http://a.com/proxy.html"</span>;    <span class="comment">// 设置的代理文件</span></span><br><span class="line">        &#125;  </span><br><span class="line">    &#125;;</span><br><span class="line">    iframe.src = <span class="string">'http://b.com/data.html'</span>;</span><br><span class="line">    <span class="keyword">if</span> (iframe.attachEvent) &#123;</span><br><span class="line">        iframe.attachEvent(<span class="string">'onload'</span>, loadfn);</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        iframe.onload  = loadfn;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">document</span>.body.appendChild(iframe);</span><br><span class="line"><span class="xml"><span class="tag">&lt;/<span class="title">script</span>&gt;</span></span></span><br></pre></td></tr></table></figure></p>
-<p> 3、获取数据以后销毁这个iframe，释放内存；这也保证了安全（不被其他域frame js访问）。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;script type=<span class="string">"text/javascript"</span>&gt;</span><br><span class="line">    iframe.contentWindow.document.write(<span class="string">''</span>);</span><br><span class="line">    iframe.contentWindow.close();</span><br><span class="line">    <span class="built_in">document</span>.body.removeChild(iframe);</span><br><span class="line"><span class="xml"><span class="tag">&lt;/<span class="title">script</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
-<h3 id="u603B_u7ED3"><a href="#u603B_u7ED3" class="headerlink" title="总结"></a>总结</h3><p>iframe的src属性由外域转向本地域，跨域数据即由iframe的window.name从外域传递到本地域。这个就巧妙地绕过了浏览器的跨域访问限制，但同时它又是安全操作。</p>
+        <h2 id="u4E3A_u4EC0_u4E48_u8981_u7528react-redux_3F"><a href="#u4E3A_u4EC0_u4E48_u8981_u7528react-redux_3F" class="headerlink" title="为什么要用react-redux?"></a>为什么要用react-redux?</h2><p>我们知道 React 的核心思想是 <strong>构建组件</strong>, 然后各个组件维护自己的状态(state)和UI，当状态变化时，自动重新渲染整个组件。</p>
+<p>可以看出 React 实现的是 MVC 中的 V 层，而React对组件间数据流的管理是比较弱的，父子组件之间数据传递还比较简单，子组件可以通过 <strong>this.props</strong> 访问到父组件的数据/方法，而非父子组件之间的通信一般是通过一个全局事件来进行监听，如果组件非常多的话，这对数据流的管理是非常不方便的。</p>
+<p>因此就引入react-redux，一开始使用的是Flux，后来 Dan Abramov 在 React Europe 2015 上作了一场令人印象深刻的演示 <a href="https://www.youtube.com/watch?v=xsSnOQynTHs" target="_blank" rel="external">Hot Reloading with Time Travel</a>，之后 Redux 迅速成为最受人关注的 Flux 实现之一。。 </p>
+<h2 id="react-redux_u6709_u4EC0_u4E48_u4E1C_u897F_u8981_u5B66_3F"><a href="#react-redux_u6709_u4EC0_u4E48_u4E1C_u897F_u8981_u5B66_3F" class="headerlink" title="react-redux有什么东西要学?"></a>react-redux有什么东西要学?</h2><h3 id="Action"><a href="#Action" class="headerlink" title="Action"></a>Action</h3><p>+用于描述发生了什么</p>
+<h3 id="Reducer"><a href="#Reducer" class="headerlink" title="Reducer"></a>Reducer</h3><p>+根据Action更新state</p>
+<h3 id="Store"><a href="#Store" class="headerlink" title="Store"></a>Store</h3><p>+维持应用的state<br>+提供getState()方法获取state<br>+提供dispatch(action)方法更新state<br>+通过subscribe(listener)注册监听器<br><strong>一个Redux应用只有一个单一的Store</strong></p>
+<h2 id="u6570_u636E_u6D41"><a href="#u6570_u636E_u6D41" class="headerlink" title="数据流"></a>数据流</h2><p>+严格的单向数据流是Redux架构的设计核心<br>   -应用中所有的数据都遵循相同的生命周期(鼓励做数据范式化)</p>
+<h2 id="Redux_u5E94_u7528_u4E2D_u6570_u636E_u7684_u751F_u547D_u5468_u671F_u9075_u5FAA_u4EE5_u4E0B4_u4E2A_u6B65_u9AA4_3A"><a href="#Redux_u5E94_u7528_u4E2D_u6570_u636E_u7684_u751F_u547D_u5468_u671F_u9075_u5FAA_u4EE5_u4E0B4_u4E2A_u6B65_u9AA4_3A" class="headerlink" title="Redux应用中数据的生命周期遵循以下4个步骤:"></a>Redux应用中数据的生命周期遵循以下4个步骤:</h2><p>+调用 store.dispatch(action)<br>+Redux Store调用传入的reducer函数(参数: state , action)<br>+根reducer把多个子reducer合并成一个单一的state树 ( combineReducer( { } ))<br>+Redux store 保存了根 reducer 返回的完整 state 树。</p>
+<h2 id="u5B9E_u8DF5_React+Redux"><a href="#u5B9E_u8DF5_React+Redux" class="headerlink" title="实践 React+Redux"></a>实践 React+Redux</h2><p>  redux和react之间没有关系,  redux 支持react、Angular、jQuery，Backbone甚至纯JavaScript)</p>
+<ol>
+<li>Redux 通过Action的形式来改变 state （全局）</li>
+<li>容器组件（Smart/Container Components）和展示组件（Dumb/Presentational Components）</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th style="text-align:center"></th>
+<th style="text-align:center">容器组件</th>
+<th style="text-align:center">展示组件</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">Location</td>
+<td style="text-align:center">最顶层，路由处理</td>
+<td style="text-align:center">中间和子组件</td>
+</tr>
+<tr>
+<td style="text-align:center">Aware of Redux</td>
+<td style="text-align:center">是</td>
+<td style="text-align:center">否</td>
+</tr>
+<tr>
+<td style="text-align:center">读取数据</td>
+<td style="text-align:center">从 Redux 获取 state</td>
+<td style="text-align:center">从 props 获取数据</td>
+</tr>
+<tr>
+<td style="text-align:center">修改数据</td>
+<td style="text-align:center">向 Redux 派发 actions</td>
+<td style="text-align:center">从 props 调用回调函数</td>
+</tr>
+</tbody>
+</table>
+<p>Redux 的 React 绑定库包含了 容器组件和展示组件相分离 的开发思想。<br>明智的做法是只在最顶层组件（如路由操作）里使用 Redux。其余内部组件仅仅是展示性的，所有数据都通过 props 传入。</p>
+<p>未完待续````</p>
 
       
     </div>
@@ -267,13 +301,13 @@
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/2016/04/05/跨域3-window.name/">跨域之法（三）—— window.name</a></p>
+        <p><span>本文标题:</span><a href="/2016/05/22/react-redux/">react-redux学习笔记</a></p>
         <p><span>文章作者:</span><a href="/" title="访问 Lueny 的个人博客">Lueny</a></p>
-        <p><span>发布时间:</span>2016年04月05日 - 12时05分</p>
-        <p><span>最后更新:</span>2016年04月09日 - 16时51分</p>
+        <p><span>发布时间:</span>2016年05月22日 - 00时00分</p>
+        <p><span>最后更新:</span>2016年05月22日 - 22时06分</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2016/04/05/跨域3-window.name/" title="跨域之法（三）—— window.name">http://yoursite.com/2016/04/05/跨域3-window.name/</a>
-            <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2016/04/05/跨域3-window.name/　　作者: Lueny" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/2016/05/22/react-redux/" title="react-redux学习笔记">http://yoursite.com/2016/05/22/react-redux/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2016/05/22/react-redux/　　作者: Lueny" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script src="/js/clipboard.min.js"></script>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
@@ -287,15 +321,15 @@
     <nav id="article-nav">
         
             <div id="article-nav-newer" class="article-nav-title">
-                <a href="/2016/04/05/跨域4-document.domain&iframe/">
-                    跨域之法（四）—— document.domain+iframe
+                <a href="/2016/05/22/JavaScript-problem1/">
+                    事件代理中遇到的问题
                 </a>
             </div>
         
         
             <div id="article-nav-older" class="article-nav-title">
-                <a href="/2016/04/02/跨域2-JSONP/">
-                    跨域之法（二）—— JSONP
+                <a href="/2016/04/08/螺纹矩阵/">
+                    JavaScript实现螺旋矩阵
                 </a>
             </div>
         
@@ -306,7 +340,7 @@
 
     <div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
-    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#u4E3B_u8981_u601D_u60F3"><span class="toc-number">1.</span> <span class="toc-text">主要思想</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#u5177_u4F53_u5B9E_u73B0"><span class="toc-number">2.</span> <span class="toc-text">具体实现</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#u603B_u7ED3"><span class="toc-number">3.</span> <span class="toc-text">总结</span></a></li></ol>
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#u4E3A_u4EC0_u4E48_u8981_u7528react-redux_3F"><span class="toc-number">1.</span> <span class="toc-text">为什么要用react-redux?</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#react-redux_u6709_u4EC0_u4E48_u4E1C_u897F_u8981_u5B66_3F"><span class="toc-number">2.</span> <span class="toc-text">react-redux有什么东西要学?</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Action"><span class="toc-number">2.1.</span> <span class="toc-text">Action</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Reducer"><span class="toc-number">2.2.</span> <span class="toc-text">Reducer</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Store"><span class="toc-number">2.3.</span> <span class="toc-text">Store</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#u6570_u636E_u6D41"><span class="toc-number">3.</span> <span class="toc-text">数据流</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Redux_u5E94_u7528_u4E2D_u6570_u636E_u7684_u751F_u547D_u5468_u671F_u9075_u5FAA_u4EE5_u4E0B4_u4E2A_u6B65_u9AA4_3A"><span class="toc-number">4.</span> <span class="toc-text">Redux应用中数据的生命周期遵循以下4个步骤:</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#u5B9E_u8DF5_React+Redux"><span class="toc-number">5.</span> <span class="toc-text">实践 React+Redux</span></a></li></ol>
 </div>
 <style>
     .left-col .switch-btn {
@@ -370,7 +404,7 @@
     
       <div class="duoshuo" id="comments">
     <!-- 多说评论框 start -->
-    <div class="ds-thread" data-thread-key="2016/04/05/跨域3-window.name/" data-title="跨域之法（三）—— window.name" data-url="http://yoursite.com/2016/04/05/跨域3-window.name/"></div>
+    <div class="ds-thread" data-thread-key="2016/05/22/react-redux/" data-title="react-redux学习笔记" data-url="http://yoursite.com/2016/05/22/react-redux/"></div>
     <!-- 多说评论框 end -->
     <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
     <script type="text/javascript">
@@ -394,7 +428,7 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2016/04/05/跨域4-document.domain&iframe/" title="上一篇: 跨域之法（四）—— document.domain+iframe">
+            <a href="/2016/05/22/JavaScript-problem1/" title="上一篇: 事件代理中遇到的问题">
                 <i class="fa fa-angle-left"></i>
             </a>
         
@@ -402,7 +436,7 @@
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
 
         
-            <a href="/2016/04/02/跨域2-JSONP/" title="下一篇: 跨域之法（二）—— JSONP">
+            <a href="/2016/04/08/螺纹矩阵/" title="下一篇: JavaScript实现螺旋矩阵">
                 <i class="fa fa-angle-right"></i>
             </a>
         
