@@ -138,7 +138,7 @@
                 
                 <section class="switch-part switch-part2">
                     <div class="widget tagcloud" id="js-tagcloud">
-                        <a href="/tags/Ajax/" style="font-size: 13.33px;">Ajax</a> <a href="/tags/JavaScript/" style="font-size: 20px;">JavaScript</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/算法/" style="font-size: 16.67px;">算法</a> <a href="/tags/随笔/" style="font-size: 10px;">随笔</a>
+                        <a href="/tags/Ajax/" style="font-size: 13.33px;">Ajax</a> <a href="/tags/JavaScript/" style="font-size: 20px;">JavaScript</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/工具/" style="font-size: 10px;">工具</a> <a href="/tags/算法/" style="font-size: 16.67px;">算法</a> <a href="/tags/随笔/" style="font-size: 10px;">随笔</a>
                     </div>
                 </section>
                 
@@ -209,6 +209,72 @@
     </div>
 </nav>
       <div class="body-wrap">
+  
+    <article id="post-小技巧-Browsersync" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/05/22/小技巧-Browsersync/" class="article-date">
+      <time datetime="2016-05-21T16:00:00.000Z" itemprop="datePublished">2016-05-22</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/05/22/小技巧-Browsersync/">小技巧-Browsersync</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p>最近在写静态页面，每次修改一点就要去刷新一下页面，实在是太烦了。于是在网上找到了一款 省时神器 <strong>Browsersync</strong>，通过npm来安装非常方便。</p>
+<h2 id="u5B89_u88C5Browsersync"><a href="#u5B89_u88C5Browsersync" class="headerlink" title="安装Browsersync"></a>安装Browsersync</h2><p>首先要确定本地环境已经安装好node，然后通过命令</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">install -g browser-sync</span><br></pre></td></tr></table></figure>
+<h2 id="u542F_u52A8Browsersync"><a href="#u542F_u52A8Browsersync" class="headerlink" title="启动Browsersync"></a>启动Browsersync</h2><p>安装成功后，我们在本地建一个文件来进行测试Browsersync是否能正常启动</p>
+<p>-css <br><br>&nbsp;&nbsp;|-test.css<br><br>-index.html<br></p>
+<p>然后启动 Browsersync 对文件进行监听, index.html所在路径下打开终端窗口</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">//--files &#34920;&#31034;&#36335;&#24452;&#26159;&#30456;&#23545;&#20110;&#36816;&#34892;&#35813;&#21629;&#20196;&#30340;&#39033;&#30446;&#10;browser-sync start --server --files &#34;*.html&#34;&#10;//&#23545;&#22810;&#20010;&#36827;&#34892;&#30417;&#21548;&#10;browser-sync start --server --files &#34;css/*.css, *.html&#34;</span><br></pre></td></tr></table></figure>
+<p>启动成功会出现下面这个<br><img src="http://7xq76k.com1.z0.glb.clouddn.com/brower-sync.png" alt="brower-sync"><br>如果你项目根目录下有 <strong>index.html</strong> 这个文件，则启动服务后，在浏览器地址栏输入：<strong><a href="http://localhost:3000" target="_blank" rel="external">http://localhost:3000</a></strong> 则显示index.html的内容，如果不是的话会出现下面的情况：<br><img src="http://7xq76k.com1.z0.glb.clouddn.com/CannotGet.png" alt="brower-sync"></p>
+<p>如果想打开目录下的hello.html ，我们还需要在后面输入 hello.html 才能显示我们想要的页面，<strong> <a href="http://localhost:3000/hello.html" target="_blank" rel="external">http://localhost:3000/hello.html</a> </strong><br><img src="http://7xq76k.com1.z0.glb.clouddn.com/test.png" alt="brower-sync"></p>
+<h3 id="u6700_u540E"><a href="#u6700_u540E" class="headerlink" title="最后"></a>最后</h3><p>在启动后出现的这种情况也是我刚好在没有建index.html的时候出现，当时不知道出现什么问题，当时挺折腾的，所以觉得有必要写下来，记住以后建项目要规范点，index.html 是默认入口文件<br>附上Browsersync官网链接:<a href="http://www.browsersync.cn" target="_blank" rel="external">http://www.browsersync.cn</a></p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/工具/">工具</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
   
     <article id="post-螺纹矩阵" class="article article-type-post" itemscope itemprop="blogPost">
   
@@ -746,67 +812,6 @@
       
         <p class="article-more-link">
           <a  href="/2016/02/10/JavaScript学习笔记---Ajax入门(一)/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-  
-    <article id="post-JavaScript学习笔记---Ajax入门(零)" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/01/26/JavaScript学习笔记---Ajax入门(零)/" class="article-date">
-      <time datetime="2016-01-26T14:50:23.000Z" itemprop="datePublished">2016-01-26</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/01/26/JavaScript学习笔记---Ajax入门(零)/">JavaScript学习笔记---Ajax入门(零)</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <p>传统的Web应用，服务器处理每一个用户请求都需要重新加载网页。这样的处理方式效率不高。用户的体验是所有页面都会消失，再重新载入，即使只是一部分页面元素改变也要重新载入整个页面，不仅要刷新改变的部分，连没有变化的部分也要刷新，这会加重服务器的负担。ajax就解决了这个问题。<br>
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Ajax/">Ajax</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
-    </div>
-
-      
-        <p class="article-more-link">
-          <a  href="/2016/01/26/JavaScript学习笔记---Ajax入门(零)/#more">more >></a>
         </p>
       
       <div class="clearfix"></div>

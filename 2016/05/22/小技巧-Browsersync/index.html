@@ -3,21 +3,33 @@
 <head>
   <meta charset="utf-8">
   
-  <title>跨域之法（四）—— document.domain+iframe | Lueny-blog</title>
+  <title>小技巧-Browsersync | Lueny-blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="前提 主域相同而子域不同
-这两个域名必须属于同一个基础域名！而且所用的协议，端口都要一致，否则无法利用document.domain进行跨域Javascript出于对安全性的考虑，而禁止两个或者多个不同域的页面进行互相操作。相同域的页面在相互操作的时候不会有任何问题。">
+  <meta name="description" content="最近在写静态页面，每次修改一点就要去刷新一下页面，实在是太烦了。于是在网上找到了一款 省时神器 Browsersync，通过npm来安装非常方便。
+安装Browsersync首先要确定本地环境已经安装好node，然后通过命令
+1install -g browser-sync
+启动Browsersync安装成功后，我们在本地建一个文件来进行测试Browsersync是否能正常启动
+-css &amp;nbs">
 <meta property="og:type" content="article">
-<meta property="og:title" content="跨域之法（四）—— document.domain+iframe">
-<meta property="og:url" content="http://yoursite.com/2016/04/05/跨域4-document.domain&iframe/index.html">
+<meta property="og:title" content="小技巧-Browsersync">
+<meta property="og:url" content="http://yoursite.com/2016/05/22/小技巧-Browsersync/index.html">
 <meta property="og:site_name" content="Lueny-blog">
-<meta property="og:description" content="前提 主域相同而子域不同
-这两个域名必须属于同一个基础域名！而且所用的协议，端口都要一致，否则无法利用document.domain进行跨域Javascript出于对安全性的考虑，而禁止两个或者多个不同域的页面进行互相操作。相同域的页面在相互操作的时候不会有任何问题。">
-<meta property="og:updated_time" content="2016-04-09T09:11:16.051Z">
+<meta property="og:description" content="最近在写静态页面，每次修改一点就要去刷新一下页面，实在是太烦了。于是在网上找到了一款 省时神器 Browsersync，通过npm来安装非常方便。
+安装Browsersync首先要确定本地环境已经安装好node，然后通过命令
+1install -g browser-sync
+启动Browsersync安装成功后，我们在本地建一个文件来进行测试Browsersync是否能正常启动
+-css &amp;nbs">
+<meta property="og:image" content="http://7xq76k.com1.z0.glb.clouddn.com/brower-sync.png">
+<meta property="og:image" content="http://7xq76k.com1.z0.glb.clouddn.com/CannotGet.png">
+<meta property="og:image" content="http://7xq76k.com1.z0.glb.clouddn.com/test.png">
+<meta property="og:updated_time" content="2016-05-22T09:40:18.705Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="跨域之法（四）—— document.domain+iframe">
-<meta name="twitter:description" content="前提 主域相同而子域不同
-这两个域名必须属于同一个基础域名！而且所用的协议，端口都要一致，否则无法利用document.domain进行跨域Javascript出于对安全性的考虑，而禁止两个或者多个不同域的页面进行互相操作。相同域的页面在相互操作的时候不会有任何问题。">
+<meta name="twitter:title" content="小技巧-Browsersync">
+<meta name="twitter:description" content="最近在写静态页面，每次修改一点就要去刷新一下页面，实在是太烦了。于是在网上找到了一款 省时神器 Browsersync，通过npm来安装非常方便。
+安装Browsersync首先要确定本地环境已经安装好node，然后通过命令
+1install -g browser-sync
+启动Browsersync安装成功后，我们在本地建一个文件来进行测试Browsersync是否能正常启动
+-css &amp;nbs">
   
     <link rel="alternative" href="/atom.xml" title="Lueny-blog" type="application/atom+xml">
   
@@ -209,11 +221,11 @@
         </header>                
     </div>
 </nav>
-      <div class="body-wrap"><article id="post-跨域4-document.domain&amp;iframe" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-小技巧-Browsersync" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2016/04/05/跨域4-document.domain&iframe/" class="article-date">
-      <time datetime="2016-04-05T12:30:26.000Z" itemprop="datePublished">2016-04-05</time>
+      <a href="/2016/05/22/小技巧-Browsersync/" class="article-date">
+      <time datetime="2016-05-21T16:00:00.000Z" itemprop="datePublished">2016-05-22</time>
 </a>
     </div>
   
@@ -226,7 +238,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      跨域之法（四）—— document.domain+iframe
+      小技巧-Browsersync
     </h1>
   
 
@@ -237,7 +249,7 @@
 
         
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/工具/">工具</a></li></ul>
     </div>
 
         <div class="clearfix"></div>
@@ -247,38 +259,16 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <h3 id="u524D_u63D0__u4E3B_u57DF_u76F8_u540C_u800C_u5B50_u57DF_u4E0D_u540C"><a href="#u524D_u63D0__u4E3B_u57DF_u76F8_u540C_u800C_u5B50_u57DF_u4E0D_u540C" class="headerlink" title="前提 主域相同而子域不同"></a>前提 主域相同而子域不同</h3><blockquote>
-<p>这两个域名必须属于同一个基础域名！而且所用的协议，端口都要一致，否则无法利用document.domain进行跨域<br>Javascript出于对安全性的考虑，而禁止两个或者多个不同域的页面进行互相操作。相同域的页面在相互操作的时候不会有任何问题。</p>
-</blockquote>
-<a id="more"></a>
-<h3 id="u5206_u6790"><a href="#u5206_u6790" class="headerlink" title="分析"></a>分析</h3><p>比如在：aaa.com的一个网页（a.html）里面 利用iframe引入了一个bbb.com里的一个网页（b.html）。</p>
-<p>这时在a.html里面可以看到b.html里的内容，但是却不能利用javascript来操作它。因为这两个页面属于不同的域，在操作之前，js会检测两个页面的域是否相等，如果相等，就允许其操作，如果不相等，就会拒绝操作。</p>
-<p>这里不可能把<code>a.html</code>与<code>b.html</code>利用JS改成同一个域的。因为它们的基础域名不相等。（强制用JS将它们改成相等的域的话会报跟上面一样的”<code>参数无效错误</code>“）</p>
-<p>所以如果在a.html里引入aaa.com里的另一个网页，是不会有这个问题的，因为域相等。<br>有另一种情况，两个子域名：</p>
-<blockquote>
-<ul>
-<li>aaa.xxx.com</li>
-<li>bbb.xxx.com</li>
-</ul>
-</blockquote>
-<p>aaa里的一个网页（a.html）引入了bbb 里的一个网页（b.html），<br>这时a.html里同样是不能操作b.html里面的内容的。<br>因为<code>document.domain</code>不一样，一个是<code>aaa.xxx.com</code>，另一个是<code>bbb.xxx.com</code>。</p>
-<p>这时我们就可以通过Javascript，将两个页面的domain改成一样的，<br>需要在a.html里与b.html里都加入：</p>
-<blockquote>
-<p>document.domain = “xxx.com”;</p>
-</blockquote>
-<p>这样这两个页面就可以互相操作了。也就是实现了同一基础域名之间的”跨域”。</p>
-<h3 id="u5177_u4F53_u5B9E_u73B0"><a href="#u5177_u4F53_u5B9E_u73B0" class="headerlink" title="具体实现"></a>具体实现</h3><p>可以通过设置document.domain的办法来解决。<br>具体的做法是可以在<a href="http://www.a.com/a.html和http://script.a.com/b.html两个文件中分别加上document.domain" target="_blank" rel="external">http://www.a.com/a.html和http://script.a.com/b.html两个文件中分别加上document.domain</a> = ‘a.com’；然后通过a.html文件中创建一个iframe，去控制iframe的contentDocument，这样两个js文件之间就可以“交互”了。当然这种办法只能解决主域相同而二级域名不同的情况。</p>
-<p>www.a.com上的a.html<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">document</span>.domain = <span class="string">'a.com'</span>;</span><br><span class="line"><span class="keyword">var</span> ifr = <span class="built_in">document</span>.createElement(<span class="string">'iframe'</span>);</span><br><span class="line">ifr.src = <span class="string">'http://script.a.com/b.html'</span>;</span><br><span class="line">ifr.style.display = <span class="string">'none'</span>;</span><br><span class="line"><span class="built_in">document</span>.body.appendChild(ifr);</span><br><span class="line">ifr.onload = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">var</span> doc = ifr.contentDocument || ifr.contentWindow.document;</span><br><span class="line">    <span class="comment">// 在这里操纵b.html</span></span><br><span class="line">    alert(doc.getElementsByTagName(<span class="string">"h1"</span>)[<span class="number">0</span>].childNodes[<span class="number">0</span>].nodeValue);</span><br><span class="line">&#125;;</span><br><span class="line">script.a.com上的b.html</span><br><span class="line"><span class="built_in">document</span>.domain = <span class="string">'a.com'</span>;</span><br></pre></td></tr></table></figure></p>
-<p>这种方式适用于{ <code>www.kuqin.com</code>,<code>kuqin.com</code>, <code>script.kuqin.com</code>, <code>css.kuqin.com</code> }中的任何页面相互通信。</p>
-<h3 id="u95EE_u9898_28_u7F3A_u70B9_29_uFF1A"><a href="#u95EE_u9898_28_u7F3A_u70B9_29_uFF1A" class="headerlink" title="问题(缺点)："></a>问题(缺点)：</h3><blockquote>
-<ul>
-<li>安全性，当一个站点<code>b.a.com</code>被攻击后，另一个站点<code>c.a.com</code>会引起安全漏洞。</li>
-<li>如果一个页面中引入多个<code>iframe</code>，要想能够操作所有<code>iframe</code>，必须都得设置相同<code>domain</code>。</li>
-</ul>
-</blockquote>
-<h4 id="u5907_u6CE8"><a href="#u5907_u6CE8" class="headerlink" title="备注"></a>备注</h4><blockquote>
-<p>　某一页面的domain默认等于<code>window.location.hostname</code>。主域名是不带www的域名，例如<code>a.com</code><br>主域名前面带前缀的通常都为二级域名或多级域名，例如<code>www.a.com</code>其实是二级域名。 domain只能设置为主域名，不可以在<code>b.a.com</code>中将domain设置为<code>c.a.com</code>。</p>
-</blockquote>
+        <p>最近在写静态页面，每次修改一点就要去刷新一下页面，实在是太烦了。于是在网上找到了一款 省时神器 <strong>Browsersync</strong>，通过npm来安装非常方便。</p>
+<h2 id="u5B89_u88C5Browsersync"><a href="#u5B89_u88C5Browsersync" class="headerlink" title="安装Browsersync"></a>安装Browsersync</h2><p>首先要确定本地环境已经安装好node，然后通过命令</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">install -g browser-sync</span><br></pre></td></tr></table></figure>
+<h2 id="u542F_u52A8Browsersync"><a href="#u542F_u52A8Browsersync" class="headerlink" title="启动Browsersync"></a>启动Browsersync</h2><p>安装成功后，我们在本地建一个文件来进行测试Browsersync是否能正常启动</p>
+<p>-css <br><br>&nbsp;&nbsp;|-test.css<br><br>-index.html<br></p>
+<p>然后启动 Browsersync 对文件进行监听, index.html所在路径下打开终端窗口</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">//--files &#34920;&#31034;&#36335;&#24452;&#26159;&#30456;&#23545;&#20110;&#36816;&#34892;&#35813;&#21629;&#20196;&#30340;&#39033;&#30446;&#10;browser-sync start --server --files &#34;*.html&#34;&#10;//&#23545;&#22810;&#20010;&#36827;&#34892;&#30417;&#21548;&#10;browser-sync start --server --files &#34;css/*.css, *.html&#34;</span><br></pre></td></tr></table></figure>
+<p>启动成功会出现下面这个<br><img src="http://7xq76k.com1.z0.glb.clouddn.com/brower-sync.png" alt="brower-sync"><br>如果你项目根目录下有 <strong>index.html</strong> 这个文件，则启动服务后，在浏览器地址栏输入：<strong><a href="http://localhost:3000" target="_blank" rel="external">http://localhost:3000</a></strong> 则显示index.html的内容，如果不是的话会出现下面的情况：<br><img src="http://7xq76k.com1.z0.glb.clouddn.com/CannotGet.png" alt="brower-sync"></p>
+<p>如果想打开目录下的hello.html ，我们还需要在后面输入 hello.html 才能显示我们想要的页面，<strong> <a href="http://localhost:3000/hello.html" target="_blank" rel="external">http://localhost:3000/hello.html</a> </strong><br><img src="http://7xq76k.com1.z0.glb.clouddn.com/test.png" alt="brower-sync"></p>
+<h3 id="u6700_u540E"><a href="#u6700_u540E" class="headerlink" title="最后"></a>最后</h3><p>在启动后出现的这种情况也是我刚好在没有建index.html的时候出现，当时不知道出现什么问题，当时挺折腾的，所以觉得有必要写下来，记住以后建项目要规范点，index.html 是默认入口文件<br>附上Browsersync官网链接:<a href="http://www.browsersync.cn" target="_blank" rel="external">http://www.browsersync.cn</a></p>
 
       
     </div>
@@ -287,13 +277,13 @@
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/2016/04/05/跨域4-document.domain&iframe/">跨域之法（四）—— document.domain+iframe</a></p>
+        <p><span>本文标题:</span><a href="/2016/05/22/小技巧-Browsersync/">小技巧-Browsersync</a></p>
         <p><span>文章作者:</span><a href="/" title="访问 Lueny 的个人博客">Lueny</a></p>
-        <p><span>发布时间:</span>2016年04月05日 - 20时30分</p>
-        <p><span>最后更新:</span>2016年04月09日 - 17时11分</p>
+        <p><span>发布时间:</span>2016年05月22日 - 00时00分</p>
+        <p><span>最后更新:</span>2016年05月22日 - 17时40分</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2016/04/05/跨域4-document.domain&iframe/" title="跨域之法（四）—— document.domain+iframe">http://yoursite.com/2016/04/05/跨域4-document.domain&amp;iframe/</a>
-            <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2016/04/05/跨域4-document.domain&amp;iframe/　　作者: Lueny" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/2016/05/22/小技巧-Browsersync/" title="小技巧-Browsersync">http://yoursite.com/2016/05/22/小技巧-Browsersync/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2016/05/22/小技巧-Browsersync/　　作者: Lueny" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script src="/js/clipboard.min.js"></script>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
@@ -306,16 +296,10 @@
 
     <nav id="article-nav">
         
-            <div id="article-nav-newer" class="article-nav-title">
-                <a href="/2016/04/08/螺纹矩阵/">
-                    JavaScript实现螺旋矩阵
-                </a>
-            </div>
-        
         
             <div id="article-nav-older" class="article-nav-title">
-                <a href="/2016/04/05/跨域3-window.name/">
-                    跨域之法（三）—— window.name
+                <a href="/2016/04/08/螺纹矩阵/">
+                    JavaScript实现螺旋矩阵
                 </a>
             </div>
         
@@ -326,7 +310,7 @@
 
     <div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
-    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#u524D_u63D0__u4E3B_u57DF_u76F8_u540C_u800C_u5B50_u57DF_u4E0D_u540C"><span class="toc-number">1.</span> <span class="toc-text">前提 主域相同而子域不同</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#u5206_u6790"><span class="toc-number">2.</span> <span class="toc-text">分析</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#u5177_u4F53_u5B9E_u73B0"><span class="toc-number">3.</span> <span class="toc-text">具体实现</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#u95EE_u9898_28_u7F3A_u70B9_29_uFF1A"><span class="toc-number">4.</span> <span class="toc-text">问题(缺点)：</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#u5907_u6CE8"><span class="toc-number">4.1.</span> <span class="toc-text">备注</span></a></li></ol></li></ol>
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#u5B89_u88C5Browsersync"><span class="toc-number">1.</span> <span class="toc-text">安装Browsersync</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#u542F_u52A8Browsersync"><span class="toc-number">2.</span> <span class="toc-text">启动Browsersync</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#u6700_u540E"><span class="toc-number">2.1.</span> <span class="toc-text">最后</span></a></li></ol></li></ol>
 </div>
 <style>
     .left-col .switch-btn {
@@ -390,7 +374,7 @@
     
       <div class="duoshuo" id="comments">
     <!-- 多说评论框 start -->
-    <div class="ds-thread" data-thread-key="2016/04/05/跨域4-document.domain&amp;iframe/" data-title="跨域之法（四）—— document.domain+iframe" data-url="http://yoursite.com/2016/04/05/跨域4-document.domain&amp;iframe/"></div>
+    <div class="ds-thread" data-thread-key="2016/05/22/小技巧-Browsersync/" data-title="小技巧-Browsersync" data-url="http://yoursite.com/2016/05/22/小技巧-Browsersync/"></div>
     <!-- 多说评论框 end -->
     <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
     <script type="text/javascript">
@@ -414,15 +398,13 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2016/04/08/螺纹矩阵/" title="上一篇: JavaScript实现螺旋矩阵">
-                <i class="fa fa-angle-left"></i>
-            </a>
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
         
 
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
 
         
-            <a href="/2016/04/05/跨域3-window.name/" title="下一篇: 跨域之法（三）—— window.name">
+            <a href="/2016/04/08/螺纹矩阵/" title="下一篇: JavaScript实现螺旋矩阵">
                 <i class="fa fa-angle-right"></i>
             </a>
         
