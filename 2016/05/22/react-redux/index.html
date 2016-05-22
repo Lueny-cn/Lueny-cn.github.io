@@ -13,7 +13,7 @@
 <meta property="og:site_name" content="Lueny-blog">
 <meta property="og:description" content="为什么要用react-redux?我们知道 React 的核心思想是 构建组件, 然后各个组件维护自己的状态(state)和UI，当状态变化时，自动重新渲染整个组件。
 可以看出 React 实现的是 MVC 中的 V 层，而React对组件间数据流的管理是比较弱的，父子组件之间数据传递还比较简单，子组件可以通过 this.props 访问到父组件的数据/方法，而非父子组件之间的通信一般是通过一个全">
-<meta property="og:updated_time" content="2016-05-22T14:10:25.307Z">
+<meta property="og:updated_time" content="2016-05-22T14:14:59.817Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="react-redux学习笔记">
 <meta name="twitter:description" content="为什么要用react-redux?我们知道 React 的核心思想是 构建组件, 然后各个组件维护自己的状态(state)和UI，当状态变化时，自动重新渲染整个组件。
@@ -248,8 +248,7 @@
       
           
         <h2 id="u4E3A_u4EC0_u4E48_u8981_u7528react-redux_3F"><a href="#u4E3A_u4EC0_u4E48_u8981_u7528react-redux_3F" class="headerlink" title="为什么要用react-redux?"></a>为什么要用react-redux?</h2><p>我们知道 React 的核心思想是 <strong>构建组件</strong>, 然后各个组件维护自己的状态(state)和UI，当状态变化时，自动重新渲染整个组件。</p>
-<p>可以看出 React 实现的是 MVC 中的 V 层，而React对组件间数据流的管理是比较弱的，父子组件之间数据传递还比较简单，子组件可以通过 <strong>this.props</strong> 访问到父组件的数据/方法，而非父子组件之间的通信一般是通过一个全局事件来进行监听，如果组件非常多的话，这对数据流的管理是非常不方便的。</p>
-<p>因此就引入react-redux，一开始使用的是Flux，后来 Dan Abramov 在 React Europe 2015 上作了一场令人印象深刻的演示 <a href="https://www.youtube.com/watch?v=xsSnOQynTHs" target="_blank" rel="external">Hot Reloading with Time Travel</a>，之后 Redux 迅速成为最受人关注的 Flux 实现之一。。 </p>
+<p>可以看出 React 实现的是 MVC 中的 V 层，而React对组件间数据流的管理是比较弱的，父子组件之间数据传递还比较简单，子组件可以通过 <strong>this.props</strong> 访问到父组件的数据/方法，而非父子组件之间的通信一般是通过一个全局事件来进行监听，如果组件非常多的话，这对数据流的管理是非常不方便的。<br><a id="more"></a><br>因此就有人搞了个 redux出来。一开始控制数据流使用的是Flux，后来 Dan Abramov 在 React Europe 2015 上作了一场令人印象深刻的演示 <a href="https://www.youtube.com/watch?v=xsSnOQynTHs" target="_blank" rel="external">Hot Reloading with Time Travel</a>之后，Redux 迅速成为最受人关注的 Flux 实现之一。。 </p>
 <h2 id="react-redux_u6709_u4EC0_u4E48_u4E1C_u897F_u8981_u5B66_3F"><a href="#react-redux_u6709_u4EC0_u4E48_u4E1C_u897F_u8981_u5B66_3F" class="headerlink" title="react-redux有什么东西要学?"></a>react-redux有什么东西要学?</h2><h3 id="Action"><a href="#Action" class="headerlink" title="Action"></a>Action</h3><ul>
 <li>用于描述发生了什么</li>
 </ul>
@@ -324,7 +323,7 @@
         <p><span>本文标题:</span><a href="/2016/05/22/react-redux/">react-redux学习笔记</a></p>
         <p><span>文章作者:</span><a href="/" title="访问 Lueny 的个人博客">Lueny</a></p>
         <p><span>发布时间:</span>2016年05月22日 - 22时06分</p>
-        <p><span>最后更新:</span>2016年05月22日 - 22时10分</p>
+        <p><span>最后更新:</span>2016年05月22日 - 22时14分</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/2016/05/22/react-redux/" title="react-redux学习笔记">http://yoursite.com/2016/05/22/react-redux/</a>
             <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2016/05/22/react-redux/　　作者: Lueny" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
