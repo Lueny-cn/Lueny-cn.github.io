@@ -3,17 +3,42 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Lueny-blog</title>
+  <title>JavaScript面向对象 | Lueny-blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="卢文友">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Lueny-blog">
-<meta property="og:url" content="http://yoursite.com/index.html">
+  <meta name="description" content="面向对象的几个概念在进入正题前，先了解传统的面向对象编程（例如Java）中常会涉及到的概念，大致可以包括：
+
+类：定义对象的特征。它是对象的属性和方法的模板定义。
+对象（或称实例）：类的一个实例。
+属性：对象的特征，比如颜色、尺寸等。
+方法：对象的行为，比如行走、说话等。
+构造函数：对象初始化的瞬间被调用的方法。
+继承：子类可以继承父类的特征。例如，猫继承了动物的一般特性。
+封装：一种把数据和相关">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JavaScript面向对象">
+<meta property="og:url" content="http://yoursite.com/2016/10/17/JavaScript面向对象/index.html">
 <meta property="og:site_name" content="Lueny-blog">
-<meta property="og:description" content="卢文友">
+<meta property="og:description" content="面向对象的几个概念在进入正题前，先了解传统的面向对象编程（例如Java）中常会涉及到的概念，大致可以包括：
+
+类：定义对象的特征。它是对象的属性和方法的模板定义。
+对象（或称实例）：类的一个实例。
+属性：对象的特征，比如颜色、尺寸等。
+方法：对象的行为，比如行走、说话等。
+构造函数：对象初始化的瞬间被调用的方法。
+继承：子类可以继承父类的特征。例如，猫继承了动物的一般特性。
+封装：一种把数据和相关">
+<meta property="og:updated_time" content="2016-10-17T13:50:14.011Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Lueny-blog">
-<meta name="twitter:description" content="卢文友">
+<meta name="twitter:title" content="JavaScript面向对象">
+<meta name="twitter:description" content="面向对象的几个概念在进入正题前，先了解传统的面向对象编程（例如Java）中常会涉及到的概念，大致可以包括：
+
+类：定义对象的特征。它是对象的属性和方法的模板定义。
+对象（或称实例）：类的一个实例。
+属性：对象的特征，比如颜色、尺寸等。
+方法：对象的行为，比如行走、说话等。
+构造函数：对象初始化的瞬间被调用的方法。
+继承：子类可以继承父类的特征。例如，猫继承了动物的一般特性。
+封装：一种把数据和相关">
   
     <link rel="alternative" href="/atom.xml" title="Lueny-blog" type="application/atom+xml">
   
@@ -27,9 +52,6 @@
   <link rel="stylesheet" href="/font-awesome/css/font-awesome.min.css">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   
-    
-    
-  
   
       <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
   
@@ -37,8 +59,8 @@
       var yiliaConfig = {
           fancybox: true,
           animate: true,
-          isHome: true,
-          isPost: false,
+          isHome: false,
+          isPost: true,
           isArchive: false,
           isTag: false,
           isCategory: false,
@@ -208,9 +230,7 @@
         </header>                
     </div>
 </nav>
-      <div class="body-wrap">
-  
-    <article id="post-JavaScript面向对象" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-JavaScript面向对象" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
       <a href="/2016/10/17/JavaScript面向对象/" class="article-date">
@@ -226,12 +246,23 @@
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/10/17/JavaScript面向对象/">JavaScript面向对象</a>
+    <h1 class="article-title" itemprop="name">
+      JavaScript面向对象
     </h1>
   
 
       </header>
+      
+      <div class="article-info article-info-post">
+        
+
+        
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
+    </div>
+
+        <div class="clearfix"></div>
+      </div>
       
     
     <div class="article-entry" itemprop="articleBody">
@@ -292,591 +323,171 @@
       
     </div>
     
-    <div class="article-info article-info-index">
-      
-      
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
-    </div>
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
   </div>
   
-</article>
-
-
-
-
-
-
-
-
-  
-    <article id="post-react-redux" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/05/22/react-redux/" class="article-date">
-      <time datetime="2016-05-22T14:06:00.000Z" itemprop="datePublished">2016-05-22</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
     
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/05/22/react-redux/">react-redux学习笔记</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <h2 id="u4E3A_u4EC0_u4E48_u8981_u7528react-redux_3F"><a href="#u4E3A_u4EC0_u4E48_u8981_u7528react-redux_3F" class="headerlink" title="为什么要用react-redux?"></a>为什么要用react-redux?</h2><p>我们知道 React 的核心思想是 <strong>构建组件</strong>, 然后各个组件维护自己的状态(state)和UI，当状态变化时，自动重新渲染整个组件。</p>
-<p>可以看出 React 实现的是 MVC 中的 V 层，而React对组件间数据流的管理是比较弱的，父子组件之间数据传递还比较简单，子组件可以通过 <strong>this.props</strong> 访问到父组件的数据/方法，而非父子组件之间的通信一般是通过一个全局事件来进行监听，如果组件非常多的话，这对数据流的管理是非常不方便的。<br>
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/react/">react</a></li></ul>
-    </div>
-
-      
-        <p class="article-more-link">
-          <a  href="/2016/05/22/react-redux/#more">more >></a>
+    <div class="copyright">
+        <p><span>本文标题:</span><a href="/2016/10/17/JavaScript面向对象/">JavaScript面向对象</a></p>
+        <p><span>文章作者:</span><a href="/" title="访问 Lueny 的个人博客">Lueny</a></p>
+        <p><span>发布时间:</span>2016年10月17日 - 21时14分</p>
+        <p><span>最后更新:</span>2016年10月17日 - 21时50分</p>
+        <p>
+            <span>原始链接:</span><a class="post-url" href="/2016/10/17/JavaScript面向对象/" title="JavaScript面向对象">http://yoursite.com/2016/10/17/JavaScript面向对象/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2016/10/17/JavaScript面向对象/　　作者: Lueny" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <script src="/js/clipboard.min.js"></script>
+            <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-  
-    <article id="post-小技巧-Browsersync" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/05/22/小技巧-Browsersync/" class="article-date">
-      <time datetime="2016-05-21T16:00:00.000Z" itemprop="datePublished">2016-05-22</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/05/22/小技巧-Browsersync/">实时刷新静态页面工具-Browsersync</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <p>最近在写静态页面，每次修改一点就要去刷新一下页面，实在是太烦了。于是在网上找到了一款 省时神器 <strong>Browsersync</strong>，通过npm来安装非常方便。</p>
-<h2 id="u5B89_u88C5Browsersync"><a href="#u5B89_u88C5Browsersync" class="headerlink" title="安装Browsersync"></a>安装Browsersync</h2>
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/工具/">工具</a></li></ul>
-    </div>
-
-      
-        <p class="article-more-link">
-          <a  href="/2016/05/22/小技巧-Browsersync/#more">more >></a>
+        <p>
+            <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/cn/" title="中国大陆 (CC BY-NC-SA 3.0 CN)" target = "_blank">"署名-非商用-相同方式共享 3.0"</a> 转载请保留原文链接及作者。
         </p>
-      
-      <div class="clearfix"></div>
     </div>
-    
-  </div>
-  
-</article>
 
 
 
-
-
-
-
-
-  
-    <article id="post-螺纹矩阵" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/04/08/螺纹矩阵/" class="article-date">
-      <time datetime="2016-04-07T23:57:25.000Z" itemprop="datePublished">2016-04-08</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
+    <nav id="article-nav">
         
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/04/08/螺纹矩阵/">JavaScript实现螺旋矩阵</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <p>这个比较有意思吧, 直接上码~</p>
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/算法/">算法</a></li></ul>
-    </div>
-
-      
-        <p class="article-more-link">
-          <a  href="/2016/04/08/螺纹矩阵/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-  
-    <article id="post-跨域4-document.domain&amp;iframe" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/04/05/跨域4-document.domain&iframe/" class="article-date">
-      <time datetime="2016-04-05T12:30:26.000Z" itemprop="datePublished">2016-04-05</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
         
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/04/05/跨域4-document.domain&iframe/">跨域之法（四）—— document.domain+iframe</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <h3 id="u524D_u63D0__u4E3B_u57DF_u76F8_u540C_u800C_u5B50_u57DF_u4E0D_u540C"><a href="#u524D_u63D0__u4E3B_u57DF_u76F8_u540C_u800C_u5B50_u57DF_u4E0D_u540C" class="headerlink" title="前提 主域相同而子域不同"></a>前提 主域相同而子域不同</h3><blockquote>
-<p>这两个域名必须属于同一个基础域名！而且所用的协议，端口都要一致，否则无法利用document.domain进行跨域<br>Javascript出于对安全性的考虑，而禁止两个或者多个不同域的页面进行互相操作。相同域的页面在相互操作的时候不会有任何问题。</p>
-</blockquote>
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
-    </div>
-
-      
-        <p class="article-more-link">
-          <a  href="/2016/04/05/跨域4-document.domain&iframe/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-  
-    <article id="post-跨域3-window.name" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/04/05/跨域3-window.name/" class="article-date">
-      <time datetime="2016-04-05T04:05:02.000Z" itemprop="datePublished">2016-04-05</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
+            <div id="article-nav-older" class="article-nav-title">
+                <a href="/2016/05/22/react-redux/">
+                    react-redux学习笔记
+                </a>
+            </div>
         
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/04/05/跨域3-window.name/">跨域之法（三）—— window.name</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <h3 id="u4E3B_u8981_u601D_u60F3"><a href="#u4E3B_u8981_u601D_u60F3" class="headerlink" title="主要思想"></a>主要思想</h3><p>通过在应用页面设置一个<code>iframe</code>,其源头指向拥有数据的文件或页面，让那个data（数据页面）把值赋在那个iframe的<code>window.name</code>上，然后由于<code>window.name</code>在浏览器环境中是一个<code>全局/window对象的属性</code>，且当在 frame 中加载新页面时，name 的属性值依旧保持不变。通过在 iframe 中加载一个资源，该目标页面将设置 frame 的 name 属性。此 name 属性值可被获取到，以访问 Web 服务发送的信息。但 name 属性仅对相同域名的 frame 可访问。这意味着为了访问 name 属性，当远程 Web 服务页面被加载后，必须导航 frame 回到原始域。(就是说先用data把数据放在iframe的window.name里面，然后切换到proxy ,这时proxy拿到window.name的数据，就可以向同域的app传值了)同源策略依旧防止其他 frame 访问 name 属性。一旦 name 属性获得，销毁 frame 。<br>
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
-    </div>
-
-      
-        <p class="article-more-link">
-          <a  href="/2016/04/05/跨域3-window.name/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-  
-    <article id="post-跨域2-JSONP" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/04/02/跨域2-JSONP/" class="article-date">
-      <time datetime="2016-04-02T08:55:02.000Z" itemprop="datePublished">2016-04-02</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/04/02/跨域2-JSONP/">跨域之法（二）—— JSONP</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <p><code>jsonp</code>可能是很多人第一次跨域使用的一种方法，使用起来比较简单，而且也不绕。</p>
-<p><strong>jsonp全称 json padding</strong>,为什么？接下来你就知道了<br>
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
-    </div>
-
-      
-        <p class="article-more-link">
-          <a  href="/2016/04/02/跨域2-JSONP/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-  
-    <article id="post-跨域之法（一）——初探跨域" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/04/01/跨域之法（一）——初探跨域/" class="article-date">
-      <time datetime="2016-04-01T07:57:25.000Z" itemprop="datePublished">2016-04-01</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/04/01/跨域之法（一）——初探跨域/">跨域之法（一）——初探跨域</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <h2 id="u4EC0_u4E48_u662F_u8DE8_u57DF_3F"><a href="#u4EC0_u4E48_u662F_u8DE8_u57DF_3F" class="headerlink" title="什么是跨域?"></a>什么是跨域?</h2><p>&nbsp;&nbsp;所谓跨域, 就是当前域到了另外的域，域不仅仅指的是不同的域名网站，可能同一个域名不同的端口号也算不同的域。浏览器是有规则的，只要协议、域名、端口有任何一个不同，都被当作是不同的域。协议指的是http，或者https等。<br>
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
-    </div>
-
-      
-        <p class="article-more-link">
-          <a  href="/2016/04/01/跨域之法（一）——初探跨域/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-  
-    <article id="post-getGray" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/03/26/getGray/" class="article-date">
-      <time datetime="2016-03-26T14:50:23.000Z" itemprop="datePublished">2016-03-26</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/03/26/getGray/">编程题笔记-格雷码生成</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <h2 id="u4EC0_u4E48_u662F_u683C_u96F7_u7801_3F"><a href="#u4EC0_u4E48_u662F_u683C_u96F7_u7801_3F" class="headerlink" title="什么是格雷码?"></a>什么是格雷码?</h2><blockquote>
-<p>格雷码(Gray Code)是一个数列集合，每个数使用二进位来表示，假设使用n位元来表示每个数字，<strong>任两个相邻数之间只有一个位元值不同</strong><br>
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/算法/">算法</a></li></ul>
-    </div>
-
-      
-        <p class="article-more-link">
-          <a  href="/2016/03/26/getGray/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-  
-    <article id="post-sort" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/03/17/sort/" class="article-date">
-      <time datetime="2016-03-17T13:14:23.000Z" itemprop="datePublished">2016-03-17</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/03/17/sort/">JavaScript实现常用排序算法</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-              <p>排序算法应该是程序猿应该掌握的最基本的算法吧, 下面就是最近整理的一些常用的排序算法, 写下来备忘。<br>
-          
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/算法/">算法</a></li></ul>
-    </div>
-
-      
-        <p class="article-more-link">
-          <a  href="/2016/03/17/sort/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-  
-  
-    <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
     </nav>
+
   
+</article>
+
+    <div id="toc" class="toc-article">
+    <strong class="toc-title">文章目录</strong>
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#u9762_u5411_u5BF9_u8C61_u7684_u51E0_u4E2A_u6982_u5FF5"><span class="toc-number">1.</span> <span class="toc-text">面向对象的几个概念</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#u5C01_u88C5"><span class="toc-number">2.</span> <span class="toc-text">封装</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#u7EE7_u627F"><span class="toc-number">3.</span> <span class="toc-text">继承</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#u6784_u9020_u51FD_u6570_u7ED1_u5B9A"><span class="toc-number">3.1.</span> <span class="toc-text">构造函数绑定</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#u539F_u578B_u94FE_u7EE7_u627F"><span class="toc-number">3.2.</span> <span class="toc-text">原型链继承</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#u7EC4_u5408_u4F7F_u7528_u539F_u578B_u94FE_u548C_u501F_u7528_u6784_u9020_u51FD_u6570"><span class="toc-number">3.3.</span> <span class="toc-text">组合使用原型链和借用构造函数</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#u591A_u6001"><span class="toc-number">4.</span> <span class="toc-text">多态</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ES6_u4E2D_u7684_u9762_u5411_u5BF9_u8C61_u8BED_u6CD5"><span class="toc-number">5.</span> <span class="toc-text">ES6中的面向对象语法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#u7C7B_uFF1Aclass"><span class="toc-number">5.1.</span> <span class="toc-text">类：class</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#u7C7B_u6784_u9020_u5668_uFF1Aconstructor"><span class="toc-number">5.2.</span> <span class="toc-text">类构造器：constructor</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#u7C7B_u7684_u9759_u6001_u65B9_u6CD5_uFF1Astatic"><span class="toc-number">5.3.</span> <span class="toc-text">类的静态方法：static</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#u7EE7_u627F_u7236_u7C7B_uFF1Aextends"><span class="toc-number">5.4.</span> <span class="toc-text">继承父类：extends</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#u5173_u952E_u5B57_uFF1Asuper"><span class="toc-number">5.5.</span> <span class="toc-text">关键字：super</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#u53C2_u8003_u8D44_u6599_3A"><span class="toc-number">6.</span> <span class="toc-text">参考资料:</span></a></li></ol>
+</div>
+<style>
+    .left-col .switch-btn {
+        display: none;
+    }
+    .left-col .switch-area {
+        display: none;
+    }
+</style>
+
+<input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
+
+<script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js" type="text/javascript"></script>
+<script>
+    var valueHide = "隐藏目录";
+    var valueShow = "显示目录";
+
+    if ($(".left-col").is(":hidden")) {
+        $("#tocButton").attr("value", valueShow);
+    }
+
+    $("#tocButton").click(function() {
+        if ($("#toc").is(":hidden")) {
+            $("#tocButton").attr("value", valueHide);
+            $("#toc").slideDown(320);
+            $(".switch-btn, .switch-area").fadeOut(300);
+        }
+        else {
+            $("#tocButton").attr("value", valueShow);
+            $("#toc").slideUp(350);
+            $(".switch-btn, .switch-area").fadeIn(500);
+        }
+    })
+
+    if ($(".toc").length < 1) {
+        $("#toc, #tocButton").hide();
+        $(".switch-btn, .switch-area").show();
+    }
+</script>
+
+
+
+
+<div class="share">
+    <div class="bdsharebuttonbox">
+    <a href="#" class="bds_more" data-cmd="more"></a>
+    <a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+    <a href="#" class="bds_sqq" data-cmd="sqq" title="分享给 QQ 好友"></a>
+    <a href="#" class="bds_copy" data-cmd="copy" title="复制网址"></a>
+    <a href="#" class="bds_mail" data-cmd="mail" title="通过邮件分享"></a>
+    <a href="#" class="bds_weixin" data-cmd="weixin" title="生成文章二维码"></a>
+    </div>
+    <script>
+        window._bd_share_config={
+            "common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+    </script>
+</div>
+
+
+
+    
+      <div class="duoshuo" id="comments">
+    <!-- 多说评论框 start -->
+    <div class="ds-thread" data-thread-key="2016/10/17/JavaScript面向对象/" data-title="JavaScript面向对象" data-url="http://yoursite.com/2016/10/17/JavaScript面向对象/"></div>
+    <!-- 多说评论框 end -->
+    <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+    <script type="text/javascript">
+    var duoshuoQuery = {short_name:"lueny-cn"};
+    (function() {
+        var ds = document.createElement('script');
+        ds.type = 'text/javascript';ds.async = true;
+        ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+        ds.charset = 'UTF-8';
+        (document.getElementsByTagName('head')[0] 
+         || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+    </script>
+    <!-- 多说公共JS代码 end -->
+</div>
+
+    
+
+
+
+
+    <div class="scroll" id="post-nav-button">
+        
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
+        
+
+        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+
+        
+            <a href="/2016/05/22/react-redux/" title="下一篇: react-redux学习笔记">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        
+    </div>
+
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2016/10/17/JavaScript面向对象/">JavaScript面向对象</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/05/22/react-redux/">react-redux学习笔记</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/05/22/小技巧-Browsersync/">实时刷新静态页面工具-Browsersync</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/04/08/螺纹矩阵/">JavaScript实现螺旋矩阵</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/04/05/跨域4-document.domain&iframe/">跨域之法（四）—— document.domain+iframe</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/04/05/跨域3-window.name/">跨域之法（三）—— window.name</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/04/02/跨域2-JSONP/">跨域之法（二）—— JSONP</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/04/01/跨域之法（一）——初探跨域/">跨域之法（一）——初探跨域</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/03/26/getGray/">编程题笔记-格雷码生成</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/03/17/sort/">JavaScript实现常用排序算法</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/03/07/常用git命令清单/">常用git命令清单</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/10/JavaScript学习笔记---Ajax入门(一)/">JavaScript学习笔记---Ajax入门(一)</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/26/JavaScript学习笔记---Ajax入门(零)/">JavaScript学习笔记---Ajax入门(零)</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/17/JavaScript之理解闭包/">JavaScript学习笔记---理解闭包</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/01/07/hello-lwy/">hello-lwy</a></li></ul>
+    <script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+    <script>
+        $(".post-list").addClass("toc-article");
+        $(".post-list-item a").attr("target","_blank");
+        $("#post-nav-button > a:nth-child(2)").click(function() {
+            $(".fa-bars, .fa-times").toggle();
+            $(".post-list").toggle(300);
+            if ($(".toc").length > 0) {
+                $("#toc, #tocButton").toggle(200, function() {
+                    if ($(".switch-area").is(":visible")) {
+                        $("#toc, .switch-btn, .switch-area").toggle();
+                        $("#tocButton").attr("value", valueHide);
+                        }
+                    })
+            }
+            else {
+                $(".switch-btn, .switch-area").fadeToggle(300);
+            }
+        })
+    </script>
+
+
+
+
+    <script>
+        
+    </script>
 </div>
       <footer id="footer">
     <div class="outer">
