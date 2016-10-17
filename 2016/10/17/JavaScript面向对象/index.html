@@ -27,7 +27,7 @@
 构造函数：对象初始化的瞬间被调用的方法。
 继承：子类可以继承父类的特征。例如，猫继承了动物的一般特性。
 封装：一种把数据和相关">
-<meta property="og:updated_time" content="2016-10-17T13:50:14.011Z">
+<meta property="og:updated_time" content="2016-10-17T14:33:41.191Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JavaScript面向对象">
 <meta name="twitter:description" content="面向对象的几个概念在进入正题前，先了解传统的面向对象编程（例如Java）中常会涉及到的概念，大致可以包括：
@@ -234,7 +234,7 @@
   
     <div class="article-meta">
       <a href="/2016/10/17/JavaScript面向对象/" class="article-date">
-      <time datetime="2016-10-17T13:14:23.000Z" itemprop="datePublished">2016-10-17</time>
+      <time datetime="2016-10-17T14:14:23.000Z" itemprop="datePublished">2016-10-17</time>
 </a>
     </div>
   
@@ -280,9 +280,10 @@
 <li>抽象：结合复杂的继承、方法、属性的对象能够模拟现实的模型。</li>
 <li><p>多态：不同的类可以定义相同的方法或属性。</p>
 <p>面向对象的三个基本特征是<strong>封装、继承、多态</strong>，接下来我们就来讲讲JavaScript的中怎么实现这三个基本特征。</p>
-<p>JavaScript是一种基于对象(object-based)的语言, 几乎所有的东西都是对象, 但是它又不是一种真正的面向对象语言(OOP), 因为在ECMAScript2015 之前, JavaScript的语法中是没有 类（Class） 的。不过我们可以通过构造函数和原型去模拟它。</p>
 </li>
 </ul>
+<a id="more"></a>
+<p> JavaScript是一种基于对象(object-based)的语言, 几乎所有的东西都是对象, 但是它又不是一种真正的面向对象语言(OOP), 因为在ECMAScript2015 之前, JavaScript的语法中是没有 类（Class） 的。不过我们可以通过构造函数和原型去模拟它。</p>
 <h2 id="u5C01_u88C5"><a href="#u5C01_u88C5" class="headerlink" title="封装"></a>封装</h2><p>  根据定义，封装就是把属性和方法封装成一个对象，我们可以通常用构造函数来进行封装。例如：</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Dog</span>(<span class="params">name, color</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.name = name;</span><br><span class="line">    <span class="keyword">this</span>.color = color;</span><br><span class="line">    <span class="keyword">this</span>.type = <span class="string">'博美'</span></span><br><span class="line">    <span class="keyword">this</span>.say = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123; </span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">'汪汪汪~'</span>); </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//new 一个实例</span></span><br><span class="line"><span class="keyword">var</span> dogA = <span class="keyword">new</span> Dog(<span class="string">"朵朵"</span>, <span class="string">"白色"</span>);</span><br><span class="line"><span class="keyword">var</span> dogB = <span class="keyword">new</span> Dog(<span class="string">"大黄"</span>, <span class="string">"黄色"</span>);</span><br><span class="line">   </span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(dogA.type);    <span class="comment">// "博美"</span></span><br><span class="line"><span class="built_in">console</span>.log(dogB.say());   <span class="comment">// "汪汪汪~"</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//这两个对象默认都有一个 constructor 属性，该属性指向它们的构造函数 Dog</span></span><br><span class="line">dogA.constructor === Dog;  <span class="comment">// true</span></span><br><span class="line">dogB.constructor === Dog;  <span class="comment">// true</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//验证原型对象与实例对象的关系    </span></span><br><span class="line">dogA <span class="keyword">instanceof</span> Dog   <span class="comment">// true</span></span><br><span class="line">dogB <span class="keyword">instanceof</span> Dog   <span class="comment">// true</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//所有的对象都继承自Object</span></span><br><span class="line">dogA <span class="keyword">instanceof</span> <span class="built_in">Object</span>   <span class="comment">// true</span></span><br><span class="line">dogB <span class="keyword">instanceof</span> <span class="built_in">Object</span>   <span class="comment">// true</span></span><br></pre></td></tr></table></figure>
 <p> 通过构造函数来定义一个”类”, 然后new一个实例对象出来,表面看没什么问题,但是这有点浪费内存,因为type属性和say()方法是一模一样的内容, 每次实例化都要再生成一遍,浪费内存;</p>
@@ -329,8 +330,8 @@
     <div class="copyright">
         <p><span>本文标题:</span><a href="/2016/10/17/JavaScript面向对象/">JavaScript面向对象</a></p>
         <p><span>文章作者:</span><a href="/" title="访问 Lueny 的个人博客">Lueny</a></p>
-        <p><span>发布时间:</span>2016年10月17日 - 21时14分</p>
-        <p><span>最后更新:</span>2016年10月17日 - 21时50分</p>
+        <p><span>发布时间:</span>2016年10月17日 - 22时14分</p>
+        <p><span>最后更新:</span>2016年10月17日 - 22时33分</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/2016/10/17/JavaScript面向对象/" title="JavaScript面向对象">http://yoursite.com/2016/10/17/JavaScript面向对象/</a>
             <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2016/10/17/JavaScript面向对象/　　作者: Lueny" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
